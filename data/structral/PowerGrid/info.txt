@@ -1,2 +1,7 @@
 #Nodes - 4941
 #Edges - 6594
+
+90% - train, 10% - pos_test, neg_set = pos_set:
+sfdp ~ 0.80, 0.82, 0.82
+PA ~ 0.47, 0.46, 0.44
+
