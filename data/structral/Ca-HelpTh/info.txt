@@ -1,2 +1,9 @@
 Nodes: 9877 Edges: 51971
 
+10% train, 90 test, neg=pos:
+sfdp:
+PA: 
+
+Dima's results 80% train, 20% test:
+PA            JC            AA            MF            FR            SFDP
+0.838 ± 0.012 0.940 ± 0.007 0.913 ± 0.016 0.937 ± 0.028 0.835 ± 0.014 0.964 ± 0.008

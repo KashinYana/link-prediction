@@ -5,3 +5,14 @@
 sfdp ~ 0.80, 0.82, 0.82
 PA ~ 0.47, 0.46, 0.44
 
+http://cseweb.ucsd.edu/~elkan/ECML2011LinkPrediction.pdf:
+90% - train, 10% - test
+AA 0.589 ± 0.003
+PA 0.442 ± 0.010
+SHP 0.659 ± 0.015
+Katz 0.655 ± 0.016
+Sup-Top 0.708 ± 0.062∗
+SVD 0.691 ± 0.026
+Fact-Sq 0.637 ± 0.012
+Fact-Log 0.675 ± 0.017
+Fact+Scores 0.751 ± 0.020∗

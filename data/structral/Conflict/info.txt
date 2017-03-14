@@ -5,3 +5,15 @@ train 10%, test 90%, neg=pos:
 sfdp: 0.635, 0.58,0.54, 0.59, 0.53 
 PA: 0.625,0.54, 0.55, 0.57, 0.54
 
+
+http://cseweb.ucsd.edu/~elkan/ECML2011LinkPrediction.pdf
+train 10%, test 90%:
+AA 0.507 ± 0.008
+PA 0.546 ± 0.024
+SHP 0.512 ± 0.014
+Katz 0.512 ± 0.014
+Sup-Top 0.695 ± 0.076
+SVD 0.541 ± 0.094
+Fact-Sq 0.692 ± 0.040
+Fact-Log 0.692 ± 0.039
+Fact+Scores 0.689 ± 0.042
