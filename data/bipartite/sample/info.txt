@@ -1,0 +1,5 @@
+gamma = -1 -- all groups repulsive each other
+mu = 1 -- attractive force between vertices of the same group assignment
+mu_p = 0 -- not very important
+
+We are not getting nice picture, because of global repulsive forces, it is hard to convergence to exact our minimum.
