@@ -3,15 +3,16 @@ def in_set(u, w, Set):
 
 def read_train(file):
     train_set = set()
-    nodes = set()
+    left_nodes = set()
+    right_nodes = set()
     FIN = open(file, 'r')
     for line in FIN:
         train_set.add(line.strip())
         u, w = line.strip().split()
-        nodes.add(int(u))
-        nodes.add(int(w))
+        left_nodes.add(int(u))
+        right_nodes.add(int(w))
     FIN.close()
-    return train_set, nodes
+    return train_set, left_nodes, right_nodes
 
 def sample_structural_poss(train_set, SIZE_POS):
     import random
@@ -33,8 +34,29 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG):
         neg_set.add(u + ' ' + w)
     return neg_set
 
+def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
+    import random
+    neg_set = set()
+    while len(neg_set) < SIZE_NEG:
+        u_sample = random.sample(left_nodes, 100)
+        w_sample = random.sample(right_nodes, 100)
+        for (u, w) in zip(u_sample, w_sample):
+            if u == w:
+                continue
+            u = str(u)
+            w = str(w)
+            if in_set(u, w, train_set):
+                continue
+            if in_set(u, w, neg_set):
+                continue
+            neg_set.add(u + ' ' + w)
+    if len(neg_set) > SIZE_NEG:
+        neg_set = set(random.sample(neg_set, SIZE_NEG))
+    return neg_set
+
 def sample_structural(file, N, method_neg_size=None):
-    train_set, nodes = read_train(file)
+    train_set, left_nodes, right_nodes = read_train(file)
+    nodes = left_nodes | right_nodes
     SIZE_POS = int(N * len(train_set) / 100.)
     if method_neg_size == 'sq':
         SIZE_NEG = SIZE_POS * SIZE_POS
@@ -43,6 +65,14 @@ def sample_structural(file, N, method_neg_size=None):
     poss_set = sample_structural_poss(train_set, SIZE_POS)
     neg_set = sample_structural_neg(train_set, nodes, SIZE_NEG)
     return train_set, nodes, poss_set, neg_set
+
+def sample_bipartite(file, N):
+    train_set, left_nodes, right_nodes = read_train(file)
+    SIZE_POS = int(N * len(train_set) / 100.)
+    SIZE_NEG = SIZE_POS
+    poss_set = sample_structural_poss(train_set, SIZE_POS)
+    neg_set = sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG)
+    return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
     def __init__(self, graph, pos):

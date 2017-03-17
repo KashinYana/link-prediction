@@ -1,0 +1,49 @@
+# From http://konect.uni-koblenz.de/networks/
+
+len(crime_set) - 829
+len(person_set) - 551
+len(edges) - 1476
+
+[neg set contains edges between nodes from the same component]
+
+sfdp_layout(g, groups=groups):
+5%, not degree 1
+  dist: 0.53, 0.48 
+  PA: 0.80, 0.72
+  
+5%, pure random
+  dist: 0.32, 0.295, 0.37
+  PA: 0.40, 0.297, 0.42
+  
+
+pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10)
+5%, not degree 1
+  dist: 0.59, 0.54
+  PA: 0.77, 0.76
+  
+5%, pure random
+  dist: 0.32, 0.48, 0.46
+  PA: 0.35, 0.74, 0.75
+  
+[neg set contains edges between nodes from different components]
+
+sfdp_layout(g, groups=groups):
+5%, not degree 1
+  dist:  0.50, 0.41,
+  PA: 0.65, 0.65, 
+  
+5%, pure random
+  dist: 0.37, 0.29 
+  PA: 0.40, 0.37
+  
+
+pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10)
+5%, not degree 1
+  dist: 0.69, 0.68, 0.737, 0.69
+  PA: 0.65, 0.69, 0.74, 0.71
+  
+5%, pure random
+  dist: 0.54, 0.60, 0.45, 
+  PA: 0.32, 0.43, 0.33,
+
+

@@ -1,0 +1,23 @@
+# http://konect.uni-koblenz.de/networks/github
+
+len(user_set) - 56519
+len(project_set) - 120867
+len(edges) - 440237
+
+Neg set has only nodes from different components
+
+5%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10):
+    sfdp: 0.746 
+    PA: 0.756
+    
+5%, pos = sfdp_layout(g, groups=groups):
+    sfdp: 0.75
+    PA: 0.756
+    
+10%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10):
+    sfdp:  0.49,
+    PA: 0.5,
+    
+10%, pos = sfdp_layout(g, groups=groups):
+    sfdp: 
+    PA: 

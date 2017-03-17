@@ -1,0 +1,43 @@
+# from http://konect.uni-koblenz.de/networks/movielens-1m
+
+len(movie_set) - 3706
+len(user_set) - 6040
+len(edges) - 1000209
+
+Avarage degree in large, pure random; neg set contains edges between nodes from the same component
+
+5%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10):
+    sfdp: 0.78, 
+    PA: 0.90, 
+    
+5%, pos = sfdp_layout(g, groups=groups):
+    sfdp: 0.80, 
+    PA: 0.90,
+    
+5%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=100)
+    sfdp: 0.77, 
+    PA: 0.90,
+
+------
+
+90%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10):
+    sfdp:  0.758
+    PA: 0.89,
+    
+90%, pos = sfdp_layout(g, groups=groups):
+    sfdp: 0.793
+    PA: 0.89,
+    
+90%, pos = sfdp_layout(g, groups=groups, gamma=-10, mu=100)
+    sfdp: 0.63,
+    PA: 0.89,
+    
+[Neg set has only nodes from different components]
+
+10% pos = sfdp_layout(g, groups=groups, gamma=-10, mu=10):
+    sfdp:  0.80,
+    PA: 0.90, 
+    
+10%, pos = sfdp_layout(g, groups=groups):
+    sfdp: 0.81, 
+    PA: 0.90,
