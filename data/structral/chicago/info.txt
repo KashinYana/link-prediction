@@ -1,0 +1,18 @@
+http://konect.uni-koblenz.de/networks/tntp-ChicagoRegional
+
+len(node_set), len(edges) 
+(1466, 1297)
+
+Several components in the network
+
+10%
+
+sfdp: 0.46,
+  pa: 0.20,
+  mf: 0.41,
+  
+5%
+
+sfdp: 0.52,
+  pa: 0.12,
+  mf: 0.42,

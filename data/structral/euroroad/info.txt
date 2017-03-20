@@ -1,0 +1,8 @@
+http://konect.uni-koblenz.de/networks/subelj_euroroad
+
+len(node_set), len(edges) 
+    1173          1416
+
+sfdp   : 0.78, 0.76,
+PA     : 0.39, 0.36 
+NMF(10): 0.71, 0.69
