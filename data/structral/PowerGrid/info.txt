@@ -2,8 +2,10 @@
 #Edges - 6594
 
 90% - train, 10% - pos_test, neg_set = pos_set:
-sfdp ~ 0.80, 0.82, 0.82
-PA ~ 0.47, 0.46, 0.44
+sfdp ~     0.80, 0.82, 0.82, 0.812, 0.83
+PA ~       0.47, 0.46, 0.44, 0.45 , 0.44
+NMF(10) ~      ,     ,     , 0.76 , 0.74
+
 
 http://cseweb.ucsd.edu/~elkan/ECML2011LinkPrediction.pdf:
 90% - train, 10% - test

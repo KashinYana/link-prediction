@@ -122,3 +122,29 @@ def make_dataset(poss_set, neg_set, functs):
     X = numpy.array(X)
     Y = numpy.array(Y)
     return X, Y
+
+def make_sparse_matrix(train_set, nodes, poss_set=set()):
+    n = max(nodes) + 1
+    from scipy.sparse import coo_matrix
+    row = []
+    col = []
+    data = []
+    for line in train_set:
+        if line in poss_set:
+            continue
+        u, w = map(int, line.split())
+        row.append(u)
+        col.append(w)
+        row.append(w)
+        col.append(u)
+        data.append(1)
+        data.append(1)
+    return coo_matrix((data, (row, col)), shape=(n, n))
+
+class MFFeatures:
+    def __init__(self, model, matrix):
+        self.A = model.fit_transform(matrix)
+        
+    def score(self, u, w):
+        import numpy
+        return numpy.dot(self.A[u], self.A[w])
