@@ -75,14 +75,15 @@ def sample_bipartite(file, N):
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
-    def __init__(self, graph, pos):
+    def __init__(self, graph, pos, gap=1):
         self.g = graph
         self.pos = pos
+        self.gap = gap
         
     def dist(self, u, w):
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
-        return -((u[0] - w[0])**2 + (u[1] - w[1])**2)**0.5
+        return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
         return self.g.vertex(u).out_degree()*self.g.vertex(w).out_degree()

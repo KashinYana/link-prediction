@@ -53,7 +53,7 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
     double mu_p = python::extract<double>(spring_parms[5]);
     group_map_t groups =
         any_cast<group_map_t>(python::extract<any>(spring_parms[6]));
-    bool bipartite = python::extract<double>(spring_parms[7]);
+    bool bipartite = python::extract<bool>(spring_parms[7]);
 
     if(vweight.empty())
         vweight = vweight_map_t();

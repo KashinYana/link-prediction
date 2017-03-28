@@ -148,18 +148,19 @@ private:
 };
 
 template <class Pos>
-inline double dist(const Pos& p1, const Pos& p2)
+inline double dist(const Pos& p1, const Pos& p2, double gap=0)
 {
     double r = 0;
     for (size_t i = 0; i < 2; ++i)
         r += power(double(p1[i] - p2[i]), 2);
+    r += gap * gap;
     return sqrt(r);
 }
 
 template <class Pos>
-inline double f_r(double C, double K, double p, const Pos& p1, const Pos& p2)
+inline double f_r(double C, double K, double p, const Pos& p1, const Pos& p2, double gap=0)
 {
-    double d = dist(p1, p2);
+    double d = dist(p1, p2, gap);
     if (d == 0)
         return 0;
     if (round(p) == p)
@@ -169,13 +170,13 @@ inline double f_r(double C, double K, double p, const Pos& p1, const Pos& p2)
 }
 
 template <class Pos>
-inline double f_a(double K, const Pos& p1, const Pos& p2)
+inline double f_a(double K, const Pos& p1, const Pos& p2, double gap=0)
 {
-    return power(dist(p1, p2), 2) / K;
+    return power(dist(p1, p2, gap), 2) / K;
 }
 
 template <class Pos>
-inline double get_diff(const Pos& p1, const Pos& p2, Pos& r)
+inline double get_diff(const Pos& p1, const Pos& p2, Pos& r, double gap=0)
 {
     double abs = 0;
     for (size_t i = 0; i < 2; ++i)
@@ -183,6 +184,7 @@ inline double get_diff(const Pos& p1, const Pos& p2, Pos& r)
         r[i] = p1[i] - p2[i];
         abs += r[i] * r[i];
     }
+    abs += gap * gap;
     if (abs == 0)
         abs = 1;
     abs = sqrt(abs);
@@ -310,8 +312,22 @@ struct get_sfdp_layout
             }
 
             QuadTree<pos_t, vweight_t> qt(ll, ur, max_level);
-            for (auto v : vertices_range(g))
-                qt.put_pos(pos[v], vweight[v]);
+            
+            QuadTree<pos_t, vweight_t> qtl(ll, ur, max_level);
+            QuadTree<pos_t, vweight_t> qtr(ll, ur, max_level);
+            
+            if (!bipartite) {
+                for (auto v : vertices_range(g))
+                    qt.put_pos(pos[v], vweight[v]);
+            } else {
+                for (auto v : vertices_range(g)) {
+                    if (size_t(group[v])) {
+                        qtl.put_pos(pos[v], vweight[v]);
+                    } else {
+                        qtr.put_pos(pos[v], vweight[v]);
+                    }
+                }
+            }
 
             std::shuffle(vertices.begin(), vertices.end(), rng);
 
@@ -325,9 +341,19 @@ struct get_sfdp_layout
                  [&](size_t, auto v)
                  {
                      pos_t diff(2, 0), pos_u(2, 0), ftot(2, 0), cm(2, 0);
-
+                     double gap = (!bipartite);
+                     
                      // global repulsive forces
-                     Q.push_back(&qt);
+                     if (!bipartite) {
+                         Q.push_back(&qt);
+                     } else {
+                         if (size_t(group[v])) {
+                             Q.push_back(&qtr);
+                         } else {
+                             Q.push_back(&qtl);
+                         }
+                     }
+                     
                      while (!Q.empty())
                      {
                          auto& q = *Q.back();
@@ -338,10 +364,10 @@ struct get_sfdp_layout
                          {
                              for (auto& dleaf : dleafs)
                              {
-                                 val_t d = get_diff(get<0>(dleaf), pos[v], diff);
+                                 val_t d = get_diff(get<0>(dleaf), pos[v], diff, gap);
                                  if (d == 0)
                                      continue;
-                                 val_t f = f_r(C, K, p, pos[v], get<0>(dleaf));
+                                 val_t f = f_r(C, K, p, pos[v], get<0>(dleaf), gap);
                                  f *= get<1>(dleaf) * get(vweight, v);
                                  for (size_t l = 0; l < 2; ++l)
                                      ftot[l] += f * diff[l];
@@ -351,7 +377,7 @@ struct get_sfdp_layout
                          {
                              double w = q.get_w();
                              q.get_cm(cm);
-                             double d = get_diff(cm, pos[v], diff);
+                             double d = get_diff(cm, pos[v], diff, gap);
                              if (w > theta * d)
                              {
                                  for (auto& leaf : q.get_leafs())
@@ -364,7 +390,7 @@ struct get_sfdp_layout
                              {
                                  if (d > 0)
                                  {
-                                     val_t f = f_r(C, K, p, cm, pos[v]);
+                                     val_t f = f_r(C, K, p, cm, pos[v], gap);
                                      f *= q.get_count() * get(vweight, v);
                                      for (size_t l = 0; l < 2; ++l)
                                          ftot[l] += f * diff[l];
@@ -381,8 +407,8 @@ struct get_sfdp_layout
                          if (u == v)
                              continue;
                          pos_u = pos[u];
-                         get_diff(pos_u, pos_v, diff);
-                         val_t f = f_a(K, pos_u, pos_v);
+                         get_diff(pos_u, pos_v, diff, gap);
+                         val_t f = f_a(K, pos_u, pos_v, gap);
                          f *= get(eweight, e) * get(vweight, u) * get(vweight, v);
                          for (size_t l = 0; l < 2; ++l)
                              ftot[l] += f * diff[l];
@@ -430,11 +456,11 @@ struct get_sfdp_layout
                      // intra-group attractive forces
                      if (mu > 0 && group_size[group[v]] > 1)
                      {
-                         val_t d = get_diff(group_cm[group[v]], pos[v], diff);
+                         val_t d = get_diff(group_cm[group[v]], pos[v], diff, gap);
                          if (d > 0)
                          {
                              double Kp = K * pow(double(group_size[group[v]]), mu_p);
-                             val_t f = f_a(Kp, group_cm[group[v]], pos[v]) * mu * \
+                             val_t f = f_a(Kp, group_cm[group[v]], pos[v], gap) * mu * \
                                  group_size[group[v]] * get(vweight, v);
                              for (size_t l = 0; l < 2; ++l)
                                  ftot[l] += f * diff[l];
@@ -456,9 +482,9 @@ struct get_sfdp_layout
             n_iter++;
             delta /= nmoves;
 
-            if (verbose)
-                cout << n_iter << " " << E << " " << step << " "
-                     << delta << " " << max_level << endl;
+            //if (verbose)
+            //    cout << n_iter << " " << E << " " << step << " "
+            //         << delta << " " << max_level << endl;
 
             if (simple)
             {

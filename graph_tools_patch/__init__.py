@@ -738,7 +738,8 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                               # init_step=max(2 * K,
                               #               _avg_edge_distance(u, pos)),
                               multilevel=False,
-                              verbose=True)
+                              verbose=verbose,
+                              bipartite=bipartite)
         pos = g_.own_property(pos)
         return pos
 
@@ -756,7 +757,7 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
     elif groups.value_type() != "int32_t":
         raise ValueError("'groups' property must be of type 'int32_t'.")
     libgraph_tool_layout.sanitize_pos(g._Graph__graph, _prop("v", g, pos))
-    print("libgraph_tool_layout.sfdp", "verbose: ", verbose)
+    print("libgraph_tool_layout.sfdp", "verbose: ", verbose, "bipartite: ", bipartite)
     libgraph_tool_layout.sfdp_layout(g._Graph__graph, _prop("v", g, pos),
                                      _prop("v", g, vweight),
                                      _prop("e", g, eweight),
