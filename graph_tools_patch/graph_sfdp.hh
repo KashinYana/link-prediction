@@ -207,15 +207,15 @@ struct get_sfdp_layout
     get_sfdp_layout(double C, double K, double p, double theta, double gamma,
                     double mu, double mu_p, double init_step,
                     double step_schedule, size_t max_level, double epsilon,
-                    size_t max_iter, bool simple)
+                    size_t max_iter, bool simple, bool bipartite)
         : C(C), K(K), p(p), theta(theta), gamma(gamma), mu(mu), mu_p(mu_p),
           init_step(init_step), step_schedule(step_schedule),
           epsilon(epsilon), max_level(max_level), max_iter(max_iter),
-          simple(simple) {}
+          simple(simple), bipartite(bipartite) {}
 
     double C, K, p, theta, gamma, mu, mu_p, init_step, step_schedule, epsilon;
     size_t max_level, max_iter;
-    bool simple;
+    bool simple, bipartite;
 
     template <class Graph, class PosMap, class VertexWeightMap,
               class EdgeWeightMap, class PinMap, class GroupMap, class RNG>
@@ -270,6 +270,9 @@ struct get_sfdp_layout
         size_t n_iter = 0;
         val_t step = init_step;
         size_t progress = 0;
+                  
+        if (verbose)
+            cout << "bipartite: " << bipartite << endl;
 
         while (delta > epsilon * K && (max_iter == 0 || n_iter < max_iter))
         {

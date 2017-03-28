@@ -53,6 +53,7 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
     double mu_p = python::extract<double>(spring_parms[5]);
     group_map_t groups =
         any_cast<group_map_t>(python::extract<any>(spring_parms[6]));
+    bool bipartite = python::extract<double>(spring_parms[7]);
 
     if(vweight.empty())
         vweight = vweight_map_t();
@@ -66,7 +67,7 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
         (g,
          std::bind(get_sfdp_layout(C, K, p, theta, gamma, mu, mu_p, init_step,
                                    step_schedule, max_level, epsilon,
-                                   max_iter, adaptive),
+                                   max_iter, adaptive, bipartite),
                    std::placeholders::_1, std::placeholders::_2,
                    std::placeholders::_3, std::placeholders::_4,
                    pin_map.get_unchecked(num_vertices(g.get_graph())),

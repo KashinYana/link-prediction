@@ -574,7 +574,7 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                 init_step=None, cooling_step=0.95, adaptive_cooling=True,
                 epsilon=1e-2, max_iter=0, pos=None, multilevel=None,
                 coarse_method="hybrid", mivs_thres=0.9, ec_thres=0.75,
-                coarse_stack=None, weighted_coarse=False, verbose=False):
+                coarse_stack=None, weighted_coarse=False, verbose=False, bipartite=False):
     r"""Obtain the SFDP spring-block layout of the graph.
 
     Parameters
@@ -738,7 +738,7 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                               # init_step=max(2 * K,
                               #               _avg_edge_distance(u, pos)),
                               multilevel=False,
-                              verbose=False)
+                              verbose=True)
         pos = g_.own_property(pos)
         return pos
 
@@ -756,11 +756,12 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
     elif groups.value_type() != "int32_t":
         raise ValueError("'groups' property must be of type 'int32_t'.")
     libgraph_tool_layout.sanitize_pos(g._Graph__graph, _prop("v", g, pos))
+    print("libgraph_tool_layout.sfdp", "verbose: ", verbose)
     libgraph_tool_layout.sfdp_layout(g._Graph__graph, _prop("v", g, pos),
                                      _prop("v", g, vweight),
                                      _prop("e", g, eweight),
                                      _prop("v", g, pin),
-                                     (C, K, p, gamma, mu, mu_p, _prop("v", g, groups)),
+                                     (C, K, p, gamma, mu, mu_p, _prop("v", g, groups), bipartite),
                                      theta, init_step, cooling_step, max_level,
                                      epsilon, max_iter, not adaptive_cooling,
                                      verbose, _get_rng())
