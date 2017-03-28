@@ -1,0 +1,3 @@
+cp graph_sfdp.hh ~/graph-tool-2.22/src/graph/layout/ &
+cp graph_sfdp.cc ~/graph-tool-2.22/src/graph/layout/ &
+cp __init__.py ~/graph-tool-2.22/src/graph_tool/draw/
