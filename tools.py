@@ -144,8 +144,9 @@ def make_sparse_matrix(train_set, nodes, poss_set=set()):
 
 class MFFeatures:
     def __init__(self, model, matrix):
-        self.A = model.fit_transform(matrix)
+        self.W = model.fit_transform(matrix)
+        self.H = model.components_;
         
     def score(self, u, w):
         import numpy
-        return numpy.dot(self.A[u], self.A[w])
+        return numpy.dot(self.W[u], self.H.T[w])
