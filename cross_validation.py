@@ -1,5 +1,6 @@
 from graph_tool.all import *
-
+import tools
+import numpy as np
 
 def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
     g = Graph(directed=False)
@@ -64,7 +65,6 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
 
 
 def cross_validation(file, N, k):
-    import tools
     auc = {
         "sfdp-default" : [],
         "sfdp-bipartite-simple" : [],
@@ -77,6 +77,6 @@ def cross_validation(file, N, k):
         calculate_auc(train_set, nodes, poss_set, neg_set, auc)
     
     for x in auc:
-        print x, "Accuracy: %0.2f (+/- %0.2f)" % (auc[x].mean(), auc[x].std() * 2)
+        print x, ": %0.2f (+/- %0.2f)" % (np.array(auc[x]).mean(), np.array(auc[x]).std() * 2)
     
     
