@@ -45,6 +45,35 @@ PA : 0.85 (+/- 0.01)
 sfdp-default : 0.76 (+/- 0.02)
 
 
+# Cross validation test 10%
 
+## Crime:
+svds-30 : 0.56 (+/- 0.06)
+NMF-10 : 0.44 (+/- 0.08)
+sfdp-bipartite-simple : 0.36 (+/- 0.11)
+PA : 0.37 (+/- 0.10)
+sfdp-default : 0.57 (+/- 0.04)
+
+
+## Movielens:
+svds-30 : 0.94 (+/- 0.00)
+NMF-10 : 0.93 (+/- 0.00)
+sfdp-bipartite-simple : 0.89 (+/- 0.00)
+PA : 0.90 (+/- 0.00)
+sfdp-default : 0.84 (+/- 0.00)
+
+## Condmat:
+svds-30 : 0.66 (+/- 0.01)
+NMF-10 : 0.58 (+/- 0.01)
+sfdp-bipartite-simple : 0.65 (+/- 0.01)
+PA : 0.59 (+/- 0.01)
+sfdp-default : 0.75 (+/- 0.01)
+
+## Frwiki:
+svds-30 : 0.69 (+/- 0.01)
+NMF-10 : 0.74 (+/- 0.02)
+sfdp-bipartite-simple : 0.84 (+/- 0.01)
+PA : 0.84 (+/- 0.01)
+sfdp-default : 0.76 (+/- 0.01)
 
 
