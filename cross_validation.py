@@ -76,7 +76,10 @@ def cross_validation(file, N, k):
         train_set, nodes, poss_set, neg_set = tools.sample_bipartite(file, N)
         calculate_auc(train_set, nodes, poss_set, neg_set, auc)
     
+    FIN = open('cross_validation', 'a')
+    FIN.write(file + ' ' + str(N) + ' ' + str(k) + '\n')
     for x in auc:
-        print x, ": %0.2f (+/- %0.2f)" % (np.array(auc[x]).mean(), np.array(auc[x]).std() * 2)
-    
+        s = x + ' ' +  ": %0.2f (+/- %0.2f)" % (np.array(auc[x]).mean(), np.array(auc[x]).std() * 2)
+        FIN.write(s + '\n')
+        print s
     
