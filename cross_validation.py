@@ -11,17 +11,7 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
             u, w = map(int, edge.split())
             g.add_edge(g.vertex(u), g.vertex(w))
     
-    is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
-    if (not is_bi):
-        print "Error"
-        
-    groups = g.new_vertex_property("int")
-    
-    for u in g.vertices():
-        groups[u] = part[u]
-    
     pos_default = sfdp_layout(g)
-    pos_bip = sfdp_layout(g, groups=groups, bipartite=True)
     
     from sklearn.metrics import roc_auc_score
     features = tools.TopologicalFeatures(g, pos_default, gap=0)
@@ -29,12 +19,20 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
                         [features.dist])
     auc["sfdp-default"].append(roc_auc_score(Y, X))
     
-    features = tools.TopologicalFeatures(g, pos_bip, gap=0)
-    X, Y = tools.make_dataset(poss_set, neg_set, 
-                    [features.dist])
-    auc["sfdp-bipartite-simple"].append(roc_auc_score(Y, X))
+    is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
+    if (is_bi):
+        groups = g.new_vertex_property("int")
+
+        for u in g.vertices():
+            groups[u] = part[u]
+        pos_bip = sfdp_layout(g, groups=groups, bipartite=True)
     
-    features = tools.TopologicalFeatures(g, pos_bip)
+        features = tools.TopologicalFeatures(g, pos_bip, gap=0)
+        X, Y = tools.make_dataset(poss_set, neg_set, 
+                        [features.dist])
+        auc["sfdp-bipartite-simple"].append(roc_auc_score(Y, X))
+    
+    features = tools.TopologicalFeatures(g, pos_default)
     X, Y = tools.make_dataset(poss_set, neg_set, 
                     [features.preferential_attachment])
     auc["PA"].append(roc_auc_score(Y, X))
