@@ -74,7 +74,7 @@ def sample_bipartite(file, N):
     train_set, left_nodes, right_nodes = read_train(file)
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
-    poss_set = sample_structural_poss(train_set, SIZE_POS)
+    poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False)
     neg_set = sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG)
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
@@ -83,37 +83,38 @@ class TopologicalFeatures:
         self.g = graph
         self.pos = pos
         self.gap = gap
+        self.bipartite = bipartite
         
     def convert(self, u, w):
         return 2*u-1, 2*w
         
     def dist(self, u, w):
-        if bipartite:
+        if self.bipartite:
             u, w = self.convert(u, w)
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
         return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
-        if bipartite:
+        if self.bipartite:
             u, w = self.convert(u, w)
         return self.g.vertex(u).out_degree()*self.g.vertex(w).out_degree()
 
     def common_neighbors(self, u, w):
-        if bipartite:
+        if self.bipartite:
             u, w = self.convert(u, w)
         return len(set.intersection(
             set(self.g.vertex(u).out_neighbours()), 
             set(self.g.vertex(w).out_neighbours())))
 
     def union_neighbors(self, u, w):
-        if bipartite:
+        if self.bipartite:
             u, w = self.convert(u, w)
         return len(
             set(self.g.vertex(u).out_neighbours()) | set(self.g.vertex(w).out_neighbours()))
 
     def Jaccards_coefficient(self, u, w):
-        if bipartite:
+        if self.bipartite:
             u, w = self.convert(u, w)
         if union_neighbors(u, w) == 0:
             return 0
