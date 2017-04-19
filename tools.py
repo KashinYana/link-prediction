@@ -14,24 +14,31 @@ def read_train(file):
     FIN.close()
     return train_set, left_nodes, right_nodes
 
-def sample_structural_poss(train_set, SIZE_POS):
+def sample_structural_poss(train_set, SIZE_POS, directed):
     import random
     poss_set = set(random.sample(train_set, SIZE_POS))
     return poss_set
     
-def sample_structural_neg(train_set, nodes, SIZE_NEG):
+def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
     import random
     neg_set = set()
+    
     while len(neg_set) < SIZE_NEG:
-        u = str(random.sample(nodes, 1)[0])
-        w = str(random.sample(nodes, 1)[0])
-        if u == w:
-            continue
-        if in_set(u, w, train_set):
-            continue
-        if in_set(u, w, neg_set):
-            continue
-        neg_set.add(u + ' ' + w)
+        u_sample = random.sample(nodes, 100)
+        w_sample = random.sample(nodes, 100)
+        for (u, w) in zip(u_sample, w_sample):
+            if u == w:
+                continue
+            u = str(u)
+            w = str(w)
+            if u + ' ' + w in train_set:
+                continue
+            if u + ' ' + w in neg_set:
+                continue
+            neg_set.add(u + ' ' + w)
+            
+    if len(neg_set) > SIZE_NEG:
+        neg_set = set(random.sample(neg_set, SIZE_NEG))
     return neg_set
 
 def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
@@ -54,16 +61,13 @@ def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
         neg_set = set(random.sample(neg_set, SIZE_NEG))
     return neg_set
 
-def sample_structural(file, N, method_neg_size=None):
+def sample_structural(file, N, directed=False):
     train_set, left_nodes, right_nodes = read_train(file)
     nodes = left_nodes | right_nodes
     SIZE_POS = int(N * len(train_set) / 100.)
-    if method_neg_size == 'sq':
-        SIZE_NEG = SIZE_POS * SIZE_POS
-    else:
-        SIZE_NEG = SIZE_POS
-    poss_set = sample_structural_poss(train_set, SIZE_POS)
-    neg_set = sample_structural_neg(train_set, nodes, SIZE_NEG)
+    SIZE_NEG = SIZE_POS
+    poss_set = sample_structural_poss(train_set, SIZE_POS, directed)
+    neg_set = sample_structural_neg(train_set, nodes, SIZE_NEG, directed)
     return train_set, nodes, poss_set, neg_set
 
 def sample_bipartite(file, N):
@@ -75,29 +79,42 @@ def sample_bipartite(file, N):
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
-    def __init__(self, graph, pos, gap=1):
+    def __init__(self, graph, pos, bipartite=False, gap=1):
         self.g = graph
         self.pos = pos
         self.gap = gap
         
+    def convert(self, u, w):
+        return 2*u-1, 2*w
+        
     def dist(self, u, w):
+        if bipartite:
+            u, w = self.convert(u, w)
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
         return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
+        if bipartite:
+            u, w = self.convert(u, w)
         return self.g.vertex(u).out_degree()*self.g.vertex(w).out_degree()
 
     def common_neighbors(self, u, w):
+        if bipartite:
+            u, w = self.convert(u, w)
         return len(set.intersection(
             set(self.g.vertex(u).out_neighbours()), 
             set(self.g.vertex(w).out_neighbours())))
 
     def union_neighbors(self, u, w):
+        if bipartite:
+            u, w = self.convert(u, w)
         return len(
             set(self.g.vertex(u).out_neighbours()) | set(self.g.vertex(w).out_neighbours()))
 
     def Jaccards_coefficient(self, u, w):
+        if bipartite:
+            u, w = self.convert(u, w)
         if union_neighbors(u, w) == 0:
             return 0
         return 1.0 * self.common_neighbors(u, w) / self.union_neighbors(u, w)
