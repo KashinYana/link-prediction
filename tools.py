@@ -79,7 +79,7 @@ def sample_bipartite(file, N):
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
-    def __init__(self, graph, pos, bipartite=False, gap=1):
+    def __init__(self, graph, pos=None, bipartite=False, gap=1):
         self.g = graph
         self.pos = pos
         self.gap = gap
@@ -161,8 +161,9 @@ def make_sparse_matrix(train_set, nodes, poss_set=set()):
 
 class MFFeatures:
     def __init__(self, model, matrix):
-        self.A = model.fit_transform(matrix)
+        self.W = model.fit_transform(matrix)
+        self.H = model.components_;
         
     def score(self, u, w):
         import numpy
-        return numpy.dot(self.A[u], self.A[w])
+        return numpy.dot(self.W[u], self.H.T[w])

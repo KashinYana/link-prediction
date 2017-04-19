@@ -341,7 +341,7 @@ struct get_sfdp_layout
                  [&](size_t, auto v)
                  {
                      pos_t diff(2, 0), pos_u(2, 0), ftot(2, 0), cm(2, 0);
-                     double gap = (!bipartite);
+                     double gap = 0; // (!bipartite);
                      
                      // global repulsive forces
                      if (!bipartite) {
