@@ -25,12 +25,15 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
 
         for u in g.vertices():
             groups[u] = part[u]
-        pos_bip = sfdp_layout(g, groups=groups, bipartite=True)
-    
-        features = tools.TopologicalFeatures(g, pos_bip, gap=0)
-        X, Y = tools.make_dataset(poss_set, neg_set, 
-                        [features.dist])
-        auc["sfdp-bipartite-simple"].append(roc_auc_score(Y, X))
+        
+        for left in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
+            for right in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
+                pos_bip = sfdp_layout(g, groups=groups, bipartite=True, bipartite_method=[left, right])
+
+                features = tools.TopologicalFeatures(g, pos_bip, gap=0)
+                X, Y = tools.make_dataset(poss_set, neg_set, 
+                                [features.dist])
+                auc["sfdp-bipartite-" + left+right].append(roc_auc_score(Y, X))
     
     features = tools.TopologicalFeatures(g, pos_default)
     X, Y = tools.make_dataset(poss_set, neg_set, 
@@ -65,11 +68,13 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
 def cross_validation(file, N, k):
     auc = {
         "sfdp-default" : [],
-        "sfdp-bipartite-simple" : [],
         "PA" : [],
         "NMF-10" : [],
         "svds-30" : [],
     }
+    for left in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
+            for right in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
+                auc["sfdp-bipartite-" + left+right] = []
     for i in range(k):
         train_set, nodes, poss_set, neg_set = tools.sample_bipartite(file, N)
         calculate_auc(train_set, nodes, poss_set, neg_set, auc)
