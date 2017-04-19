@@ -20,6 +20,7 @@
 
 #include <limits>
 #include <iostream>
+#include <string>
 
 #ifndef __clang__
 #include <ext/numeric>
@@ -209,15 +210,19 @@ struct get_sfdp_layout
     get_sfdp_layout(double C, double K, double p, double theta, double gamma,
                     double mu, double mu_p, double init_step,
                     double step_schedule, size_t max_level, double epsilon,
-                    size_t max_iter, bool simple, bool bipartite)
+                    size_t max_iter, bool simple, bool bipartite, 
+                    string bipartite_method_left_part, string bipartite_method_right_part)
         : C(C), K(K), p(p), theta(theta), gamma(gamma), mu(mu), mu_p(mu_p),
           init_step(init_step), step_schedule(step_schedule),
           epsilon(epsilon), max_level(max_level), max_iter(max_iter),
-          simple(simple), bipartite(bipartite) {}
+          simple(simple), bipartite(bipartite),
+          bipartite_method_left_part(bipartite_method_left_part),
+          bipartite_method_right_part(bipartite_method_right_part) {}
 
     double C, K, p, theta, gamma, mu, mu_p, init_step, step_schedule, epsilon;
     size_t max_level, max_iter;
     bool simple, bipartite;
+    string bipartite_method_left_part, bipartite_method_right_part;
 
     template <class Graph, class PosMap, class VertexWeightMap,
               class EdgeWeightMap, class PinMap, class GroupMap, class RNG>
@@ -273,8 +278,11 @@ struct get_sfdp_layout
         val_t step = init_step;
         size_t progress = 0;
                   
-        if (verbose)
+        if (verbose) {
             cout << "bipartite: " << bipartite << endl;
+            cout << "bipartite_method_left_part: " << bipartite_method_left_part << endl;
+            cout << "bipartite_method_right_part: " << bipartite_method_right_part << endl;
+        }
 
         while (delta > epsilon * K && (max_iter == 0 || n_iter < max_iter))
         {
@@ -316,16 +324,14 @@ struct get_sfdp_layout
             QuadTree<pos_t, vweight_t> qtl(ll, ur, max_level);
             QuadTree<pos_t, vweight_t> qtr(ll, ur, max_level);
             
-            if (!bipartite) {
-                for (auto v : vertices_range(g))
-                    qt.put_pos(pos[v], vweight[v]);
-            } else {
-                for (auto v : vertices_range(g)) {
-                    if (size_t(group[v])) {
-                        qtl.put_pos(pos[v], vweight[v]);
-                    } else {
-                        qtr.put_pos(pos[v], vweight[v]);
-                    }
+            for (auto v : vertices_range(g))
+                qt.put_pos(pos[v], vweight[v]);
+           
+            for (auto v : vertices_range(g)) {
+                if (size_t(group[v]) == 0) {
+                    qtl.put_pos(pos[v], vweight[v]);
+                } else {
+                    qtr.put_pos(pos[v], vweight[v]);
                 }
             }
 
@@ -347,10 +353,22 @@ struct get_sfdp_layout
                      if (!bipartite) {
                          Q.push_back(&qt);
                      } else {
-                         if (size_t(group[v])) {
-                             Q.push_back(&qtr);
+                         if (size_t(group[v]) == 0) {
+                             if (bipartite_method_left_part == "repulse-fellows") {
+                                 Q.push_back(&qtl);
+                             } else if (bipartite_method_left_part == "repulse-aliens") {
+                                 Q.push_back(&qtr);
+                             } else {
+                                 Q.push_back(&qt);
+                             }
                          } else {
-                             Q.push_back(&qtl);
+                             if (bipartite_method_right_part == "repulse-fellows") {
+                                 Q.push_back(&qtr);
+                             } else if (bipartite_method_right_part == "repulse-aliens") {
+                                 Q.push_back(&qtl);
+                             } else {
+                                 Q.push_back(&qt);
+                             }
                          }
                      }
                      

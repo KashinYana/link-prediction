@@ -25,6 +25,8 @@
 #include "graph_sfdp.hh"
 #include "random.hh"
 #include "hash_map_wrap.hh"
+    
+#include <string>
 
 using namespace std;
 using namespace boost;
@@ -54,6 +56,8 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
     group_map_t groups =
         any_cast<group_map_t>(python::extract<any>(spring_parms[6]));
     bool bipartite = python::extract<bool>(spring_parms[7]);
+    string bipartite_method_left_part = python::extract<string>(spring_parms[8]);
+    string bipartite_method_right_part = python::extract<string>(spring_parms[9]);
 
     if(vweight.empty())
         vweight = vweight_map_t();
@@ -67,7 +71,8 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
         (g,
          std::bind(get_sfdp_layout(C, K, p, theta, gamma, mu, mu_p, init_step,
                                    step_schedule, max_level, epsilon,
-                                   max_iter, adaptive, bipartite),
+                                   max_iter, adaptive, bipartite, 
+                                   bipartite_method_left_part, bipartite_method_right_part),
                    std::placeholders::_1, std::placeholders::_2,
                    std::placeholders::_3, std::placeholders::_4,
                    pin_map.get_unchecked(num_vertices(g.get_graph())),
