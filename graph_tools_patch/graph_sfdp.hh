@@ -211,18 +211,21 @@ struct get_sfdp_layout
                     double mu, double mu_p, double init_step,
                     double step_schedule, size_t max_level, double epsilon,
                     size_t max_iter, bool simple, bool bipartite, 
-                    string bipartite_method_left_part, string bipartite_method_right_part)
+                    string bipartite_method_left_part, string bipartite_method_right_part,
+                    double gap)
         : C(C), K(K), p(p), theta(theta), gamma(gamma), mu(mu), mu_p(mu_p),
           init_step(init_step), step_schedule(step_schedule),
           epsilon(epsilon), max_level(max_level), max_iter(max_iter),
           simple(simple), bipartite(bipartite),
           bipartite_method_left_part(bipartite_method_left_part),
-          bipartite_method_right_part(bipartite_method_right_part) {}
+          bipartite_method_right_part(bipartite_method_right_part),
+          gap(gap) {}
 
     double C, K, p, theta, gamma, mu, mu_p, init_step, step_schedule, epsilon;
     size_t max_level, max_iter;
     bool simple, bipartite;
     string bipartite_method_left_part, bipartite_method_right_part;
+    double gap;
 
     template <class Graph, class PosMap, class VertexWeightMap,
               class EdgeWeightMap, class PinMap, class GroupMap, class RNG>
@@ -282,6 +285,7 @@ struct get_sfdp_layout
             cout << "bipartite: " << bipartite << endl;
             cout << "bipartite_method_left_part: " << bipartite_method_left_part << endl;
             cout << "bipartite_method_right_part: " << bipartite_method_right_part << endl;
+            cout << "gap: " << gap << endl;
         }
 
         while (delta > epsilon * K && (max_iter == 0 || n_iter < max_iter))
@@ -347,8 +351,8 @@ struct get_sfdp_layout
                  [&](size_t, auto v)
                  {
                      pos_t diff(2, 0), pos_u(2, 0), ftot(2, 0), cm(2, 0);
-                     double gap = 0; // (!bipartite);
                      
+                     double repulsive_gap = 0;
                      // global repulsive forces
                      if (!bipartite) {
                          Q.push_back(&qt);
@@ -357,6 +361,7 @@ struct get_sfdp_layout
                              if (bipartite_method_left_part == "repulse-fellows") {
                                  Q.push_back(&qtl);
                              } else if (bipartite_method_left_part == "repulse-aliens") {
+                                 repulsive_gap = 1;
                                  Q.push_back(&qtr);
                              } else {
                                  Q.push_back(&qt);
@@ -365,6 +370,7 @@ struct get_sfdp_layout
                              if (bipartite_method_right_part == "repulse-fellows") {
                                  Q.push_back(&qtr);
                              } else if (bipartite_method_right_part == "repulse-aliens") {
+                                 repulsive_gap = 1;
                                  Q.push_back(&qtl);
                              } else {
                                  Q.push_back(&qt);
@@ -382,10 +388,10 @@ struct get_sfdp_layout
                          {
                              for (auto& dleaf : dleafs)
                              {
-                                 val_t d = get_diff(get<0>(dleaf), pos[v], diff, gap);
+                                 val_t d = get_diff(get<0>(dleaf), pos[v], diff, repulsive_gap);
                                  if (d == 0)
                                      continue;
-                                 val_t f = f_r(C, K, p, pos[v], get<0>(dleaf), gap);
+                                 val_t f = f_r(C, K, p, pos[v], get<0>(dleaf), repulsive_gap);
                                  f *= get<1>(dleaf) * get(vweight, v);
                                  for (size_t l = 0; l < 2; ++l)
                                      ftot[l] += f * diff[l];
@@ -395,7 +401,7 @@ struct get_sfdp_layout
                          {
                              double w = q.get_w();
                              q.get_cm(cm);
-                             double d = get_diff(cm, pos[v], diff, gap);
+                             double d = get_diff(cm, pos[v], diff, repulsive_gap);
                              if (w > theta * d)
                              {
                                  for (auto& leaf : q.get_leafs())
@@ -408,7 +414,7 @@ struct get_sfdp_layout
                              {
                                  if (d > 0)
                                  {
-                                     val_t f = f_r(C, K, p, cm, pos[v], gap);
+                                     val_t f = f_r(C, K, p, cm, pos[v], repulsive_gap);
                                      f *= q.get_count() * get(vweight, v);
                                      for (size_t l = 0; l < 2; ++l)
                                          ftot[l] += f * diff[l];
@@ -441,11 +447,11 @@ struct get_sfdp_layout
                                  continue;
                              if (s == size_t(group[v]))
                                  continue;
-                             val_t d = get_diff(group_cm[s], pos[v], diff);
+                             val_t d = get_diff(group_cm[s], pos[v], diff, gap);
                              if (d == 0)
                                  continue;
                              double Kp = K * power(HN, 2);
-                             val_t f = f_a(Kp, group_cm[s], pos[v]) * gamma * \
+                             val_t f = f_a(Kp, group_cm[s], pos[v], gap) * gamma * \
                                  group_size[s] * get(vweight, v);
                              for (size_t l = 0; l < 2; ++l)
                                  ftot[l] += f * diff[l];
@@ -461,10 +467,10 @@ struct get_sfdp_layout
                                  continue;
                              if (s == size_t(group[v]))
                                  continue;
-                             val_t d = get_diff(group_cm[s], pos[v], diff);
+                             val_t d = get_diff(group_cm[s], pos[v], diff, gap);
                              if (d == 0)
                             continue;
-                             val_t f = f_r(C, K, p, cm, pos[v]);
+                             val_t f = f_r(C, K, p, cm, pos[v], gap);
                              f *= group_size[s] * get(vweight, v) * abs(gamma);
                              for (size_t l = 0; l < 2; ++l)
                                  ftot[l] += f * diff[l];
@@ -474,11 +480,11 @@ struct get_sfdp_layout
                      // intra-group attractive forces
                      if (mu > 0 && group_size[group[v]] > 1)
                      {
-                         val_t d = get_diff(group_cm[group[v]], pos[v], diff, gap);
+                         val_t d = get_diff(group_cm[group[v]], pos[v], diff, 0);
                          if (d > 0)
                          {
                              double Kp = K * pow(double(group_size[group[v]]), mu_p);
-                             val_t f = f_a(Kp, group_cm[group[v]], pos[v], gap) * mu * \
+                             val_t f = f_a(Kp, group_cm[group[v]], pos[v], 0) * mu * \
                                  group_size[group[v]] * get(vweight, v);
                              for (size_t l = 0; l < 2; ++l)
                                  ftot[l] += f * diff[l];

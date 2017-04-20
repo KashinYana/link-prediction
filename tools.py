@@ -97,7 +97,7 @@ def sample_bipartite(file, N):
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
-    def __init__(self, graph, pos=None, directed=False, gap=1):
+    def __init__(self, graph, pos=None, directed=False, gap=0):
         self.g = graph
         self.pos = pos
         self.gap = gap

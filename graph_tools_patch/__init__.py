@@ -575,7 +575,7 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                 epsilon=1e-2, max_iter=0, pos=None, multilevel=None,
                 coarse_method="hybrid", mivs_thres=0.9, ec_thres=0.75,
                 coarse_stack=None, weighted_coarse=False, verbose=False, bipartite=False, 
-                bipartite_method=["repulse-aliens", "repulse-aliens"]):
+                bipartite_method=["repulse-aliens", "repulse-aliens"], gap=0):
     r"""Obtain the SFDP spring-block layout of the graph.s
 
     Parameters
@@ -741,7 +741,8 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                               multilevel=False,
                               verbose=verbose,
                               bipartite=bipartite,
-                              bipartite_method=bipartite_method)
+                              bipartite_method=bipartite_method,
+                              gap=gap)
         pos = g_.own_property(pos)
         return pos
 
@@ -774,7 +775,7 @@ def sfdp_layout(g, vweight=None, eweight=None, pin=None, groups=None, C=0.2,
                                      _prop("e", g, eweight),
                                      _prop("v", g, pin),
                                      (C, K, p, gamma, mu, mu_p, _prop("v", g, groups),
-                                      bipartite, bipartite_method[0], bipartite_method[1]),
+                                      bipartite, bipartite_method[0], bipartite_method[1], gap),
                                      theta, init_step, cooling_step, max_level,
                                      epsilon, max_iter, not adaptive_cooling,
                                      verbose, _get_rng())

@@ -58,6 +58,8 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
     bool bipartite = python::extract<bool>(spring_parms[7]);
     string bipartite_method_left_part = python::extract<string>(spring_parms[8]);
     string bipartite_method_right_part = python::extract<string>(spring_parms[9]);
+    double gap = python::extract<double>(spring_parms[10]);
+    
 
     if(vweight.empty())
         vweight = vweight_map_t();
@@ -72,7 +74,8 @@ void sfdp_layout(GraphInterface& g, boost::any pos, boost::any vweight,
          std::bind(get_sfdp_layout(C, K, p, theta, gamma, mu, mu_p, init_step,
                                    step_schedule, max_level, epsilon,
                                    max_iter, adaptive, bipartite, 
-                                   bipartite_method_left_part, bipartite_method_right_part),
+                                   bipartite_method_left_part, bipartite_method_right_part,
+                                   gap),
                    std::placeholders::_1, std::placeholders::_2,
                    std::placeholders::_3, std::placeholders::_4,
                    pin_map.get_unchecked(num_vertices(g.get_graph())),
