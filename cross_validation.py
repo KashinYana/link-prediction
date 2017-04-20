@@ -3,6 +3,10 @@ import tools
 import numpy as np
 
 def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
+    
+    print "start is makeing graph"
+    
+    
     g = Graph(directed=False)
     g.add_vertex(max(nodes) + 1)
     
@@ -11,30 +15,32 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc):
             u, w = map(int, edge.split())
             g.add_edge(g.vertex(u), g.vertex(w))
     
-    pos_default = sfdp_layout(g)
+    #pos_default = sfdp_layout(g)
     
     from sklearn.metrics import roc_auc_score
-    features = tools.TopologicalFeatures(g, pos_default, gap=0)
-    X, Y = tools.make_dataset(poss_set, neg_set, 
-                        [features.dist])
-    auc["sfdp-default"].append(roc_auc_score(Y, X))
-    
+    #features = tools.TopologicalFeatures(g, pos_default, gap=0)
+    #X, Y = tools.make_dataset(poss_set, neg_set, 
+    #                    [features.dist])
+    #auc["sfdp-default"].append(roc_auc_score(Y, X))
+    print "is_bi, part = .... "
     is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
     if (is_bi):
         groups = g.new_vertex_property("int")
 
         for u in g.vertices():
-            groups[u] = part[u]
+            groups[u] = 1 - int(part[u])
         
-        for left in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
-            for right in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
-                pos_bip = sfdp_layout(g, groups=groups, bipartite=True, bipartite_method=[left, right])
+        for left in ["repulse-fellows", "repulse-aliens"]:
+            for right in ["repulse-fellows", "repulse-aliens"]:
+                pos_bip = sfdp_layout(g, groups=groups, verbose=True, bipartite=True, bipartite_method=[left, right])
 
                 features = tools.TopologicalFeatures(g, pos_bip, gap=0)
                 X, Y = tools.make_dataset(poss_set, neg_set, 
                                 [features.dist])
                 auc["sfdp-bipartite-" + left+right].append(roc_auc_score(Y, X))
     
+    return auc
+
     features = tools.TopologicalFeatures(g, pos_default)
     X, Y = tools.make_dataset(poss_set, neg_set, 
                     [features.preferential_attachment])
@@ -75,6 +81,9 @@ def cross_validation(file, N, k):
     for left in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
             for right in ["repulse-fellows", "repulse-aliens", "repulse-all"]:
                 auc["sfdp-bipartite-" + left+right] = []
+    
+    print "auc is ready"
+    
     for i in range(k):
         train_set, nodes, poss_set, neg_set = tools.sample_bipartite(file, N)
         calculate_auc(train_set, nodes, poss_set, neg_set, auc)
