@@ -21,7 +21,19 @@ def sample_structural_poss(train_set, SIZE_POS, directed):
     
 def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
     import random
+    
+    DIFFICULT_EDGE_RATE = 0.5
     neg_set = set()
+    difficult_edges = []
+    
+    if directed:
+        for edge in train_set:
+            u, w, = edge.split()
+            if w + ' ' + u not in train_set:
+                difficult_edges.append(w + ' ' + u)
+
+        neg_set = set(random.sample(difficult_edges, 
+            int(min(DIFFICULT_EDGE_RATE * SIZE_NEG, len(difficult_edges))) ))
     
     while len(neg_set) < SIZE_NEG:
         u_sample = random.sample(nodes, 100)
@@ -31,10 +43,16 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
                 continue
             u = str(u)
             w = str(w)
-            if u + ' ' + w in train_set:
-                continue
-            if u + ' ' + w in neg_set:
-                continue
+            if directed:
+                if u + ' ' + w in train_set:
+                    continue
+                if u + ' ' + w in neg_set:
+                    continue
+            else:
+                if in_set(u, w, train_set):
+                    continue
+                if in_set(u, w, neg_set):
+                    continue
             neg_set.add(u + ' ' + w)
             
     if len(neg_set) > SIZE_NEG:
@@ -79,42 +97,42 @@ def sample_bipartite(file, N):
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
 class TopologicalFeatures:
-    def __init__(self, graph, pos=None, bipartite=False, gap=1):
+    def __init__(self, graph, pos=None, directed=False, gap=1):
         self.g = graph
         self.pos = pos
         self.gap = gap
-        self.bipartite = bipartite
+        self.directed = directed
         
     def convert(self, u, w):
         return 2*u-1, 2*w
         
     def dist(self, u, w):
-        if self.bipartite:
+        if self.directed:
             u, w = self.convert(u, w)
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
         return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
-        if self.bipartite:
+        if self.directed:
             u, w = self.convert(u, w)
         return self.g.vertex(u).out_degree()*self.g.vertex(w).out_degree()
 
     def common_neighbors(self, u, w):
-        if self.bipartite:
+        if self.directed:
             u, w = self.convert(u, w)
         return len(set.intersection(
             set(self.g.vertex(u).out_neighbours()), 
             set(self.g.vertex(w).out_neighbours())))
 
     def union_neighbors(self, u, w):
-        if self.bipartite:
+        if self.directed:
             u, w = self.convert(u, w)
         return len(
             set(self.g.vertex(u).out_neighbours()) | set(self.g.vertex(w).out_neighbours()))
 
     def Jaccards_coefficient(self, u, w):
-        if self.bipartite:
+        if self.directed:
             u, w = self.convert(u, w)
         if union_neighbors(u, w) == 0:
             return 0
@@ -142,7 +160,7 @@ def make_dataset(poss_set, neg_set, functs):
     Y = numpy.array(Y)
     return X, Y
 
-def make_sparse_matrix(train_set, nodes, poss_set=set()):
+def make_sparse_matrix(train_set, nodes, poss_set=set(), directed=False):
     n = max(nodes) + 1
     from scipy.sparse import coo_matrix
     row = []
@@ -154,10 +172,11 @@ def make_sparse_matrix(train_set, nodes, poss_set=set()):
         u, w = map(int, line.split())
         row.append(u)
         col.append(w)
-        row.append(w)
-        col.append(u)
         data.append(1)
-        data.append(1)
+        if not directed:
+            row.append(w)
+            col.append(u)
+            data.append(1)
     return coo_matrix((data, (row, col)), shape=(n, n))
 
 class MFFeatures:
