@@ -137,6 +137,20 @@ class TopologicalFeatures:
         if union_neighbors(u, w) == 0:
             return 0
         return 1.0 * self.common_neighbors(u, w) / self.union_neighbors(u, w)
+    
+    def Adamic_Adar_coefficient(self, u, w):
+        import numpy as np
+        if self.directed:
+            u, w = self.convert(u, w)
+        CN_set = set.intersection(
+            set(self.g.vertex(u).out_neighbours()), 
+            set(self.g.vertex(w).out_neighbours()))
+        score = 0
+        for z in CN_set:
+            if self.g.vertex(z).out_degree() == 1:
+                print u, w, z
+            score += 1. / np.log(self.g.vertex(z).out_degree())
+        return score
 
 def make_dataset(poss_set, neg_set, functs):
     import numpy

@@ -1,0 +1,61 @@
+Reactome network, part of the Koblenz Network Collection
+===========================================================================
+
+This directory contains the TSV and related files of the reactome network:
+
+This is a network of protein–protein interactions in the species <i>Homo sapiens</i>, i.e., in Humans.  The data is curated by the Reactome project, an open online database of biological pathways. 
+
+
+More information about the network is provided here: 
+http://konect.uni-koblenz.de/networks/reactome
+
+Files: 
+    meta.reactome -- Metadata about the network 
+    out.reactome -- The adjacency matrix of the network in space separated values format, with one edge per line
+      The meaning of the columns in out.reactome are: 
+        First column: ID of from node 
+        Second column: ID of to node
+
+
+Complete documentation about the file format can be found in the KONECT
+handbook, in the section File Formats, available at:
+
+http://konect.uni-koblenz.de/publications
+
+All files are licensed under a Creative Commons Attribution-ShareAlike 2.0 Germany License.
+For more information concerning license visit http://konect.uni-koblenz.de/license.
+
+
+
+Use the following References for citation:
+
+@MISC{konect:2016:reactome,
+    title = {Reactome network dataset -- {KONECT}},
+    month = sep,
+    year = {2016},
+    url = {http://konect.uni-koblenz.de/networks/reactome}
+}
+
+@article{konect:reactome,
+  title={{Reactome}: A Knowledgebase of Biological Pathways},
+  author={Joshi-Tope, G. and Gillespie, Marc and Vastrik, Imre and D'Eustachio, Peter and Schmidt, Esther and de Bono, Bernard and Jassal, Bijay and Gopinath, GR and Wu, GR and Matthews, Lisa and others},
+  journal={Nucleic Acids Research},
+  volume={33},
+  number={suppl 1},
+  pages={D428--D432},
+  year={2005},
+  publisher={Oxford Univ. Press}
+}
+
+
+@inproceedings{konect,
+	title = {{KONECT} -- {The} {Koblenz} {Network} {Collection}},
+	author = {Jérôme Kunegis},
+	year = {2013},
+	booktitle = {Proc. Int. Conf. on World Wide Web Companion},
+	pages = {1343--1350},
+	url = {http://userpages.uni-koblenz.de/~kunegis/paper/kunegis-koblenz-network-collection.pdf}, 
+	url_presentation = {http://userpages.uni-koblenz.de/~kunegis/paper/kunegis-koblenz-network-collection.presentation.pdf},
+}
+
+

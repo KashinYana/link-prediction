@@ -1,0 +1,7 @@
+http://konect.uni-koblenz.de/networks/ca-cit-HepTh
+
+This is the collaboration graph of authors of scientific papers from the arXiv's High Energy Physics – Theory (hep-th) section. An edge between two authors represents a common publication. Timestamps denote the date of a publication.
+
+
+Size 22,908 vertices (authors)
+Volume 2,673,133 edges (collaborations)
