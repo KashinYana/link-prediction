@@ -1,3 +1,5 @@
+from graph_tool.all import *
+
 def in_set(u, w, Set):
     return (u + ' ' + w in Set) or (w + ' ' + u in Set)
 
@@ -14,10 +16,35 @@ def read_train(file):
     FIN.close()
     return train_set, left_nodes, right_nodes
 
-def sample_structural_poss(train_set, SIZE_POS, directed):
+def sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False, nodes=None):
     import random
-    poss_set = set(random.sample(train_set, SIZE_POS))
-    return poss_set
+    
+    if not sparse:
+        return  set(random.sample(train_set, SIZE_POS))
+    else:
+        
+        g = Graph(directed=False)
+        g.add_vertex(max(nodes) + 1)
+        for edge in train_set:
+            u, w = map(int, edge.split())
+            g.add_edge(g.vertex(u), g.vertex(w))
+            
+        poss_set = set()
+        while len(poss_set) < SIZE_POS:
+            updates = 0
+            samples = set(random.sample(train_set, SIZE_POS))
+            for sample in samples:
+                u, w = map(int, sample.split())
+                if (g.vertex(u).out_degree() > 1) and (g.vertex(w).out_degree() > 1) and g.edge(g.vertex(u), g.vertex(w)):
+                    poss_set.add(str(u) + ' ' + str(w))
+                    g.remove_edge(g.edge(g.vertex(u), g.vertex(w)))
+                    updates += 1
+            if updates == 0:
+                break
+       
+        if len(poss_set) > SIZE_POS:
+            poss_set = set(random.sample(poss_set, SIZE_POS))
+        return poss_set      
     
 def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
     import random
@@ -79,12 +106,12 @@ def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
         neg_set = set(random.sample(neg_set, SIZE_NEG))
     return neg_set
 
-def sample_structural(file, N, directed=False):
+def sample_structural(file, N, directed=False, sparse=False):
     train_set, left_nodes, right_nodes = read_train(file)
     nodes = left_nodes | right_nodes
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
-    poss_set = sample_structural_poss(train_set, SIZE_POS, directed)
+    poss_set = sample_structural_poss(train_set, SIZE_POS, directed, sparse, nodes)
     neg_set = sample_structural_neg(train_set, nodes, SIZE_NEG, directed)
     return train_set, nodes, poss_set, neg_set
 
@@ -92,7 +119,7 @@ def sample_bipartite(file, N):
     train_set, left_nodes, right_nodes = read_train(file)
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
-    poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False)
+    poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False)
     neg_set = sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG)
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
