@@ -1,2409 +1,1039 @@
-data/bipartite/crime/train.in 10 5
-svds-30 : 0.55 (+/- 0.07)
-NMF-10 : 0.49 (+/- 0.05)
-sfdp-bipartite-simple : 0.34 (+/- 0.09)
-PA : 0.37 (+/- 0.06)
-sfdp-default : 0.61 (+/- 0.02)
-data/bipartite/crime/train.in 40 5
-svds-30 : 0.53 (+/- 0.03)
-NMF-10 : 0.51 (+/- 0.01)
-sfdp-bipartite-simple : 0.48 (+/- 0.03)
-PA : 0.44 (+/- 0.02)
-sfdp-default : 0.53 (+/- 0.04)
-data/bipartite/movielens/train.in 40 5
-svds-30 : 0.94 (+/- 0.00)
-NMF-10 : 0.92 (+/- 0.00)
-sfdp-bipartite-simple : 0.89 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-sfdp-default : 0.84 (+/- 0.01)
-data/bipartite/frwikinews/train.in 40 5
-svds-30 : 0.58 (+/- 0.01)
-NMF-10 : 0.69 (+/- 0.02)
-sfdp-bipartite-simple : 0.79 (+/- 0.01)
-PA : 0.79 (+/- 0.00)
-sfdp-default : 0.73 (+/- 0.01)
-data/bipartite/condmat/train.in 40 5
-svds-30 : 0.64 (+/- 0.01)
-NMF-10 : 0.58 (+/- 0.01)
-sfdp-bipartite-simple : 0.59 (+/- 0.00)
-PA : 0.56 (+/- 0.00)
-sfdp-default : 0.67 (+/- 0.00)
-data/bipartite/crime/train.in 5 5
-svds-30 : 0.58 (+/- 0.10)
-NMF-10 : 0.47 (+/- 0.06)
-sfdp-bipartite-simple : 0.34 (+/- 0.08)
-PA : 0.36 (+/- 0.11)
-sfdp-default : 0.61 (+/- 0.08)
-data/bipartite/crime/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.33 (+/- 0.04)
-PA : 0.40 (+/- 0.06)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.33 (+/- 0.09)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.33 (+/- 0.05)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.34 (+/- 0.06)
-NMF-10 : 0.44 (+/- 0.06)
-svds-30 : 0.54 (+/- 0.08)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.33 (+/- 0.06)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.36 (+/- 0.05)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.34 (+/- 0.04)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.32 (+/- 0.05)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.32 (+/- 0.06)
-sfdp-default : 0.60 (+/- 0.09)
-data/bipartite/movielens/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.81 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.89 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.89 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.82 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.81 (+/- 0.01)
-sfdp-default : 0.84 (+/- 0.00)
-data/bipartite/condmat/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.61 (+/- 0.01)
-PA : 0.60 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.63 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.63 (+/- 0.02)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.65 (+/- 0.01)
-NMF-10 : 0.57 (+/- 0.01)
-svds-30 : 0.66 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.61 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.65 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.65 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.61 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.63 (+/- 0.01)
-sfdp-default : 0.76 (+/- 0.01)
-data/bipartite/frwikinews/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.73 (+/- 0.01)
-PA : 0.85 (+/- 0.02)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.66 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.66 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.85 (+/- 0.01)
-NMF-10 : 0.77 (+/- 0.05)
-svds-30 : 0.70 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.73 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.85 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.85 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.73 (+/- 0.02)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.66 (+/- 0.01)
-sfdp-default : 0.76 (+/- 0.01)
-data/bipartite/movielens/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.81 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.89 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.89 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.81 (+/- 0.00)
-sfdp-default : 0.84 (+/- 0.00)
-data/bipartite/frwikinews/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.73 (+/- 0.01)
-PA : 0.85 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.66 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.66 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.85 (+/- 0.01)
-NMF-10 : 0.77 (+/- 0.07)
-svds-30 : 0.70 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.73 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.85 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.85 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.73 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.66 (+/- 0.01)
-sfdp-default : 0.76 (+/- 0.01)
-data/bipartite/crime/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.30 (+/- 0.12)
-PA : 0.36 (+/- 0.06)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.32 (+/- 0.08)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.32 (+/- 0.09)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.33 (+/- 0.09)
-NMF-10 : 0.45 (+/- 0.08)
-svds-30 : 0.56 (+/- 0.05)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.32 (+/- 0.07)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.30 (+/- 0.10)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.30 (+/- 0.09)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.36 (+/- 0.09)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.36 (+/- 0.08)
-sfdp-default : 0.58 (+/- 0.08)
-data/bipartite/condmat/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : 0.61 (+/- 0.00)
-PA : 0.59 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.62 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.62 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.65 (+/- 0.00)
-NMF-10 : 0.57 (+/- 0.00)
-svds-30 : 0.65 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.61 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.63 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.64 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.60 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.64 (+/- 0.00)
-sfdp-default : 0.76 (+/- 0.00)
-data/bipartite/movielens/train.in 5 5
-sfdp-bipartite-repulse-allrepulse-all : 0.81 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-fellowsrepulse-all : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : 0.80 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-all : 0.86 (+/- 0.01)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.81 (+/- 0.01)
-sfdp-bipartite-repulse-allrepulse-aliens : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.82 (+/- 0.00)
-sfdp-default : 0.84 (+/- 0.01)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : nan (+/- nan)
-svds-30 : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.82 (+/- 0.00)
-sfdp-default : nan (+/- nan)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : nan (+/- nan)
-svds-30 : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.83 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.80 (+/- 0.00)
-sfdp-default : nan (+/- nan)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.80 (+/- 0.00)
-sfdp-default : 0.84 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.82 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.84 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.83 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.84 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.83 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-data/bipartite/frwikinews/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.85 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.65 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.85 (+/- 0.00)
-NMF-10 : 0.78 (+/- 0.00)
-svds-30 : 0.70 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.75 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.73 (+/- 0.00)
-sfdp-default : 0.77 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.84 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.83 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.81 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.95 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.83 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.83 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-data/bipartite/frwikinews/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.85 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.65 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.84 (+/- 0.00)
-NMF-10 : 0.76 (+/- 0.00)
-svds-30 : 0.71 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.75 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.73 (+/- 0.00)
-sfdp-default : 0.76 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : nan (+/- nan)
-NMF-10 : 0.97 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : nan (+/- nan)
-sfdp-directed : nan (+/- nan)
-svds-30 : 0.97 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : nan (+/- nan)
-sfdp-default : 0.84 (+/- 0.00)
-data/directed/ego-twitter/train.in 10 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.49 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : nan (+/- nan)
-NMF-10 : 0.70 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : nan (+/- nan)
-sfdp-directed : 0.49 (+/- 0.00)
-svds-30 : 0.69 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : nan (+/- nan)
-sfdp-default : 0.50 (+/- 0.00)
-data/bipartite/movielens/train.in 5 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.90 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : 0.82 (+/- 0.00)
-NMF-10 : 0.93 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : 0.89 (+/- 0.00)
-sfdp-directed : nan (+/- nan)
-svds-30 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : 0.84 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : 0.83 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-data/directed/ego-twitter/train.in 10 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : nan (+/- nan)
-NMF-10 : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : nan (+/- nan)
-sfdp-directed : 0.80 (+/- 0.00)
-svds-30 : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : nan (+/- nan)
-sfdp-default : nan (+/- nan)
-data/directed/ego-twitter/train.in 10 1
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.50 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : nan (+/- nan)
-NMF-10 : 0.70 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : nan (+/- nan)
-sfdp-directed : 0.79 (+/- 0.00)
-svds-30 : 0.69 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : nan (+/- nan)
-sfdp-default : 0.50 (+/- 0.00)
-data/structral/ca-cit-HepTh/train.in 10 5
-sfdp-bipartite-repulse-allrepulse-all : nan (+/- nan)
-PA : 0.91 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-fellows : nan (+/- nan)
-NMF-10 : 0.94 (+/- 0.00)
-sfdp-bipartite-repulse-fellowsrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-aliens : nan (+/- nan)
-sfdp-directed : nan (+/- nan)
-svds-30 : 0.97 (+/- 0.00)
-sfdp-bipartite-repulse-allrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-all : nan (+/- nan)
-sfdp-bipartite-repulse-aliensrepulse-fellows : nan (+/- nan)
-sfdp-bipartite-repulse-allrepulse-aliens : nan (+/- nan)
-sfdp-bipartite-repulse-fellowsrepulse-aliens : nan (+/- nan)
-sfdp-default : 0.82 (+/- 0.01)
-file:data/structral/PowerGrid/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.56 (+/- 0.05)
-svds-30 : 0.70 (+/- 0.07)
-PA : 0.44 (+/- 0.03)
-CN : 0.59 (+/- 0.01)
-Adamic-Adar : 0.59 (+/- 0.01)
-NMF-30 : 0.71 (+/- 0.04)
-svds-10 : 0.50 (+/- 0.05)
-sfdp-default : 0.81 (+/- 0.01)
-file:data/structral/euroroad/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.63 (+/- 0.06)
-svds-30 : 0.59 (+/- 0.04)
-PA : 0.33 (+/- 0.04)
-CN : 0.52 (+/- 0.02)
-Adamic-Adar : 0.52 (+/- 0.02)
-NMF-30 : 0.63 (+/- 0.03)
-svds-10 : 0.68 (+/- 0.06)
-sfdp-default : 0.74 (+/- 0.06)
-file:data/structral/airport/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.97 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.94 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.97 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.95 (+/- 0.00)
-file:data/structral/euroroad/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.67 (+/- 0.07)
-svds-30 : 0.62 (+/- 0.05)
-PA : 0.34 (+/- 0.06)
-CN : 0.53 (+/- 0.02)
-Adamic-Adar : 0.53 (+/- 0.02)
-NMF-30 : 0.65 (+/- 0.05)
-svds-10 : 0.65 (+/- 0.08)
-sfdp-default : 0.76 (+/- 0.05)
-file:data/structral/PowerGrid/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.59 (+/- 0.08)
-svds-30 : 0.70 (+/- 0.06)
-PA : 0.45 (+/- 0.03)
-CN : 0.59 (+/- 0.01)
-Adamic-Adar : 0.59 (+/- 0.01)
-NMF-30 : 0.71 (+/- 0.06)
-svds-10 : 0.53 (+/- 0.12)
-sfdp-default : 0.82 (+/- 0.05)
-file:data/structral/airport/train.in N: 10 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.97 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.01)
-PA : 0.94 (+/- 0.01)
-CN : 0.96 (+/- 0.01)
-Adamic-Adar : 0.97 (+/- 0.01)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.95 (+/- 0.01)
-file:data/structral/airport/train.in N: 50 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96 (+/- 0.00)
-svds-30 : 0.90 (+/- 0.01)
-PA : 0.94 (+/- 0.00)
-CN : 0.95 (+/- 0.00)
-Adamic-Adar : 0.95 (+/- 0.00)
-NMF-30 : 0.95 (+/- 0.00)
-svds-10 : 0.94 (+/- 0.00)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/airport/train.in N: 90 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.86 (+/- 0.01)
-svds-30 : 0.68 (+/- 0.00)
-PA : 0.90 (+/- 0.01)
-CN : 0.77 (+/- 0.01)
-Adamic-Adar : 0.77 (+/- 0.01)
-NMF-30 : 0.86 (+/- 0.01)
-svds-10 : 0.76 (+/- 0.02)
-sfdp-default : 0.90 (+/- 0.01)
-file:data/structral/airport/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.97 (+/- 0.00)
-svds-30 : 0.95 (+/- 0.00)
-PA : 0.94 (+/- 0.00)
-CN : 0.97 (+/- 0.00)
-Adamic-Adar : 0.97 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/facebook/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:4
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.92 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.94 (+/- 0.00)
-Adamic-Adar : 0.94 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.86 (+/- 0.00)
-file:data/structral/reactome/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:4
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.98 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.99 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/reactome/train.in N: 90 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:4
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.88 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.75 (+/- 0.00)
-Adamic-Adar : 0.75 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.90 (+/- 0.00)
-sfdp-default : 0.90 (+/- 0.00)
-file:data/structral/reactome/train.in N: 90 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:5
-NMF-10 : 0.92 (+/- 0.00)
-svds-30 : 0.88 (+/- 0.00)
-PA : 0.89 (+/- 0.00)
-CN : 0.75 (+/- 0.00)
-Adamic-Adar : 0.75 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.85 (+/- 0.00)
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.50 (+/- 0.00)
-svds-30 : 0.50 (+/- 0.01)
-PA : 0.50 (+/- 0.00)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.00)
-svds-10 : 0.50 (+/- 0.01)
-sfdp-default : 0.50 (+/- 0.01)
-file:data/structral/PowerGrid/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.50 (+/- 0.00)
-svds-30 : 0.50 (+/- 0.01)
-PA : 0.50 (+/- 0.01)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.00)
-svds-10 : 0.50 (+/- 0.01)
-sfdp-default : 0.51 (+/- 0.01)
-file:data/structral/PowerGrid/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.51 (+/- 0.00)
-svds-30 : 0.51 (+/- 0.02)
-PA : 0.49 (+/- 0.01)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-NMF-30 : 0.51 (+/- 0.00)
-svds-10 : 0.51 (+/- 0.01)
-sfdp-default : 0.52 (+/- 0.01)
-file:data/structral/PowerGrid/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.52 (+/- 0.01)
-svds-30 : 0.51 (+/- 0.01)
-PA : 0.48 (+/- 0.01)
-CN : 0.52 (+/- 0.00)
-Adamic-Adar : 0.52 (+/- 0.00)
-NMF-30 : 0.52 (+/- 0.01)
-svds-10 : 0.52 (+/- 0.01)
-sfdp-default : 0.54 (+/- 0.01)
-file:data/structral/PowerGrid/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.53 (+/- 0.01)
-svds-30 : 0.53 (+/- 0.01)
-PA : 0.47 (+/- 0.01)
-CN : 0.53 (+/- 0.00)
-Adamic-Adar : 0.53 (+/- 0.00)
-NMF-30 : 0.54 (+/- 0.01)
-svds-10 : 0.53 (+/- 0.02)
-sfdp-default : 0.56 (+/- 0.02)
-file:data/structral/PowerGrid/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.54 (+/- 0.02)
-svds-30 : 0.57 (+/- 0.03)
-PA : 0.46 (+/- 0.01)
-CN : 0.55 (+/- 0.00)
-Adamic-Adar : 0.55 (+/- 0.00)
-NMF-30 : 0.57 (+/- 0.02)
-svds-10 : 0.56 (+/- 0.02)
-sfdp-default : 0.60 (+/- 0.02)
-file:data/structral/PowerGrid/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.57 (+/- 0.02)
-svds-30 : 0.61 (+/- 0.03)
-PA : 0.45 (+/- 0.01)
-CN : 0.56 (+/- 0.01)
-Adamic-Adar : 0.56 (+/- 0.01)
-NMF-30 : 0.61 (+/- 0.02)
-svds-10 : 0.58 (+/- 0.05)
-sfdp-default : 0.67 (+/- 0.03)
-file:data/structral/PowerGrid/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.54 (+/- 0.04)
-svds-30 : 0.65 (+/- 0.03)
-PA : 0.45 (+/- 0.01)
-CN : 0.57 (+/- 0.01)
-Adamic-Adar : 0.57 (+/- 0.01)
-NMF-30 : 0.65 (+/- 0.04)
-svds-10 : 0.55 (+/- 0.10)
-sfdp-default : 0.76 (+/- 0.03)
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.57 (+/- 0.05)
-svds-30 : 0.70 (+/- 0.04)
-PA : 0.44 (+/- 0.03)
-CN : 0.59 (+/- 0.01)
-Adamic-Adar : 0.59 (+/- 0.01)
-NMF-30 : 0.72 (+/- 0.04)
-svds-10 : 0.51 (+/- 0.08)
-sfdp-default : 0.83 (+/- 0.02)
-file:data/structral/euroroad/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.50 (+/- 0.00)
-svds-30 : 0.50 (+/- 0.01)
-PA : 0.49 (+/- 0.01)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.00)
-svds-10 : 0.50 (+/- 0.02)
-sfdp-default : 0.50 (+/- 0.02)
-file:data/structral/euroroad/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.50 (+/- 0.01)
-svds-30 : 0.50 (+/- 0.02)
-PA : 0.48 (+/- 0.01)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.01)
-svds-10 : 0.50 (+/- 0.02)
-sfdp-default : 0.50 (+/- 0.02)
-file:data/structral/euroroad/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.49 (+/- 0.01)
-svds-30 : 0.50 (+/- 0.03)
-PA : 0.46 (+/- 0.02)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.01)
-svds-10 : 0.50 (+/- 0.03)
-sfdp-default : 0.51 (+/- 0.03)
-file:data/structral/euroroad/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.49 (+/- 0.01)
-svds-30 : 0.50 (+/- 0.02)
-PA : 0.43 (+/- 0.02)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-NMF-30 : 0.49 (+/- 0.01)
-svds-10 : 0.50 (+/- 0.03)
-sfdp-default : 0.52 (+/- 0.02)
-file:data/structral/euroroad/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.50 (+/- 0.01)
-svds-30 : 0.52 (+/- 0.03)
-PA : 0.42 (+/- 0.02)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-NMF-30 : 0.50 (+/- 0.01)
-svds-10 : 0.50 (+/- 0.03)
-sfdp-default : 0.53 (+/- 0.03)
-file:data/structral/euroroad/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.51 (+/- 0.02)
-svds-30 : 0.51 (+/- 0.03)
-PA : 0.40 (+/- 0.03)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-NMF-30 : 0.51 (+/- 0.02)
-svds-10 : 0.53 (+/- 0.04)
-sfdp-default : 0.56 (+/- 0.04)
-file:data/structral/euroroad/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.55 (+/- 0.02)
-svds-30 : 0.54 (+/- 0.04)
-PA : 0.38 (+/- 0.03)
-CN : 0.51 (+/- 0.01)
-Adamic-Adar : 0.51 (+/- 0.01)
-NMF-30 : 0.54 (+/- 0.02)
-svds-10 : 0.56 (+/- 0.04)
-sfdp-default : 0.61 (+/- 0.05)
-file:data/structral/euroroad/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.59 (+/- 0.04)
-svds-30 : 0.56 (+/- 0.04)
-PA : 0.35 (+/- 0.04)
-CN : 0.52 (+/- 0.01)
-Adamic-Adar : 0.52 (+/- 0.01)
-NMF-30 : 0.58 (+/- 0.03)
-svds-10 : 0.60 (+/- 0.04)
-sfdp-default : 0.65 (+/- 0.04)
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.66 (+/- 0.05)
-svds-30 : 0.61 (+/- 0.06)
-PA : 0.33 (+/- 0.05)
-CN : 0.52 (+/- 0.02)
-Adamic-Adar : 0.52 (+/- 0.02)
-NMF-30 : 0.64 (+/- 0.05)
-svds-10 : 0.64 (+/- 0.08)
-sfdp-default : 0.74 (+/- 0.07)
-file:data/structral/airport/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.87 (+/- 0.01)
-svds-30 : 0.67 (+/- 0.01)
-PA : 0.90 (+/- 0.00)
-CN : 0.77 (+/- 0.01)
-Adamic-Adar : 0.77 (+/- 0.01)
-NMF-30 : 0.86 (+/- 0.01)
-svds-10 : 0.76 (+/- 0.02)
-sfdp-default : 0.90 (+/- 0.01)
-file:data/structral/airport/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.92 (+/- 0.01)
-svds-30 : 0.77 (+/- 0.01)
-PA : 0.92 (+/- 0.00)
-CN : 0.88 (+/- 0.00)
-Adamic-Adar : 0.88 (+/- 0.00)
-NMF-30 : 0.90 (+/- 0.01)
-svds-10 : 0.86 (+/- 0.01)
-sfdp-default : 0.92 (+/- 0.00)
-file:data/structral/airport/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.83 (+/- 0.01)
-PA : 0.93 (+/- 0.00)
-CN : 0.92 (+/- 0.00)
-Adamic-Adar : 0.92 (+/- 0.00)
-NMF-30 : 0.92 (+/- 0.01)
-svds-10 : 0.91 (+/- 0.01)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/airport/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.87 (+/- 0.01)
-PA : 0.93 (+/- 0.00)
-CN : 0.94 (+/- 0.00)
-Adamic-Adar : 0.94 (+/- 0.00)
-NMF-30 : 0.94 (+/- 0.00)
-svds-10 : 0.93 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/airport/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96 (+/- 0.00)
-svds-30 : 0.90 (+/- 0.00)
-PA : 0.94 (+/- 0.00)
-CN : 0.95 (+/- 0.00)
-Adamic-Adar : 0.95 (+/- 0.00)
-NMF-30 : 0.95 (+/- 0.00)
-svds-10 : 0.94 (+/- 0.01)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/airport/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96 (+/- 0.00)
-svds-30 : 0.92 (+/- 0.01)
-PA : 0.94 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.96 (+/- 0.00)
-NMF-30 : 0.96 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.01)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/airport/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96 (+/- 0.00)
-svds-30 : 0.93 (+/- 0.01)
-PA : 0.94 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.96 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/airport/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.97 (+/- 0.00)
-svds-30 : 0.95 (+/- 0.01)
-PA : 0.94 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.96 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.94 (+/- 0.00)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.97 (+/- 0.01)
-svds-30 : 0.95 (+/- 0.01)
-PA : 0.94 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.97 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.96 (+/- 0.00)
-sfdp-default : 0.95 (+/- 0.01)
-file:data/structral/facebook/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.92 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.94 (+/- 0.00)
-Adamic-Adar : 0.94 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/facebook/train.in N: 90 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.84 (+/- 0.00)
-svds-30 : 0.78 (+/- 0.00)
-PA : 0.84 (+/- 0.00)
-CN : 0.56 (+/- 0.00)
-Adamic-Adar : 0.56 (+/- 0.00)
-NMF-30 : 0.83 (+/- 0.00)
-svds-10 : 0.83 (+/- 0.00)
-sfdp-default : 0.86 (+/- 0.00)
-file:data/structral/facebook/train.in N: 80 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.89 (+/- 0.00)
-svds-30 : 0.86 (+/- 0.00)
-PA : 0.86 (+/- 0.00)
-CN : 0.66 (+/- 0.00)
-Adamic-Adar : 0.66 (+/- 0.00)
-NMF-30 : 0.89 (+/- 0.00)
-svds-10 : 0.88 (+/- 0.00)
-sfdp-default : 0.90 (+/- 0.00)
-file:data/structral/facebook/train.in N: 70 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.90 (+/- 0.00)
-svds-30 : 0.89 (+/- 0.00)
-PA : 0.87 (+/- 0.00)
-CN : 0.75 (+/- 0.00)
-Adamic-Adar : 0.75 (+/- 0.00)
-NMF-30 : 0.91 (+/- 0.00)
-svds-10 : 0.89 (+/- 0.00)
-sfdp-default : 0.91 (+/- 0.00)
-file:data/structral/facebook/train.in N: 60 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.90 (+/- 0.00)
-PA : 0.87 (+/- 0.00)
-CN : 0.81 (+/- 0.00)
-Adamic-Adar : 0.81 (+/- 0.00)
-NMF-30 : 0.92 (+/- 0.00)
-svds-10 : 0.90 (+/- 0.00)
-sfdp-default : 0.92 (+/- 0.00)
-file:data/structral/facebook/train.in N: 50 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.91 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.86 (+/- 0.00)
-Adamic-Adar : 0.86 (+/- 0.00)
-NMF-30 : 0.92 (+/- 0.00)
-svds-10 : 0.90 (+/- 0.00)
-sfdp-default : 0.92 (+/- 0.00)
-file:data/structral/facebook/train.in N: 40 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.91 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.89 (+/- 0.00)
-Adamic-Adar : 0.89 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/facebook/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.92 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.91 (+/- 0.00)
-Adamic-Adar : 0.91 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/facebook/train.in N: 20 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.91 (+/- 0.00)
-svds-30 : 0.92 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.93 (+/- 0.00)
-Adamic-Adar : 0.93 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.91 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/reactome/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.98 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.99 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.98 (+/- 0.00)
-file:data/structral/reactome/train.in N: 90 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.87 (+/- 0.00)
-PA : 0.88 (+/- 0.00)
-CN : 0.75 (+/- 0.00)
-Adamic-Adar : 0.75 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.92 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/reactome/train.in N: 80 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-PA : 0.89 (+/- 0.00)
-CN : 0.89 (+/- 0.00)
-Adamic-Adar : 0.89 (+/- 0.00)
-NMF-30 : 0.95 (+/- 0.00)
-svds-10 : 0.93 (+/- 0.00)
-sfdp-default : 0.96 (+/- 0.00)
-file:data/structral/reactome/train.in N: 70 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.94 (+/- 0.00)
-Adamic-Adar : 0.94 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.97 (+/- 0.00)
-file:data/structral/reactome/train.in N: 60 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.96 (+/- 0.00)
-Adamic-Adar : 0.96 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.97 (+/- 0.00)
-file:data/structral/reactome/train.in N: 50 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.97 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.97 (+/- 0.00)
-file:data/structral/reactome/train.in N: 40 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.98 (+/- 0.00)
-file:data/structral/reactome/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.98 (+/- 0.00)
-file:data/structral/reactome/train.in N: 20 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.98 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.99 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.98 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.98 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 90 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.93 (+/- 0.00)
-svds-30 : 0.90 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.85 (+/- 0.00)
-Adamic-Adar : 0.86 (+/- 0.00)
-NMF-30 : 0.93 (+/- 0.00)
-svds-10 : 0.92 (+/- 0.00)
-sfdp-default : 0.92 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 80 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.95 (+/- 0.00)
-Adamic-Adar : 0.96 (+/- 0.00)
-NMF-30 : 0.95 (+/- 0.00)
-svds-10 : 0.94 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 70 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.97 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.96 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 60 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.96 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 50 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 40 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.95 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 20 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.97 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.99 (+/- 0.00)
-NMF-30 : 0.97 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/ca-cit-HepTh/train.in N: 70 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.97 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.96 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/structral/airport/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96894776 (+/- 0.00000000)
-svds-30 : 0.95878223 (+/- 0.00000000)
-PA : 0.94265872 (+/- 0.00000000)
-CN : 0.96471328 (+/- 0.00000000)
-Adamic-Adar : 0.96769320 (+/- 0.00000000)
-NMF-30 : 0.97560196 (+/- 0.00000000)
-svds-10 : 0.96357008 (+/- 0.00000000)
-sfdp-default : 0.94370241 (+/- 0.00000000)
-file:data/structral/airport/train.in N: 10 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96955842 (+/- 0.00000000)
-svds-30 : 0.95367904 (+/- 0.00000000)
-PA : 0.94628908 (+/- 0.00000000)
-CN : 0.96852050 (+/- 0.00000000)
-Adamic-Adar : 0.97114324 (+/- 0.00000000)
-NMF-30 : 0.97613049 (+/- 0.00000000)
-svds-10 : 0.96471071 (+/- 0.00000000)
-sfdp-default : 0.95131497 (+/- 0.00000000)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96903736 (+/- 0.00565433)
-svds-30 : 0.95897786 (+/- 0.00790704)
-PA : 0.94483450 (+/- 0.00430253)
-CN : 0.96435613 (+/- 0.00447616)
-Adamic-Adar : 0.96711914 (+/- 0.00411982)
-NMF-30 : 0.97585814 (+/- 0.00338123)
-svds-10 : 0.96363169 (+/- 0.00738933)
-sfdp-default : 0.94641421 (+/- 0.00548049)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.96775959 (+/- 0.00246139)
-svds-30 : 0.95630214 (+/- 0.00383437)
-PA : 0.94418959 (+/- 0.00454239)
-CN : 0.96266812 (+/- 0.00510552)
-Adamic-Adar : 0.96538580 (+/- 0.00482571)
-NMF-30 : 0.97402128 (+/- 0.00245341)
-svds-10 : 0.96238843 (+/- 0.00430469)
-sfdp-default : 0.94545467 (+/- 0.00597479)
-file:data/bipartite/crime/train.in N: 5 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.45 (+/- 0.13)
-svds-30 : 0.52 (+/- 0.14)
-PA : 0.37 (+/- 0.16)
-CN : 0.50 (+/- 0.01)
-Adamic-Adar : 0.50 (+/- 0.01)
-NMF-30 : 0.50 (+/- 0.06)
-svds-10 : 0.51 (+/- 0.09)
-sfdp-default : 0.54 (+/- 0.10)
-file:data/bipartite/crime/train.in N: 5 k: 5 gap:0 verbose:False directed:False bipartite:False max_iter:0
-NMF-10 : 0.51 (+/- 0.07)
-svds-30 : 0.55 (+/- 0.05)
-PA : 0.38 (+/- 0.08)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.52 (+/- 0.08)
-svds-10 : 0.51 (+/- 0.11)
-sfdp-default : 0.60 (+/- 0.11)
-file:data/structral/ca-cit-HepTh/train.in N: 60 k: 1 gap:0 verbose:False directed:False bipartite:False max_iter:50
-NMF-10 : 0.94 (+/- 0.00)
-svds-30 : 0.96 (+/- 0.00)
-PA : 0.91 (+/- 0.00)
-CN : 0.98 (+/- 0.00)
-Adamic-Adar : 0.98 (+/- 0.00)
-NMF-30 : 0.96 (+/- 0.00)
-svds-10 : 0.95 (+/- 0.00)
-sfdp-default : 0.93 (+/- 0.00)
-file:data/bipartite/crime/train.in N: 5 k: 5 gap:0 verbose:False directed:False bipartite:True max_iter:0
-NMF-10 : 0.47 (+/- 0.05)
-svds-30 : 0.58 (+/- 0.10)
-PA : 0.39 (+/- 0.04)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.54 (+/- 0.05)
-svds-10 : 0.56 (+/- 0.09)
-sfdp-bipartite : 0.31 (+/- 0.00)
-sfdp-default : 0.59 (+/- 0.09)
-file:data/bipartite/movielens/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:True max_iter:0
-NMF-10 : 0.92 (+/- 0.00)
-svds-30 : 0.94 (+/- 0.00)
-PA : 0.90 (+/- 0.00)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.94 (+/- 0.00)
-svds-10 : 0.93 (+/- 0.00)
-sfdp-bipartite : 0.89 (+/- 0.00)
-sfdp-default : 0.84 (+/- 0.00)
-file:data/directed/ego-twitter/train.in N: 30 k: 1 gap:0 verbose:False directed:True bipartite:False max_iter:4
-NMF-10 : 0.68 (+/- 0.00)
-svds-30 : 0.67 (+/- 0.00)
-PA : 0.51 (+/- 0.00)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-sfdp-directed : 0.77 (+/- 0.00)
-NMF-30 : 0.67 (+/- 0.00)
-svds-10 : 0.67 (+/- 0.00)
-sfdp-default : 0.50 (+/- 0.00)
-file:data/bipartite/frwikinews/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:True max_iter:0
-NMF-10 : 0.72 (+/- 0.00)
-svds-30 : 0.61 (+/- 0.00)
-PA : 0.82 (+/- 0.00)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.60 (+/- 0.00)
-svds-10 : 0.75 (+/- 0.00)
-sfdp-bipartite : 0.81 (+/- 0.00)
-sfdp-default : 0.74 (+/- 0.00)
-file:data/directed/ego-gplus/train.in N: 30 k: 1 gap:0 verbose:False directed:True bipartite:False max_iter:4
-NMF-10 : 0.74 (+/- 0.00)
-svds-30 : 0.66 (+/- 0.00)
-PA : 0.52 (+/- 0.00)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-sfdp-directed : 0.81 (+/- 0.00)
-NMF-30 : 0.69 (+/- 0.00)
-svds-10 : 0.71 (+/- 0.00)
-sfdp-default : 0.52 (+/- 0.00)
-file:data/directed/cit-HepTh/train.in N: 30 k: 1 gap:0 verbose:False directed:True bipartite:False max_iter:4
-NMF-10 : 0.81 (+/- 0.00)
-svds-30 : 0.82 (+/- 0.00)
-PA : 0.54 (+/- 0.00)
-CN : 0.51 (+/- 0.00)
-Adamic-Adar : 0.51 (+/- 0.00)
-sfdp-directed : 0.83 (+/- 0.00)
-NMF-30 : 0.82 (+/- 0.00)
-svds-10 : 0.81 (+/- 0.00)
-sfdp-default : 0.53 (+/- 0.00)
-file:data/bipartite/condmat/train.in N: 30 k: 1 gap:0 verbose:False directed:False bipartite:True max_iter:0
-NMF-10 : 0.59 (+/- 0.00)
-svds-30 : 0.64 (+/- 0.00)
-PA : 0.57 (+/- 0.00)
-CN : 0.50 (+/- 0.00)
-Adamic-Adar : 0.50 (+/- 0.00)
-NMF-30 : 0.61 (+/- 0.00)
-svds-10 : 0.59 (+/- 0.00)
-sfdp-bipartite : 0.60 (+/- 0.00)
-sfdp-default : 0.70 (+/- 0.00)
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.499975 (+/- 0.002168)
-svds-30 : 0.499464 (+/- 0.011491)
-PA : 0.500956 (+/- 0.005857)
-CN : 0.501542 (+/- 0.000612)
-Adamic-Adar : 0.501542 (+/- 0.000612)
-NMF-30 : 0.500570 (+/- 0.001943)
-svds-10 : 0.500187 (+/- 0.008559)
-sfdp-default : 0.502993 (+/- 0.009668)
-file:data/structral/PowerGrid/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.502649 (+/- 0.004670)
-svds-30 : 0.502049 (+/- 0.010885)
-PA : 0.498230 (+/- 0.006866)
-CN : 0.505915 (+/- 0.001936)
-Adamic-Adar : 0.505915 (+/- 0.001935)
-NMF-30 : 0.502678 (+/- 0.003989)
-svds-10 : 0.503089 (+/- 0.005832)
-sfdp-default : 0.505889 (+/- 0.008743)
-file:data/structral/PowerGrid/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.506412 (+/- 0.005691)
-svds-30 : 0.504826 (+/- 0.011933)
-PA : 0.488938 (+/- 0.009259)
-CN : 0.513055 (+/- 0.001575)
-Adamic-Adar : 0.513055 (+/- 0.001575)
-NMF-30 : 0.508070 (+/- 0.003595)
-svds-10 : 0.503282 (+/- 0.012614)
-sfdp-default : 0.511201 (+/- 0.017321)
-file:data/structral/PowerGrid/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.518025 (+/- 0.005663)
-svds-30 : 0.513945 (+/- 0.015909)
-PA : 0.478396 (+/- 0.008208)
-CN : 0.521563 (+/- 0.004140)
-Adamic-Adar : 0.521564 (+/- 0.004140)
-NMF-30 : 0.519663 (+/- 0.008976)
-svds-10 : 0.519149 (+/- 0.011954)
-sfdp-default : 0.525277 (+/- 0.011397)
-file:data/structral/PowerGrid/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.533913 (+/- 0.012236)
-svds-30 : 0.540090 (+/- 0.015412)
-PA : 0.470851 (+/- 0.008307)
-CN : 0.531651 (+/- 0.002142)
-Adamic-Adar : 0.531650 (+/- 0.002145)
-NMF-30 : 0.538628 (+/- 0.012629)
-svds-10 : 0.536738 (+/- 0.013295)
-sfdp-default : 0.546265 (+/- 0.021148)
-file:data/structral/PowerGrid/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.543109 (+/- 0.024504)
-svds-30 : 0.575801 (+/- 0.024901)
-PA : 0.460113 (+/- 0.010753)
-CN : 0.544543 (+/- 0.004194)
-Adamic-Adar : 0.544545 (+/- 0.004203)
-NMF-30 : 0.569501 (+/- 0.009804)
-svds-10 : 0.560618 (+/- 0.019272)
-sfdp-default : 0.597241 (+/- 0.032145)
-file:data/structral/PowerGrid/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.559401 (+/- 0.029443)
-svds-30 : 0.622912 (+/- 0.016380)
-PA : 0.453266 (+/- 0.011987)
-CN : 0.559782 (+/- 0.003392)
-Adamic-Adar : 0.559789 (+/- 0.003388)
-NMF-30 : 0.614586 (+/- 0.022259)
-svds-10 : 0.576122 (+/- 0.034049)
-sfdp-default : 0.696598 (+/- 0.035673)
-file:data/structral/PowerGrid/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.554994 (+/- 0.048782)
-svds-30 : 0.658293 (+/- 0.038680)
-PA : 0.449252 (+/- 0.019131)
-CN : 0.574291 (+/- 0.010504)
-Adamic-Adar : 0.574291 (+/- 0.010521)
-NMF-30 : 0.653580 (+/- 0.027572)
-svds-10 : 0.581150 (+/- 0.093009)
-sfdp-default : 0.782126 (+/- 0.035583)
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.557039 (+/- 0.056033)
-svds-30 : 0.703517 (+/- 0.030634)
-PA : 0.433722 (+/- 0.023767)
-CN : 0.583705 (+/- 0.011790)
-Adamic-Adar : 0.583740 (+/- 0.011784)
-NMF-30 : 0.716040 (+/- 0.033022)
-svds-10 : 0.508948 (+/- 0.051509)
-sfdp-default : 0.834690 (+/- 0.026955)
-file:data/structral/euroroad/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.497730 (+/- 0.004788)
-svds-30 : 0.500356 (+/- 0.019994)
-PA : 0.493664 (+/- 0.008455)
-CN : 0.500353 (+/- 0.000652)
-Adamic-Adar : 0.500353 (+/- 0.000652)
-NMF-30 : 0.498435 (+/- 0.003056)
-svds-10 : 0.505772 (+/- 0.010912)
-sfdp-default : 0.498440 (+/- 0.027188)
-file:data/structral/euroroad/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.496080 (+/- 0.005877)
-svds-30 : 0.501425 (+/- 0.011902)
-PA : 0.476014 (+/- 0.011201)
-CN : 0.501458 (+/- 0.000972)
-Adamic-Adar : 0.501457 (+/- 0.000972)
-NMF-30 : 0.495901 (+/- 0.006740)
-svds-10 : 0.500137 (+/- 0.014251)
-sfdp-default : 0.494970 (+/- 0.010907)
-file:data/structral/euroroad/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.490688 (+/- 0.009562)
-svds-30 : 0.500066 (+/- 0.024647)
-PA : 0.454961 (+/- 0.018488)
-CN : 0.502725 (+/- 0.002174)
-Adamic-Adar : 0.502725 (+/- 0.002174)
-NMF-30 : 0.494484 (+/- 0.010654)
-svds-10 : 0.492009 (+/- 0.020329)
-sfdp-default : 0.503388 (+/- 0.025472)
-file:data/structral/euroroad/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.494442 (+/- 0.008544)
-svds-30 : 0.499579 (+/- 0.023814)
-PA : 0.444569 (+/- 0.012849)
-CN : 0.505536 (+/- 0.003914)
-Adamic-Adar : 0.505535 (+/- 0.003913)
-NMF-30 : 0.497239 (+/- 0.005002)
-svds-10 : 0.513315 (+/- 0.025394)
-sfdp-default : 0.517364 (+/- 0.017474)
-file:data/structral/euroroad/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.495792 (+/- 0.011554)
-svds-30 : 0.512315 (+/- 0.033050)
-PA : 0.413800 (+/- 0.030985)
-CN : 0.507062 (+/- 0.005470)
-Adamic-Adar : 0.507063 (+/- 0.005474)
-NMF-30 : 0.496538 (+/- 0.013780)
-svds-10 : 0.516683 (+/- 0.034781)
-sfdp-default : 0.523791 (+/- 0.035565)
-file:data/structral/euroroad/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.515739 (+/- 0.035323)
-svds-30 : 0.518339 (+/- 0.025992)
-PA : 0.397940 (+/- 0.018455)
-CN : 0.510779 (+/- 0.005286)
-Adamic-Adar : 0.510779 (+/- 0.005281)
-NMF-30 : 0.512796 (+/- 0.020645)
-svds-10 : 0.528701 (+/- 0.039592)
-sfdp-default : 0.563339 (+/- 0.035590)
-file:data/structral/euroroad/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.535431 (+/- 0.029174)
-svds-30 : 0.545816 (+/- 0.033230)
-PA : 0.371676 (+/- 0.029454)
-CN : 0.515916 (+/- 0.005805)
-Adamic-Adar : 0.515921 (+/- 0.005802)
-NMF-30 : 0.536140 (+/- 0.015484)
-svds-10 : 0.542617 (+/- 0.027434)
-sfdp-default : 0.609442 (+/- 0.050752)
-file:data/structral/euroroad/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.593623 (+/- 0.060161)
-svds-30 : 0.557077 (+/- 0.062447)
-PA : 0.358861 (+/- 0.041404)
-CN : 0.521191 (+/- 0.009964)
-Adamic-Adar : 0.521172 (+/- 0.010002)
-NMF-30 : 0.581315 (+/- 0.041184)
-svds-10 : 0.590998 (+/- 0.068055)
-sfdp-default : 0.683349 (+/- 0.051646)
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.646487 (+/- 0.054793)
-svds-30 : 0.613136 (+/- 0.065543)
-PA : 0.322728 (+/- 0.054304)
-CN : 0.521988 (+/- 0.015468)
-Adamic-Adar : 0.521958 (+/- 0.015527)
-NMF-30 : 0.640365 (+/- 0.053240)
-svds-10 : 0.648340 (+/- 0.062464)
-sfdp-default : 0.766923 (+/- 0.057005)
-file:data/structral/airport/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.867280 (+/- 0.011764)
-svds-30 : 0.675728 (+/- 0.006598)
-PA : 0.904288 (+/- 0.004252)
-CN : 0.768923 (+/- 0.003280)
-Adamic-Adar : 0.769586 (+/- 0.003286)
-NMF-30 : 0.861370 (+/- 0.016364)
-svds-10 : 0.754764 (+/- 0.014155)
-sfdp-default : 0.896770 (+/- 0.004873)
-file:data/structral/airport/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.919026 (+/- 0.021477)
-svds-30 : 0.773661 (+/- 0.008587)
-PA : 0.922511 (+/- 0.003473)
-CN : 0.881084 (+/- 0.004138)
-Adamic-Adar : 0.882618 (+/- 0.004101)
-NMF-30 : 0.902165 (+/- 0.008285)
-svds-10 : 0.852101 (+/- 0.013848)
-sfdp-default : 0.919586 (+/- 0.004339)
-file:data/structral/airport/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.940675 (+/- 0.002470)
-svds-30 : 0.830429 (+/- 0.007196)
-PA : 0.929806 (+/- 0.001917)
-CN : 0.920517 (+/- 0.003832)
-Adamic-Adar : 0.922563 (+/- 0.003801)
-NMF-30 : 0.924693 (+/- 0.006527)
-svds-10 : 0.908513 (+/- 0.005378)
-sfdp-default : 0.929927 (+/- 0.002161)
-file:data/structral/airport/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.950397 (+/- 0.004764)
-svds-30 : 0.869328 (+/- 0.003912)
-PA : 0.934193 (+/- 0.002846)
-CN : 0.938551 (+/- 0.002584)
-Adamic-Adar : 0.941035 (+/- 0.002487)
-NMF-30 : 0.939561 (+/- 0.003305)
-svds-10 : 0.928514 (+/- 0.006028)
-sfdp-default : 0.936160 (+/- 0.002162)
-file:data/structral/airport/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.957185 (+/- 0.006055)
-svds-30 : 0.897954 (+/- 0.006751)
-PA : 0.938074 (+/- 0.002544)
-CN : 0.949144 (+/- 0.002559)
-Adamic-Adar : 0.951765 (+/- 0.002656)
-NMF-30 : 0.951345 (+/- 0.005361)
-svds-10 : 0.942877 (+/- 0.008656)
-sfdp-default : 0.940511 (+/- 0.002975)
-file:data/structral/airport/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.960534 (+/- 0.003651)
-svds-30 : 0.919431 (+/- 0.005972)
-PA : 0.939443 (+/- 0.001870)
-CN : 0.954842 (+/- 0.002604)
-Adamic-Adar : 0.957529 (+/- 0.002620)
-NMF-30 : 0.958904 (+/- 0.003948)
-svds-10 : 0.953849 (+/- 0.002714)
-sfdp-default : 0.942110 (+/- 0.001801)
-file:data/structral/airport/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.964762 (+/- 0.002542)
-svds-30 : 0.935094 (+/- 0.005072)
-PA : 0.941666 (+/- 0.003047)
-CN : 0.959630 (+/- 0.002795)
-Adamic-Adar : 0.962393 (+/- 0.002608)
-NMF-30 : 0.965944 (+/- 0.004055)
-svds-10 : 0.958235 (+/- 0.004592)
-sfdp-default : 0.944030 (+/- 0.003054)
-file:data/directed/ego-twitter/train.in N: 30 k: 10 gap:0 verbose:False directed:True bipartite:False max_iter:25p:2
-NMF-10 : 0.681783 (+/- 0.005706)
-svds-30 : 0.669102 (+/- 0.007080)
-PA : 0.500746 (+/- 0.004502)
-CN : 0.510429 (+/- 0.001466)
-Adamic-Adar : 0.510434 (+/- 0.001465)
-sfdp-directed : 0.758950 (+/- 0.039955)
-NMF-30 : 0.677939 (+/- 0.006048)
-svds-10 : 0.678128 (+/- 0.008806)
-sfdp-default : 0.717397 (+/- 0.006382)
-file:data/structral/airport/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.966162 (+/- 0.003112)
-svds-30 : 0.948648 (+/- 0.003160)
-PA : 0.942330 (+/- 0.002793)
-CN : 0.961233 (+/- 0.001905)
-Adamic-Adar : 0.963992 (+/- 0.001949)
-NMF-30 : 0.970423 (+/- 0.003650)
-svds-10 : 0.960607 (+/- 0.001666)
-sfdp-default : 0.945192 (+/- 0.003493)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:1
-NMF-10 : 0.968403 (+/- 0.002923)
-svds-30 : 0.956977 (+/- 0.004889)
-PA : 0.944288 (+/- 0.004840)
-CN : 0.963616 (+/- 0.005169)
-Adamic-Adar : 0.966433 (+/- 0.004739)
-NMF-30 : 0.974072 (+/- 0.002637)
-svds-10 : 0.963196 (+/- 0.004906)
-sfdp-default : 0.946363 (+/- 0.005072)
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.500002 (+/- 0.001391)
-svds-30 : 0.499197 (+/- 0.008382)
-PA : 0.501648 (+/- 0.003197)
-CN : 0.501298 (+/- 0.000731)
-Adamic-Adar : 0.501298 (+/- 0.000731)
-NMF-30 : 0.500366 (+/- 0.001316)
-svds-10 : 0.501097 (+/- 0.005304)
-sfdp-default : 0.506304 (+/- 0.017119)
-file:data/structral/PowerGrid/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.501346 (+/- 0.003956)
-svds-30 : 0.501567 (+/- 0.008189)
-PA : 0.495983 (+/- 0.006234)
-CN : 0.505460 (+/- 0.001191)
-Adamic-Adar : 0.505460 (+/- 0.001190)
-NMF-30 : 0.501218 (+/- 0.002042)
-svds-10 : 0.502830 (+/- 0.015811)
-sfdp-default : 0.510386 (+/- 0.010322)
-file:data/structral/PowerGrid/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.506326 (+/- 0.005961)
-svds-30 : 0.505320 (+/- 0.011502)
-PA : 0.487928 (+/- 0.008968)
-CN : 0.512936 (+/- 0.001772)
-Adamic-Adar : 0.512936 (+/- 0.001772)
-NMF-30 : 0.506298 (+/- 0.003846)
-svds-10 : 0.504162 (+/- 0.015412)
-sfdp-default : 0.521772 (+/- 0.012567)
-file:data/structral/PowerGrid/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.517437 (+/- 0.008402)
-svds-30 : 0.514543 (+/- 0.010438)
-PA : 0.477855 (+/- 0.008819)
-CN : 0.521537 (+/- 0.001748)
-Adamic-Adar : 0.521538 (+/- 0.001748)
-NMF-30 : 0.520337 (+/- 0.006078)
-svds-10 : 0.519706 (+/- 0.014690)
-sfdp-default : 0.544275 (+/- 0.013010)
-file:data/structral/PowerGrid/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.532310 (+/- 0.016969)
-svds-30 : 0.539989 (+/- 0.018094)
-PA : 0.468080 (+/- 0.009626)
-CN : 0.532591 (+/- 0.003047)
-Adamic-Adar : 0.532592 (+/- 0.003048)
-NMF-30 : 0.540241 (+/- 0.011343)
-svds-10 : 0.537973 (+/- 0.016730)
-sfdp-default : 0.559504 (+/- 0.018714)
-file:data/structral/PowerGrid/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.545988 (+/- 0.024184)
-svds-30 : 0.569881 (+/- 0.016209)
-PA : 0.466178 (+/- 0.013530)
-CN : 0.546456 (+/- 0.003349)
-Adamic-Adar : 0.546456 (+/- 0.003361)
-NMF-30 : 0.564270 (+/- 0.014689)
-svds-10 : 0.560731 (+/- 0.021394)
-sfdp-default : 0.598705 (+/- 0.022597)
-file:data/structral/PowerGrid/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.554201 (+/- 0.017629)
-svds-30 : 0.617914 (+/- 0.026614)
-PA : 0.454192 (+/- 0.014829)
-CN : 0.559788 (+/- 0.004944)
-Adamic-Adar : 0.559792 (+/- 0.004962)
-NMF-30 : 0.605326 (+/- 0.020281)
-svds-10 : 0.576328 (+/- 0.068034)
-sfdp-default : 0.676809 (+/- 0.032255)
-file:data/structral/PowerGrid/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.558051 (+/- 0.051047)
-svds-30 : 0.668702 (+/- 0.043469)
-PA : 0.452413 (+/- 0.024088)
-CN : 0.571789 (+/- 0.006234)
-Adamic-Adar : 0.571801 (+/- 0.006252)
-NMF-30 : 0.663067 (+/- 0.036668)
-svds-10 : 0.548304 (+/- 0.040349)
-sfdp-default : 0.760627 (+/- 0.029653)
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.582089 (+/- 0.060997)
-svds-30 : 0.710715 (+/- 0.030794)
-PA : 0.449237 (+/- 0.013966)
-CN : 0.588496 (+/- 0.008710)
-Adamic-Adar : 0.588491 (+/- 0.008684)
-NMF-30 : 0.719775 (+/- 0.021708)
-svds-10 : 0.504663 (+/- 0.051659)
-sfdp-default : 0.818545 (+/- 0.032960)
-file:data/structral/euroroad/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.498390 (+/- 0.004379)
-svds-30 : 0.500504 (+/- 0.011245)
-PA : 0.492165 (+/- 0.008501)
-CN : 0.500196 (+/- 0.000527)
-Adamic-Adar : 0.500196 (+/- 0.000527)
-NMF-30 : 0.498705 (+/- 0.004080)
-svds-10 : 0.501297 (+/- 0.011554)
-sfdp-default : 0.507853 (+/- 0.018894)
-file:data/structral/euroroad/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.495508 (+/- 0.007588)
-svds-30 : 0.498885 (+/- 0.018658)
-PA : 0.475309 (+/- 0.017212)
-CN : 0.501369 (+/- 0.001148)
-Adamic-Adar : 0.501369 (+/- 0.001149)
-NMF-30 : 0.496313 (+/- 0.007204)
-svds-10 : 0.502062 (+/- 0.016843)
-sfdp-default : 0.497484 (+/- 0.014952)
-file:data/structral/euroroad/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.493833 (+/- 0.009945)
-svds-30 : 0.493281 (+/- 0.022807)
-PA : 0.459153 (+/- 0.018484)
-CN : 0.502674 (+/- 0.002672)
-Adamic-Adar : 0.502674 (+/- 0.002671)
-NMF-30 : 0.497809 (+/- 0.007377)
-svds-10 : 0.498764 (+/- 0.027741)
-sfdp-default : 0.518816 (+/- 0.016349)
-file:data/structral/euroroad/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.492352 (+/- 0.010296)
-svds-30 : 0.503885 (+/- 0.027520)
-PA : 0.437286 (+/- 0.019836)
-CN : 0.504770 (+/- 0.002810)
-Adamic-Adar : 0.504771 (+/- 0.002811)
-NMF-30 : 0.498674 (+/- 0.004860)
-svds-10 : 0.506011 (+/- 0.015028)
-sfdp-default : 0.520458 (+/- 0.036869)
-file:data/structral/euroroad/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.500039 (+/- 0.014050)
-svds-30 : 0.516088 (+/- 0.025037)
-PA : 0.413172 (+/- 0.018046)
-CN : 0.509181 (+/- 0.004284)
-Adamic-Adar : 0.509183 (+/- 0.004285)
-NMF-30 : 0.501733 (+/- 0.010416)
-svds-10 : 0.514213 (+/- 0.024161)
-sfdp-default : 0.531939 (+/- 0.018838)
-file:data/structral/euroroad/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.513126 (+/- 0.024435)
-svds-30 : 0.513912 (+/- 0.043492)
-PA : 0.388374 (+/- 0.024269)
-CN : 0.511661 (+/- 0.003604)
-Adamic-Adar : 0.511655 (+/- 0.003600)
-NMF-30 : 0.511698 (+/- 0.020033)
-svds-10 : 0.528098 (+/- 0.020590)
-sfdp-default : 0.561279 (+/- 0.028935)
-file:data/structral/euroroad/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.547500 (+/- 0.032962)
-svds-30 : 0.536042 (+/- 0.025152)
-PA : 0.379841 (+/- 0.021141)
-CN : 0.514151 (+/- 0.008634)
-Adamic-Adar : 0.514146 (+/- 0.008615)
-NMF-30 : 0.532477 (+/- 0.030977)
-svds-10 : 0.560204 (+/- 0.032180)
-sfdp-default : 0.623770 (+/- 0.045431)
-file:data/structral/euroroad/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.592946 (+/- 0.017833)
-svds-30 : 0.571805 (+/- 0.034409)
-PA : 0.365869 (+/- 0.036174)
-CN : 0.519435 (+/- 0.009349)
-Adamic-Adar : 0.519435 (+/- 0.009352)
-NMF-30 : 0.576343 (+/- 0.016436)
-svds-10 : 0.603722 (+/- 0.030601)
-sfdp-default : 0.665736 (+/- 0.055360)
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.640305 (+/- 0.057221)
-svds-30 : 0.617187 (+/- 0.097395)
-PA : 0.336502 (+/- 0.045285)
-CN : 0.520925 (+/- 0.018342)
-Adamic-Adar : 0.520854 (+/- 0.018394)
-NMF-30 : 0.632013 (+/- 0.061334)
-svds-10 : 0.659021 (+/- 0.044813)
-sfdp-default : 0.749600 (+/- 0.080850)
-file:data/structral/airport/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.866397 (+/- 0.009307)
-svds-30 : 0.672317 (+/- 0.011203)
-PA : 0.903660 (+/- 0.004903)
-CN : 0.766861 (+/- 0.003687)
-Adamic-Adar : 0.767507 (+/- 0.003524)
-NMF-30 : 0.861536 (+/- 0.014295)
-svds-10 : 0.761203 (+/- 0.012116)
-sfdp-default : 0.898094 (+/- 0.006688)
-file:data/structral/airport/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.914409 (+/- 0.024760)
-svds-30 : 0.773602 (+/- 0.004284)
-PA : 0.922247 (+/- 0.002723)
-CN : 0.880660 (+/- 0.004061)
-Adamic-Adar : 0.882155 (+/- 0.003948)
-NMF-30 : 0.902563 (+/- 0.006793)
-svds-10 : 0.851587 (+/- 0.015410)
-sfdp-default : 0.919458 (+/- 0.002154)
-file:data/bipartite/movielens/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:True max_iter:0p:2
-NMF-10 : 0.924980 (+/- 0.000701)
-svds-30 : 0.940871 (+/- 0.000516)
-PA : 0.902563 (+/- 0.000680)
-CN : 0.500000 (+/- 0.000000)
-Adamic-Adar : 0.500000 (+/- 0.000000)
-NMF-30 : 0.941359 (+/- 0.001424)
-svds-10 : 0.927220 (+/- 0.000611)
-sfdp-bipartite : 0.887031 (+/- 0.000000)
-sfdp-default : 0.840992 (+/- 0.005297)
-file:data/structral/airport/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.939688 (+/- 0.004487)
-svds-30 : 0.829322 (+/- 0.005266)
-PA : 0.930032 (+/- 0.002478)
-CN : 0.920475 (+/- 0.003203)
-Adamic-Adar : 0.922517 (+/- 0.003175)
-NMF-30 : 0.922517 (+/- 0.007194)
-svds-10 : 0.907226 (+/- 0.004580)
-sfdp-default : 0.929596 (+/- 0.002923)
-file:data/structral/airport/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.949371 (+/- 0.005843)
-svds-30 : 0.869917 (+/- 0.007577)
-PA : 0.934354 (+/- 0.002012)
-CN : 0.938246 (+/- 0.001791)
-Adamic-Adar : 0.940638 (+/- 0.001750)
-NMF-30 : 0.939673 (+/- 0.003899)
-svds-10 : 0.928698 (+/- 0.006347)
-sfdp-default : 0.934854 (+/- 0.003332)
-file:data/structral/airport/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.956632 (+/- 0.003222)
-svds-30 : 0.898725 (+/- 0.005284)
-PA : 0.937371 (+/- 0.002419)
-CN : 0.948802 (+/- 0.002050)
-Adamic-Adar : 0.951384 (+/- 0.002037)
-NMF-30 : 0.950801 (+/- 0.003733)
-svds-10 : 0.940832 (+/- 0.004834)
-sfdp-default : 0.938070 (+/- 0.003227)
-file:data/structral/airport/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.960692 (+/- 0.001979)
-svds-30 : 0.921050 (+/- 0.006299)
-PA : 0.939604 (+/- 0.002618)
-CN : 0.954535 (+/- 0.002789)
-Adamic-Adar : 0.957296 (+/- 0.002707)
-NMF-30 : 0.959714 (+/- 0.003554)
-svds-10 : 0.952568 (+/- 0.004277)
-sfdp-default : 0.940014 (+/- 0.002831)
-file:data/directed/ego-gplus/train.in N: 30 k: 10 gap:0 verbose:False directed:True bipartite:False max_iter:25p:2
-NMF-10 : 0.736458 (+/- 0.004902)
-svds-30 : 0.657987 (+/- 0.011933)
-PA : 0.510365 (+/- 0.009603)
-CN : 0.509947 (+/- 0.002712)
-Adamic-Adar : 0.510001 (+/- 0.002711)
-sfdp-directed : 0.842734 (+/- 0.028342)
-NMF-30 : 0.689966 (+/- 0.013049)
-svds-10 : 0.717287 (+/- 0.005972)
-sfdp-default : 0.775500 (+/- 0.005364)
-file:data/structral/airport/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.963597 (+/- 0.003770)
-svds-30 : 0.935489 (+/- 0.005241)
-PA : 0.940868 (+/- 0.004904)
-CN : 0.958705 (+/- 0.004113)
-Adamic-Adar : 0.961441 (+/- 0.004034)
-NMF-30 : 0.965774 (+/- 0.003295)
-svds-10 : 0.957344 (+/- 0.005050)
-sfdp-default : 0.942409 (+/- 0.003326)
-file:data/structral/airport/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.966013 (+/- 0.003059)
-svds-30 : 0.947980 (+/- 0.003933)
-PA : 0.941811 (+/- 0.004854)
-CN : 0.960578 (+/- 0.003535)
-Adamic-Adar : 0.963352 (+/- 0.003347)
-NMF-30 : 0.970221 (+/- 0.002663)
-svds-10 : 0.960241 (+/- 0.001885)
-sfdp-default : 0.944027 (+/- 0.004122)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:2
-NMF-10 : 0.968647 (+/- 0.004224)
-svds-30 : 0.956627 (+/- 0.005723)
-PA : 0.944534 (+/- 0.005039)
-CN : 0.963782 (+/- 0.003548)
-Adamic-Adar : 0.966619 (+/- 0.003561)
-NMF-30 : 0.974937 (+/- 0.003991)
-svds-10 : 0.963073 (+/- 0.003138)
-sfdp-default : 0.947165 (+/- 0.005168)
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.500067 (+/- 0.001322)
-svds-30 : 0.500184 (+/- 0.006786)
-PA : 0.500713 (+/- 0.003882)
-CN : 0.501500 (+/- 0.000616)
-Adamic-Adar : 0.501500 (+/- 0.000616)
-NMF-30 : 0.500078 (+/- 0.001195)
-svds-10 : 0.500286 (+/- 0.007645)
-sfdp-default : 0.501739 (+/- 0.010264)
-file:data/structral/PowerGrid/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.503122 (+/- 0.003973)
-svds-30 : 0.504536 (+/- 0.011565)
-PA : 0.497414 (+/- 0.007629)
-CN : 0.505886 (+/- 0.001221)
-Adamic-Adar : 0.505886 (+/- 0.001221)
-NMF-30 : 0.503110 (+/- 0.002498)
-svds-10 : 0.502924 (+/- 0.010504)
-sfdp-default : 0.508890 (+/- 0.009385)
-file:data/structral/PowerGrid/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.507566 (+/- 0.006338)
-svds-30 : 0.507659 (+/- 0.011875)
-PA : 0.487297 (+/- 0.008866)
-CN : 0.512459 (+/- 0.003018)
-Adamic-Adar : 0.512459 (+/- 0.003018)
-NMF-30 : 0.506347 (+/- 0.003812)
-svds-10 : 0.507435 (+/- 0.010663)
-sfdp-default : 0.520499 (+/- 0.007924)
-file:data/structral/PowerGrid/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.517088 (+/- 0.005826)
-svds-30 : 0.521283 (+/- 0.012865)
-PA : 0.480842 (+/- 0.010740)
-CN : 0.522068 (+/- 0.002903)
-Adamic-Adar : 0.522068 (+/- 0.002901)
-NMF-30 : 0.520557 (+/- 0.005900)
-svds-10 : 0.519451 (+/- 0.009765)
-sfdp-default : 0.542027 (+/- 0.011019)
-file:data/structral/PowerGrid/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.529701 (+/- 0.015403)
-svds-30 : 0.539382 (+/- 0.014128)
-PA : 0.469524 (+/- 0.013135)
-CN : 0.532576 (+/- 0.002430)
-Adamic-Adar : 0.532576 (+/- 0.002429)
-NMF-30 : 0.540130 (+/- 0.008516)
-svds-10 : 0.535253 (+/- 0.021074)
-sfdp-default : 0.555821 (+/- 0.007634)
-file:data/structral/PowerGrid/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.544350 (+/- 0.017278)
-svds-30 : 0.571885 (+/- 0.016053)
-PA : 0.459599 (+/- 0.012906)
-CN : 0.546136 (+/- 0.003697)
-Adamic-Adar : 0.546143 (+/- 0.003698)
-NMF-30 : 0.568927 (+/- 0.017679)
-svds-10 : 0.564025 (+/- 0.025801)
-sfdp-default : 0.595428 (+/- 0.021410)
-file:data/structral/PowerGrid/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.558627 (+/- 0.022032)
-svds-30 : 0.628986 (+/- 0.029313)
-PA : 0.456046 (+/- 0.015397)
-CN : 0.559005 (+/- 0.004651)
-Adamic-Adar : 0.558999 (+/- 0.004623)
-NMF-30 : 0.610014 (+/- 0.022009)
-svds-10 : 0.582857 (+/- 0.043450)
-sfdp-default : 0.641691 (+/- 0.021737)
-file:data/structral/PowerGrid/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.548475 (+/- 0.055125)
-svds-30 : 0.652332 (+/- 0.034539)
-PA : 0.449577 (+/- 0.022262)
-CN : 0.572321 (+/- 0.006340)
-Adamic-Adar : 0.572335 (+/- 0.006341)
-NMF-30 : 0.656541 (+/- 0.029655)
-svds-10 : 0.547583 (+/- 0.049217)
-sfdp-default : 0.721243 (+/- 0.036962)
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.577616 (+/- 0.069287)
-svds-30 : 0.700078 (+/- 0.040748)
-PA : 0.439277 (+/- 0.016515)
-CN : 0.588563 (+/- 0.012579)
-Adamic-Adar : 0.588567 (+/- 0.012586)
-NMF-30 : 0.709502 (+/- 0.037736)
-svds-10 : 0.505226 (+/- 0.041208)
-sfdp-default : 0.797389 (+/- 0.032623)
-file:data/structral/euroroad/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.498480 (+/- 0.003333)
-svds-30 : 0.498661 (+/- 0.012065)
-PA : 0.493401 (+/- 0.007387)
-CN : 0.500510 (+/- 0.000789)
-Adamic-Adar : 0.500510 (+/- 0.000789)
-NMF-30 : 0.498628 (+/- 0.002199)
-svds-10 : 0.498988 (+/- 0.018022)
-sfdp-default : 0.496674 (+/- 0.022129)
-file:data/structral/euroroad/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.494762 (+/- 0.007005)
-svds-30 : 0.502141 (+/- 0.017210)
-PA : 0.482112 (+/- 0.011739)
-CN : 0.501193 (+/- 0.001855)
-Adamic-Adar : 0.501193 (+/- 0.001855)
-NMF-30 : 0.496714 (+/- 0.005963)
-svds-10 : 0.502152 (+/- 0.017004)
-sfdp-default : 0.510423 (+/- 0.017394)
-file:data/bipartite/frwikinews/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:True max_iter:0p:2
-NMF-10 : 0.696214 (+/- 0.030957)
-svds-30 : 0.613425 (+/- 0.011517)
-PA : 0.812840 (+/- 0.005076)
-CN : 0.500000 (+/- 0.000000)
-Adamic-Adar : 0.500000 (+/- 0.000000)
-NMF-30 : 0.607015 (+/- 0.030262)
-svds-10 : 0.747541 (+/- 0.009120)
-sfdp-bipartite : 0.811112 (+/- 0.000000)
-sfdp-default : 0.744149 (+/- 0.006823)
-file:data/structral/euroroad/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.494538 (+/- 0.007753)
-svds-30 : 0.503746 (+/- 0.016914)
-PA : 0.457907 (+/- 0.017512)
-CN : 0.502624 (+/- 0.001483)
-Adamic-Adar : 0.502623 (+/- 0.001483)
-NMF-30 : 0.495490 (+/- 0.005884)
-svds-10 : 0.505045 (+/- 0.019201)
-sfdp-default : 0.511164 (+/- 0.018102)
-file:data/structral/euroroad/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.494894 (+/- 0.010033)
-svds-30 : 0.502472 (+/- 0.035356)
-PA : 0.433284 (+/- 0.020592)
-CN : 0.504653 (+/- 0.003815)
-Adamic-Adar : 0.504652 (+/- 0.003815)
-NMF-30 : 0.494051 (+/- 0.011056)
-svds-10 : 0.498443 (+/- 0.027082)
-sfdp-default : 0.513521 (+/- 0.028631)
-file:data/structral/euroroad/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.501520 (+/- 0.022105)
-svds-30 : 0.509168 (+/- 0.026870)
-PA : 0.411490 (+/- 0.028566)
-CN : 0.507980 (+/- 0.003686)
-Adamic-Adar : 0.507981 (+/- 0.003687)
-NMF-30 : 0.499032 (+/- 0.014429)
-svds-10 : 0.508924 (+/- 0.026423)
-sfdp-default : 0.532751 (+/- 0.014757)
-file:data/structral/euroroad/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.521170 (+/- 0.018291)
-svds-30 : 0.517465 (+/- 0.030447)
-PA : 0.401148 (+/- 0.020141)
-CN : 0.511131 (+/- 0.005818)
-Adamic-Adar : 0.511134 (+/- 0.005821)
-NMF-30 : 0.515249 (+/- 0.015845)
-svds-10 : 0.522344 (+/- 0.030237)
-sfdp-default : 0.553538 (+/- 0.025720)
-file:data/structral/euroroad/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.546847 (+/- 0.021731)
-svds-30 : 0.541064 (+/- 0.040155)
-PA : 0.386310 (+/- 0.026186)
-CN : 0.515920 (+/- 0.007551)
-Adamic-Adar : 0.515920 (+/- 0.007552)
-NMF-30 : 0.533938 (+/- 0.028137)
-svds-10 : 0.565054 (+/- 0.042999)
-sfdp-default : 0.600230 (+/- 0.033222)
-file:data/structral/euroroad/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.587065 (+/- 0.044496)
-svds-30 : 0.565721 (+/- 0.049484)
-PA : 0.360945 (+/- 0.043122)
-CN : 0.519436 (+/- 0.008795)
-Adamic-Adar : 0.519403 (+/- 0.008781)
-NMF-30 : 0.585939 (+/- 0.029279)
-svds-10 : 0.608809 (+/- 0.056512)
-sfdp-default : 0.658688 (+/- 0.036226)
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.620884 (+/- 0.043003)
-svds-30 : 0.619509 (+/- 0.066127)
-PA : 0.324073 (+/- 0.068123)
-CN : 0.521284 (+/- 0.014867)
-Adamic-Adar : 0.521269 (+/- 0.014872)
-NMF-30 : 0.626812 (+/- 0.030221)
-svds-10 : 0.638431 (+/- 0.064295)
-sfdp-default : 0.695448 (+/- 0.058029)
-file:data/structral/airport/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.865114 (+/- 0.016915)
-svds-30 : 0.674798 (+/- 0.011117)
-PA : 0.903938 (+/- 0.004444)
-CN : 0.768258 (+/- 0.007223)
-Adamic-Adar : 0.768896 (+/- 0.007220)
-NMF-30 : 0.859333 (+/- 0.018641)
-svds-10 : 0.759402 (+/- 0.022192)
-sfdp-default : 0.891074 (+/- 0.009376)
-file:data/structral/airport/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.914877 (+/- 0.023055)
-svds-30 : 0.771572 (+/- 0.008211)
-PA : 0.923148 (+/- 0.003811)
-CN : 0.880480 (+/- 0.004037)
-Adamic-Adar : 0.882008 (+/- 0.004039)
-NMF-30 : 0.903669 (+/- 0.006042)
-svds-10 : 0.849488 (+/- 0.011301)
-sfdp-default : 0.898923 (+/- 0.016298)
-file:data/structral/airport/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.939222 (+/- 0.005466)
-svds-30 : 0.829848 (+/- 0.007900)
-PA : 0.929648 (+/- 0.002643)
-CN : 0.920336 (+/- 0.003083)
-Adamic-Adar : 0.922345 (+/- 0.003140)
-NMF-30 : 0.923813 (+/- 0.005850)
-svds-10 : 0.908447 (+/- 0.004851)
-sfdp-default : 0.899202 (+/- 0.018571)
-file:data/structral/airport/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p:3
-NMF-10 : 0.950612 (+/- 0.002981)
-svds-30 : 0.870408 (+/- 0.004627)
-PA : 0.934857 (+/- 0.002210)
-CN : 0.938955 (+/- 0.002168)
-Adamic-Adar : 0.941387 (+/- 0.002218)
-NMF-30 : 0.939170 (+/- 0.004916)
-svds-10 : 0.926339 (+/- 0.004589)
-sfdp-default : 0.893069 (+/- 0.017574)
-file:data/directed/cit-HepTh/train.in N: 30 k: 10 gap:0 verbose:False directed:True bipartite:False max_iter:25p:2
-NMF-10 : 0.808980 (+/- 0.001689)
-svds-30 : 0.819458 (+/- 0.001612)
-PA : 0.541131 (+/- 0.002693)
-CN : 0.505561 (+/- 0.000714)
-Adamic-Adar : 0.505572 (+/- 0.000717)
-sfdp-directed : 0.833927 (+/- 0.011028)
-NMF-30 : 0.819128 (+/- 0.002929)
-svds-10 : 0.810075 (+/- 0.001207)
-sfdp-default : 0.814425 (+/- 0.003251)
-file:data/structral/PowerGrid/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.495052 (+/- 0.008244)
-svds-30 : 0.498469 (+/- 0.013085)
-PA : 0.572897 (+/- 0.008072)
-CN : 0.506651 (+/- 0.001428)
-Adamic-Adar : 0.506651 (+/- 0.001429)
-NMF-30 : 0.497437 (+/- 0.003515)
-svds-10 : 0.498232 (+/- 0.013000)
-sfdp-default : 0.503457 (+/- 0.013610)
-file:data/structral/PowerGrid/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.493753 (+/- 0.004665)
-svds-30 : 0.502124 (+/- 0.012589)
-PA : 0.572863 (+/- 0.006934)
-CN : 0.507000 (+/- 0.001450)
-Adamic-Adar : 0.507000 (+/- 0.001450)
-NMF-30 : 0.502191 (+/- 0.005639)
-svds-10 : 0.504711 (+/- 0.008550)
-sfdp-default : 0.506478 (+/- 0.012713)
-file:data/structral/PowerGrid/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.497614 (+/- 0.003675)
-svds-30 : 0.498410 (+/- 0.012652)
-PA : 0.572353 (+/- 0.008574)
-CN : 0.506847 (+/- 0.001861)
-Adamic-Adar : 0.506847 (+/- 0.001861)
-NMF-30 : 0.501225 (+/- 0.008061)
-svds-10 : 0.503542 (+/- 0.013312)
-sfdp-default : 0.509541 (+/- 0.013882)
-file:data/structral/PowerGrid/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.494819 (+/- 0.005775)
-svds-30 : 0.495239 (+/- 0.014442)
-PA : 0.572707 (+/- 0.005969)
-CN : 0.506288 (+/- 0.000873)
-Adamic-Adar : 0.506288 (+/- 0.000873)
-NMF-30 : 0.501749 (+/- 0.004625)
-svds-10 : 0.496240 (+/- 0.011084)
-sfdp-default : 0.509527 (+/- 0.012651)
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.686091 (+/- 0.062301)
-svds-30 : 0.780256 (+/- 0.051441)
-PA : 0.560905 (+/- 0.030498)
-CN : 0.606608 (+/- 0.014044)
-Adamic-Adar : 0.606614 (+/- 0.014039)
-NMF-30 : 0.805820 (+/- 0.031886)
-svds-10 : 0.591499 (+/- 0.073922)
-sfdp-default : 0.900346 (+/- 0.022621)
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.709421 (+/- 0.071182)
-svds-30 : 0.620945 (+/- 0.110415)
-PA : 0.381590 (+/- 0.062997)
-CN : 0.529790 (+/- 0.017140)
-Adamic-Adar : 0.529812 (+/- 0.017154)
-NMF-30 : 0.674627 (+/- 0.079876)
-svds-10 : 0.672496 (+/- 0.078075)
-sfdp-default : 0.792918 (+/- 0.084004)
-file:data/bipartite/condmat/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:True max_iter:0p:2
-NMF-10 : 0.582597 (+/- 0.009017)
-svds-30 : 0.646288 (+/- 0.014982)
-PA : 0.575246 (+/- 0.004739)
-CN : 0.500000 (+/- 0.000000)
-Adamic-Adar : 0.500000 (+/- 0.000000)
-NMF-30 : 0.615734 (+/- 0.004445)
-svds-10 : 0.597678 (+/- 0.005206)
-sfdp-bipartite : 0.611895 (+/- 0.000000)
-sfdp-default : 0.698280 (+/- 0.006323)
-file:data/structral/reactome/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:25p: 2sparse: False
-NMF-10 : 0.945959 (+/- 0.007664)
-svds-30 : 0.974206 (+/- 0.001257)
-PA : 0.899646 (+/- 0.001078)
-CN : 0.984065 (+/- 0.001216)
-Adamic-Adar : 0.984908 (+/- 0.001210)
-NMF-30 : 0.975485 (+/- 0.001678)
-svds-10 : 0.947680 (+/- 0.001567)
-sfdp-default : 0.967696 (+/- 0.001250)
-file:data/structral/facebook/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:25p: 2sparse: False
-NMF-10 : 0.910311 (+/- 0.002795)
-svds-30 : 0.916859 (+/- 0.001494)
-PA : 0.878891 (+/- 0.001117)
-CN : 0.909232 (+/- 0.000781)
-Adamic-Adar : 0.909540 (+/- 0.000795)
-NMF-30 : 0.927333 (+/- 0.001262)
-svds-10 : 0.905818 (+/- 0.001093)
-sfdp-default : 0.910233 (+/- 0.000809)
-file:data/structral/Ca-HelpTh/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.822846 (+/- 0.004562)
-svds-30 : 0.888617 (+/- 0.003917)
-PA : 0.772922 (+/- 0.003598)
-CN : 0.904594 (+/- 0.002813)
-Adamic-Adar : 0.904854 (+/- 0.002763)
-NMF-30 : 0.884616 (+/- 0.004783)
-svds-10 : 0.824843 (+/- 0.005331)
-sfdp-default : 0.938674 (+/- 0.003299)
-file:data/structral/Ca-HelpTh/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.832239 (+/- 0.002715)
-svds-30 : 0.903572 (+/- 0.003184)
-PA : 0.780586 (+/- 0.007419)
-CN : 0.930531 (+/- 0.005911)
-Adamic-Adar : 0.930818 (+/- 0.005979)
-NMF-30 : 0.900582 (+/- 0.004408)
-svds-10 : 0.833213 (+/- 0.006382)
-sfdp-default : 0.958733 (+/- 0.003396)
-file:data/structral/Ca-HelpTh/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.830155 (+/- 0.008193)
-svds-30 : 0.896326 (+/- 0.004559)
-PA : 0.777744 (+/- 0.006749)
-CN : 0.919403 (+/- 0.001753)
-Adamic-Adar : 0.919681 (+/- 0.001727)
-NMF-30 : 0.894771 (+/- 0.006162)
-svds-10 : 0.830770 (+/- 0.010157)
-sfdp-default : 0.950240 (+/- 0.004400)
-file:data/structral/Ca-HelpTh/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.819018 (+/- 0.008514)
-svds-30 : 0.879328 (+/- 0.006218)
-PA : 0.769922 (+/- 0.003490)
-CN : 0.880219 (+/- 0.002438)
-Adamic-Adar : 0.880432 (+/- 0.002428)
-NMF-30 : 0.875562 (+/- 0.006952)
-svds-10 : 0.820725 (+/- 0.009840)
-sfdp-default : 0.926133 (+/- 0.003267)
-file:data/structral/Ca-HelpTh/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.810290 (+/- 0.007501)
-svds-30 : 0.862955 (+/- 0.003511)
-PA : 0.765904 (+/- 0.004660)
-CN : 0.844871 (+/- 0.002800)
-Adamic-Adar : 0.845065 (+/- 0.002776)
-NMF-30 : 0.861767 (+/- 0.010467)
-svds-10 : 0.813191 (+/- 0.007105)
-sfdp-default : 0.908808 (+/- 0.004682)
-file:data/structral/Ca-HelpTh/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.797196 (+/- 0.008494)
-svds-30 : 0.838727 (+/- 0.005544)
-PA : 0.759501 (+/- 0.001878)
-CN : 0.793237 (+/- 0.002768)
-Adamic-Adar : 0.793366 (+/- 0.002769)
-NMF-30 : 0.840312 (+/- 0.006081)
-svds-10 : 0.803200 (+/- 0.008069)
-sfdp-default : 0.881706 (+/- 0.002388)
-file:data/structral/Ca-HelpTh/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.783702 (+/- 0.012155)
-svds-30 : 0.798487 (+/- 0.009522)
-PA : 0.748962 (+/- 0.003892)
-CN : 0.723881 (+/- 0.002746)
-Adamic-Adar : 0.723957 (+/- 0.002765)
-NMF-30 : 0.809623 (+/- 0.006070)
-svds-10 : 0.785293 (+/- 0.006890)
-sfdp-default : 0.847732 (+/- 0.004717)
-file:data/structral/Ca-HelpTh/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.747745 (+/- 0.006419)
-svds-30 : 0.728654 (+/- 0.007652)
-PA : 0.731344 (+/- 0.004326)
-CN : 0.638918 (+/- 0.003371)
-Adamic-Adar : 0.638941 (+/- 0.003372)
-NMF-30 : 0.756103 (+/- 0.005091)
-svds-10 : 0.736573 (+/- 0.004991)
-sfdp-default : 0.793079 (+/- 0.001833)
-file:data/structral/Ca-HelpTh/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.663120 (+/- 0.012995)
-svds-30 : 0.601670 (+/- 0.007655)
-PA : 0.687629 (+/- 0.002535)
-CN : 0.550397 (+/- 0.002057)
-Adamic-Adar : 0.550398 (+/- 0.002057)
-NMF-30 : 0.651160 (+/- 0.011953)
-svds-10 : 0.631868 (+/- 0.021879)
-sfdp-default : 0.690793 (+/- 0.004894)
-file:data/structral/Ca-HelpTh/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.831795 (+/- 0.016046)
-svds-30 : 0.901807 (+/- 0.009058)
-PA : 0.780198 (+/- 0.013461)
-CN : 0.928477 (+/- 0.003243)
-Adamic-Adar : 0.928789 (+/- 0.003199)
-NMF-30 : 0.897326 (+/- 0.010970)
-svds-10 : 0.831901 (+/- 0.010927)
-sfdp-default : 0.956600 (+/- 0.006390)
-file:data/structral/Ca-HelpTh/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.826055 (+/- 0.006921)
-svds-30 : 0.896789 (+/- 0.003316)
-PA : 0.776488 (+/- 0.005202)
-CN : 0.919786 (+/- 0.002299)
-Adamic-Adar : 0.920056 (+/- 0.002323)
-NMF-30 : 0.893227 (+/- 0.005112)
-svds-10 : 0.829902 (+/- 0.007004)
-sfdp-default : 0.948875 (+/- 0.003830)
-file:data/structral/Ca-HelpTh/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.817186 (+/- 0.014540)
-svds-30 : 0.881083 (+/- 0.004917)
-PA : 0.770391 (+/- 0.002429)
-CN : 0.881061 (+/- 0.003024)
-Adamic-Adar : 0.881290 (+/- 0.003016)
-NMF-30 : 0.878142 (+/- 0.006846)
-svds-10 : 0.820610 (+/- 0.009906)
-sfdp-default : 0.926421 (+/- 0.005134)
-file:data/structral/Ca-HelpTh/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.811538 (+/- 0.007638)
-svds-30 : 0.864784 (+/- 0.003411)
-PA : 0.766356 (+/- 0.003004)
-CN : 0.845830 (+/- 0.002776)
-Adamic-Adar : 0.846016 (+/- 0.002787)
-NMF-30 : 0.863331 (+/- 0.006937)
-svds-10 : 0.817664 (+/- 0.008589)
-sfdp-default : 0.909313 (+/- 0.002534)
-file:data/structral/Ca-HelpTh/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.798695 (+/- 0.010603)
-svds-30 : 0.839528 (+/- 0.006004)
-PA : 0.758692 (+/- 0.005001)
-CN : 0.792867 (+/- 0.001779)
-Adamic-Adar : 0.792989 (+/- 0.001773)
-NMF-30 : 0.841350 (+/- 0.006170)
-svds-10 : 0.807098 (+/- 0.008855)
-sfdp-default : 0.881412 (+/- 0.004732)
-file:data/structral/Ca-HelpTh/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.783677 (+/- 0.009657)
-svds-30 : 0.799792 (+/- 0.010160)
-PA : 0.749555 (+/- 0.002957)
-CN : 0.724432 (+/- 0.002946)
-Adamic-Adar : 0.724500 (+/- 0.002942)
-NMF-30 : 0.810979 (+/- 0.007406)
-svds-10 : 0.783752 (+/- 0.009448)
-sfdp-default : 0.847219 (+/- 0.005111)
-file:data/structral/Ca-HelpTh/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.749662 (+/- 0.007808)
-svds-30 : 0.726999 (+/- 0.010220)
-PA : 0.730914 (+/- 0.003766)
-CN : 0.639401 (+/- 0.002917)
-Adamic-Adar : 0.639424 (+/- 0.002923)
-NMF-30 : 0.756740 (+/- 0.007900)
-svds-10 : 0.737875 (+/- 0.008310)
-sfdp-default : 0.793110 (+/- 0.004416)
-file:data/structral/Ca-HelpTh/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.660143 (+/- 0.009884)
-svds-30 : 0.599988 (+/- 0.016401)
-PA : 0.686716 (+/- 0.003519)
-CN : 0.549634 (+/- 0.002532)
-Adamic-Adar : 0.549636 (+/- 0.002533)
-NMF-30 : 0.647598 (+/- 0.007632)
-svds-10 : 0.629305 (+/- 0.027887)
-sfdp-default : 0.692011 (+/- 0.004692)
-file:data/structral/Ca-HelpTh/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.830888 (+/- 0.007177)
-svds-30 : 0.900995 (+/- 0.008482)
-PA : 0.778265 (+/- 0.009608)
-CN : 0.927120 (+/- 0.004960)
-Adamic-Adar : 0.927406 (+/- 0.004997)
-NMF-30 : 0.897009 (+/- 0.009044)
-svds-10 : 0.832595 (+/- 0.008769)
-sfdp-default : 0.957803 (+/- 0.003769)
-file:data/structral/Ca-HelpTh/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.824115 (+/- 0.008754)
-svds-30 : 0.895335 (+/- 0.004184)
-PA : 0.774157 (+/- 0.005365)
-CN : 0.919669 (+/- 0.003476)
-Adamic-Adar : 0.919921 (+/- 0.003499)
-NMF-30 : 0.890219 (+/- 0.007540)
-svds-10 : 0.825636 (+/- 0.008171)
-sfdp-default : 0.949478 (+/- 0.002296)
-file:data/structral/Ca-HelpTh/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.817231 (+/- 0.004925)
-svds-30 : 0.879425 (+/- 0.003033)
-PA : 0.770085 (+/- 0.003828)
-CN : 0.881332 (+/- 0.002133)
-Adamic-Adar : 0.881569 (+/- 0.002171)
-NMF-30 : 0.874834 (+/- 0.005328)
-svds-10 : 0.820540 (+/- 0.008756)
-sfdp-default : 0.925929 (+/- 0.004547)
-file:data/structral/Ca-HelpTh/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.810144 (+/- 0.008791)
-svds-30 : 0.863906 (+/- 0.004673)
-PA : 0.766977 (+/- 0.002129)
-CN : 0.844777 (+/- 0.002878)
-Adamic-Adar : 0.844969 (+/- 0.002891)
-NMF-30 : 0.862826 (+/- 0.006294)
-svds-10 : 0.816207 (+/- 0.006799)
-sfdp-default : 0.907587 (+/- 0.003286)
-file:data/structral/Ca-HelpTh/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.801515 (+/- 0.004108)
-svds-30 : 0.836150 (+/- 0.006140)
-PA : 0.759937 (+/- 0.002579)
-CN : 0.792640 (+/- 0.004242)
-Adamic-Adar : 0.792767 (+/- 0.004232)
-NMF-30 : 0.841446 (+/- 0.005515)
-svds-10 : 0.804706 (+/- 0.006866)
-sfdp-default : 0.882314 (+/- 0.004105)
-file:data/structral/Ca-HelpTh/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.781304 (+/- 0.006681)
-svds-30 : 0.797864 (+/- 0.007386)
-PA : 0.748359 (+/- 0.003103)
-CN : 0.724135 (+/- 0.002245)
-Adamic-Adar : 0.724203 (+/- 0.002259)
-NMF-30 : 0.809319 (+/- 0.005426)
-svds-10 : 0.784230 (+/- 0.009919)
-sfdp-default : 0.846660 (+/- 0.005368)
-file:data/structral/Ca-HelpTh/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.748631 (+/- 0.005819)
-svds-30 : 0.728071 (+/- 0.007139)
-PA : 0.730082 (+/- 0.002660)
-CN : 0.638769 (+/- 0.002867)
-Adamic-Adar : 0.638786 (+/- 0.002875)
-NMF-30 : 0.757081 (+/- 0.008218)
-svds-10 : 0.737862 (+/- 0.013264)
-sfdp-default : 0.792788 (+/- 0.003688)
-file:data/structral/Ca-HelpTh/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: False
-NMF-10 : 0.662942 (+/- 0.010348)
-svds-30 : 0.605112 (+/- 0.013814)
-PA : 0.686906 (+/- 0.003920)
-CN : 0.550002 (+/- 0.001960)
-Adamic-Adar : 0.550003 (+/- 0.001961)
-NMF-30 : 0.647775 (+/- 0.006551)
-svds-10 : 0.624377 (+/- 0.024673)
-sfdp-default : 0.691514 (+/- 0.006488)
-file:data/structral/Ca-HelpTh/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.834106 (+/- 0.010142)
-svds-30 : 0.903222 (+/- 0.004182)
-PA : 0.778085 (+/- 0.010759)
-CN : 0.928199 (+/- 0.002771)
-Adamic-Adar : 0.928554 (+/- 0.002764)
-NMF-30 : 0.899512 (+/- 0.007223)
-svds-10 : 0.833590 (+/- 0.011895)
-sfdp-default : 0.956440 (+/- 0.005170)
-file:data/structral/Ca-HelpTh/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.828248 (+/- 0.005719)
-svds-30 : 0.895513 (+/- 0.003196)
-PA : 0.777295 (+/- 0.005674)
-CN : 0.919171 (+/- 0.003394)
-Adamic-Adar : 0.919494 (+/- 0.003414)
-NMF-30 : 0.891433 (+/- 0.004639)
-svds-10 : 0.829106 (+/- 0.006253)
-sfdp-default : 0.948911 (+/- 0.003300)
-file:data/structral/Ca-HelpTh/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.816931 (+/- 0.006743)
-svds-30 : 0.878496 (+/- 0.004156)
-PA : 0.769954 (+/- 0.003047)
-CN : 0.879927 (+/- 0.003177)
-Adamic-Adar : 0.880178 (+/- 0.003135)
-NMF-30 : 0.875835 (+/- 0.002776)
-svds-10 : 0.821723 (+/- 0.006000)
-sfdp-default : 0.924091 (+/- 0.004006)
-file:data/structral/Ca-HelpTh/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.812215 (+/- 0.006577)
-svds-30 : 0.865203 (+/- 0.004682)
-PA : 0.766271 (+/- 0.003357)
-CN : 0.844920 (+/- 0.002265)
-Adamic-Adar : 0.845116 (+/- 0.002293)
-NMF-30 : 0.862130 (+/- 0.006314)
-svds-10 : 0.816354 (+/- 0.004199)
-sfdp-default : 0.907183 (+/- 0.003912)
-file:data/structral/Ca-HelpTh/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.799358 (+/- 0.009480)
-svds-30 : 0.840016 (+/- 0.011625)
-PA : 0.759480 (+/- 0.002535)
-CN : 0.793802 (+/- 0.004372)
-Adamic-Adar : 0.793933 (+/- 0.004352)
-NMF-30 : 0.842179 (+/- 0.008376)
-svds-10 : 0.805948 (+/- 0.006551)
-sfdp-default : 0.882499 (+/- 0.002649)
-file:data/structral/Ca-HelpTh/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.782181 (+/- 0.007070)
-svds-30 : 0.798848 (+/- 0.006557)
-PA : 0.749433 (+/- 0.002790)
-CN : 0.724141 (+/- 0.000927)
-Adamic-Adar : 0.724212 (+/- 0.000945)
-NMF-30 : 0.810229 (+/- 0.006786)
-svds-10 : 0.787770 (+/- 0.006118)
-sfdp-default : 0.845156 (+/- 0.004375)
-file:data/structral/Ca-HelpTh/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.749635 (+/- 0.011670)
-svds-30 : 0.729444 (+/- 0.008617)
-PA : 0.731025 (+/- 0.002090)
-CN : 0.638725 (+/- 0.002085)
-Adamic-Adar : 0.638747 (+/- 0.002094)
-NMF-30 : 0.758874 (+/- 0.009272)
-svds-10 : 0.739821 (+/- 0.014671)
-sfdp-default : 0.789799 (+/- 0.003723)
-file:data/structral/Ca-HelpTh/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.658216 (+/- 0.010980)
-svds-30 : 0.600363 (+/- 0.011272)
-PA : 0.686341 (+/- 0.004673)
-CN : 0.550235 (+/- 0.002865)
-Adamic-Adar : 0.550237 (+/- 0.002866)
-NMF-30 : 0.648465 (+/- 0.009627)
-svds-10 : 0.627568 (+/- 0.023198)
-sfdp-default : 0.695157 (+/- 0.004146)
-file:data/structral/Ca-HelpTh/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.832076 (+/- 0.004584)
-svds-30 : 0.901503 (+/- 0.006160)
-PA : 0.780060 (+/- 0.010739)
-CN : 0.928784 (+/- 0.005806)
-Adamic-Adar : 0.929049 (+/- 0.005808)
-NMF-30 : 0.898825 (+/- 0.009801)
-svds-10 : 0.832350 (+/- 0.010276)
-sfdp-default : 0.802776 (+/- 0.012624)
-file:data/structral/Ca-HelpTh/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.828309 (+/- 0.008705)
-svds-30 : 0.897659 (+/- 0.005749)
-PA : 0.776580 (+/- 0.004175)
-CN : 0.920081 (+/- 0.004448)
-Adamic-Adar : 0.920373 (+/- 0.004417)
-NMF-30 : 0.893405 (+/- 0.007727)
-svds-10 : 0.831249 (+/- 0.004939)
-sfdp-default : 0.802160 (+/- 0.004938)
-file:data/structral/Ca-HelpTh/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.820645 (+/- 0.007510)
-svds-30 : 0.880573 (+/- 0.003690)
-PA : 0.771904 (+/- 0.002227)
-CN : 0.880887 (+/- 0.003024)
-Adamic-Adar : 0.881117 (+/- 0.003042)
-NMF-30 : 0.876217 (+/- 0.004985)
-svds-10 : 0.821280 (+/- 0.004460)
-sfdp-default : 0.796258 (+/- 0.004863)
-file:data/structral/Ca-HelpTh/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.811521 (+/- 0.006880)
-svds-30 : 0.863243 (+/- 0.007124)
-PA : 0.765716 (+/- 0.002831)
-CN : 0.844668 (+/- 0.002478)
-Adamic-Adar : 0.844866 (+/- 0.002463)
-NMF-30 : 0.861820 (+/- 0.007932)
-svds-10 : 0.815835 (+/- 0.006636)
-sfdp-default : 0.793114 (+/- 0.002984)
-file:data/structral/Ca-HelpTh/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.798465 (+/- 0.010721)
-svds-30 : 0.837909 (+/- 0.004683)
-PA : 0.758928 (+/- 0.002789)
-CN : 0.793190 (+/- 0.003174)
-Adamic-Adar : 0.793325 (+/- 0.003158)
-NMF-30 : 0.842344 (+/- 0.004771)
-svds-10 : 0.805182 (+/- 0.004442)
-sfdp-default : 0.790172 (+/- 0.006587)
-file:data/structral/Ca-HelpTh/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.781651 (+/- 0.005536)
-svds-30 : 0.798046 (+/- 0.007516)
-PA : 0.748900 (+/- 0.001509)
-CN : 0.724482 (+/- 0.002752)
-Adamic-Adar : 0.724549 (+/- 0.002771)
-NMF-30 : 0.810190 (+/- 0.006750)
-svds-10 : 0.787404 (+/- 0.007059)
-sfdp-default : 0.782071 (+/- 0.006417)
-file:data/structral/Ca-HelpTh/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.747397 (+/- 0.008379)
-svds-30 : 0.728017 (+/- 0.007766)
-PA : 0.730750 (+/- 0.004612)
-CN : 0.639813 (+/- 0.002148)
-Adamic-Adar : 0.639832 (+/- 0.002145)
-NMF-30 : 0.757247 (+/- 0.009505)
-svds-10 : 0.737503 (+/- 0.019546)
-sfdp-default : 0.762307 (+/- 0.007996)
-file:data/structral/Ca-HelpTh/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.658496 (+/- 0.007913)
-svds-30 : 0.605656 (+/- 0.013347)
-PA : 0.687235 (+/- 0.004781)
-CN : 0.550120 (+/- 0.003625)
-Adamic-Adar : 0.550122 (+/- 0.003628)
-NMF-30 : 0.648348 (+/- 0.011649)
-svds-10 : 0.626974 (+/- 0.021361)
-sfdp-default : 0.690411 (+/- 0.006543)
-file:data/structral/airport/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.966881 (+/- 0.004479)
-svds-30 : 0.955031 (+/- 0.008341)
-PA : 0.943141 (+/- 0.004138)
-CN : 0.962134 (+/- 0.004352)
-Adamic-Adar : 0.964979 (+/- 0.004392)
-NMF-30 : 0.973597 (+/- 0.003960)
-svds-10 : 0.961649 (+/- 0.004528)
-sfdp-default : 0.884726 (+/- 0.021704)
-file:data/structral/airport/train.in N: 20 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.966598 (+/- 0.001933)
-svds-30 : 0.946828 (+/- 0.006917)
-PA : 0.942524 (+/- 0.003544)
-CN : 0.961671 (+/- 0.001898)
-Adamic-Adar : 0.964492 (+/- 0.001950)
-NMF-30 : 0.970364 (+/- 0.002531)
-svds-10 : 0.960487 (+/- 0.003316)
-sfdp-default : 0.881954 (+/- 0.021471)
-file:data/structral/airport/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.964282 (+/- 0.003894)
-svds-30 : 0.934779 (+/- 0.004205)
-PA : 0.940705 (+/- 0.002800)
-CN : 0.958292 (+/- 0.002510)
-Adamic-Adar : 0.961122 (+/- 0.002586)
-NMF-30 : 0.965744 (+/- 0.003372)
-svds-10 : 0.957738 (+/- 0.001595)
-sfdp-default : 0.893113 (+/- 0.020722)
-file:data/structral/airport/train.in N: 40 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.961746 (+/- 0.003374)
-svds-30 : 0.919413 (+/- 0.004805)
-PA : 0.939436 (+/- 0.001574)
-CN : 0.954633 (+/- 0.001828)
-Adamic-Adar : 0.957374 (+/- 0.001937)
-NMF-30 : 0.959849 (+/- 0.001780)
-svds-10 : 0.954530 (+/- 0.003961)
-sfdp-default : 0.893294 (+/- 0.020042)
-file:data/structral/airport/train.in N: 50 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.956997 (+/- 0.004252)
-svds-30 : 0.899425 (+/- 0.004049)
-PA : 0.937602 (+/- 0.002098)
-CN : 0.948674 (+/- 0.002501)
-Adamic-Adar : 0.951345 (+/- 0.002403)
-NMF-30 : 0.951303 (+/- 0.004501)
-svds-10 : 0.942571 (+/- 0.004270)
-sfdp-default : 0.895662 (+/- 0.016697)
-file:data/structral/airport/train.in N: 60 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.950689 (+/- 0.003629)
-svds-30 : 0.870814 (+/- 0.003640)
-PA : 0.934935 (+/- 0.002273)
-CN : 0.938166 (+/- 0.003682)
-Adamic-Adar : 0.940538 (+/- 0.003702)
-NMF-30 : 0.940397 (+/- 0.003869)
-svds-10 : 0.928775 (+/- 0.006068)
-sfdp-default : 0.893840 (+/- 0.015270)
-file:data/structral/airport/train.in N: 70 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.939410 (+/- 0.005144)
-svds-30 : 0.831253 (+/- 0.005459)
-PA : 0.930496 (+/- 0.002737)
-CN : 0.919749 (+/- 0.004116)
-Adamic-Adar : 0.921890 (+/- 0.004216)
-NMF-30 : 0.923794 (+/- 0.006081)
-svds-10 : 0.908452 (+/- 0.005069)
-sfdp-default : 0.902092 (+/- 0.013365)
-file:data/structral/airport/train.in N: 80 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.918317 (+/- 0.023634)
-svds-30 : 0.773114 (+/- 0.006617)
-PA : 0.923160 (+/- 0.002376)
-CN : 0.882848 (+/- 0.004635)
-Adamic-Adar : 0.884373 (+/- 0.004622)
-NMF-30 : 0.902019 (+/- 0.006584)
-svds-10 : 0.855906 (+/- 0.017255)
-sfdp-default : 0.904528 (+/- 0.008703)
-file:data/structral/airport/train.in N: 90 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.866763 (+/- 0.013144)
-svds-30 : 0.676542 (+/- 0.012081)
-PA : 0.904106 (+/- 0.005383)
-CN : 0.769195 (+/- 0.006373)
-Adamic-Adar : 0.769850 (+/- 0.006321)
-NMF-30 : 0.862349 (+/- 0.015817)
-svds-10 : 0.758775 (+/- 0.023420)
-sfdp-default : 0.892530 (+/- 0.006951)
-file:data/structral/Ca-HelpTh/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 3sparse: False
-NMF-10 : 0.823597 (+/- 0.007464)
-svds-30 : 0.889528 (+/- 0.002601)
-PA : 0.774688 (+/- 0.003874)
-CN : 0.904314 (+/- 0.003212)
-Adamic-Adar : 0.904552 (+/- 0.003200)
-NMF-30 : 0.885227 (+/- 0.007390)
-svds-10 : 0.827242 (+/- 0.005427)
-sfdp-default : 0.799904 (+/- 0.008953)
-file:data/structral/Ca-HelpTh/train.in N: 30 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 1sparse: False
-NMF-10 : 0.823801 (+/- 0.004480)
-svds-30 : 0.890262 (+/- 0.003167)
-PA : 0.773500 (+/- 0.002948)
-CN : 0.905483 (+/- 0.003268)
-Adamic-Adar : 0.905747 (+/- 0.003263)
-NMF-30 : 0.887159 (+/- 0.006498)
-svds-10 : 0.826851 (+/- 0.005284)
-sfdp-default : 0.939356 (+/- 0.001841)
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.6320182094081942,
+      0.6327769347496206
+    ],
+    "CN": [
+      0.6320182094081942,
+      0.6327769347496206
+    ],
+    "NMF-10": [
+      0.79346436984348845,
+      0.77745054469341279
+    ],
+    "NMF-30": [
+      0.88332439135030083,
+      0.89070440567282483
+    ],
+    "PA": [
+      0.56433737603072665,
+      0.58584649109677844
+    ],
+    "sfdp-default": [
+      0.97525334978965228,
+      0.977694165759036
+    ],
+    "sfdp-directed": [],
+    "svds-10": [
+      0.66179731556296495,
+      0.64283954398189191
+    ],
+    "svds-30": [
+      0.79289446234120309,
+      0.85929386733474411
+    ]
+  },
+  "bipartite": false,
+  "comment": "",
+  "directed": false,
+  "file": "data/structral/PowerGrid/train.in",
+  "gap": 0,
+  "k": 2,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.6290443284417232
+    ],
+    "CN": [
+      0.62902820984569896
+    ],
+    "NMF-10": [
+      0.75258415634117082
+    ],
+    "NMF-30": [
+      0.90664569714079124
+    ],
+    "PA": [
+      0.56996161471489659
+    ],
+    "sfdp-default": [
+      0.97820305286208697
+    ],
+    "svds-10": [
+      0.6224241907889132
+    ],
+    "svds-30": [
+      0.81408350814334485
+    ]
+  },
+  "bipartite": false,
+  "comment": "",
+  "directed": false,
+  "file": "data/structral/PowerGrid/train.in",
+  "gap": 0,
+  "k": 1,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.62681996219037905
+    ],
+    "CN": [
+      0.62674973116484489
+    ],
+    "NMF-10": [
+      0.76997151613816872
+    ],
+    "NMF-30": [
+      0.90583631335471726
+    ],
+    "Node2Vec": [
+      0.89878673025069034
+    ],
+    "PA": [
+      0.57755117078573548
+    ],
+    "sfdp-default": [
+      0.96235847297026578
+    ],
+    "svds-10": [
+      0.69747007122116789
+    ],
+    "svds-30": [
+      0.81883619131391894
+    ]
+  },
+  "bipartite": false,
+  "comment": "",
+  "directed": false,
+  "file": "data/structral/PowerGrid/train.in",
+  "gap": 0,
+  "k": 1,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.56153846153846154,
+      0.54647928994082839,
+      0.52692307692307694
+    ],
+    "CN": [
+      0.56153846153846154,
+      0.54621301775147935,
+      0.52692307692307694
+    ],
+    "NMF-10": [
+      0.80568047337278115,
+      0.73008875739644963,
+      0.84124260355029579
+    ],
+    "NMF-30": [
+      0.77662721893491116,
+      0.73257396449704137,
+      0.76798816568047334
+    ],
+    "Node2Vec": [
+      0.84159763313609459,
+      0.79810650887573964,
+      0.81733727810650891
+    ],
+    "PA": [
+      0.42591715976331362,
+      0.38668639053254439,
+      0.39958579881656797
+    ],
+    "sfdp-default": [
+      0.93934911242603547,
+      0.89603550295857992,
+      0.93804733727810663
+    ],
+    "svds-10": [
+      0.78230769230769237,
+      0.69325443786982255,
+      0.75337278106508887
+    ],
+    "svds-30": [
+      0.69236686390532554,
+      0.63159763313609463,
+      0.69958579881656802
+    ]
+  },
+  "bipartite": false,
+  "comment": "",
+  "directed": false,
+  "file": "data/structral/euroroad/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.54565088757396452,
+      0.52683431952662729,
+      0.54615384615384621
+    ],
+    "CN": [
+      0.54615384615384621,
+      0.52692307692307694,
+      0.54615384615384621
+    ],
+    "NMF-10": [
+      0.80795857988165676,
+      0.81171597633136094,
+      0.82147928994082831
+    ],
+    "NMF-30": [
+      0.73869822485207104,
+      0.6916568047337277,
+      0.781508875739645
+    ],
+    "Node2Vec": [
+      0.77798816568047346,
+      0.78088757396449704,
+      0.78579881656804751
+    ],
+    "PA": [
+      0.44204142011834324,
+      0.35857988165680477,
+      0.42056213017751476
+    ],
+    "sfdp-default": [
+      0.90544378698224859,
+      0.91177514792899417,
+      0.92786982248520711
+    ],
+    "svds-10": [
+      0.73668639053254448,
+      0.73727810650887571,
+      0.76763313609467454
+    ],
+    "svds-30": [
+      0.65763313609467455,
+      0.63958579881656819,
+      0.65869822485207097
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/euroroad/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.6251632007847453,
+      0.61153147386139395,
+      0.6191970175992042
+    ],
+    "CN": [
+      0.62523343181027946,
+      0.61159940223035314,
+      0.61920737955379124
+    ],
+    "NMF-10": [
+      0.74988774549197412,
+      0.77906470695241103,
+      0.7338347751801253
+    ],
+    "NMF-30": [
+      0.9076726819731924,
+      0.89823179001614162,
+      0.91872082821951684
+    ],
+    "Node2Vec": [
+      0.89920120843417051,
+      0.91574809858133333,
+      0.90942270097010924
+    ],
+    "PA": [
+      0.61056090411507757,
+      0.61046879785208197,
+      0.58391571355873273
+    ],
+    "sfdp-default": [
+      0.97517966477925588,
+      0.97376583364227309,
+      0.97711619895873858
+    ],
+    "svds-10": [
+      0.74122975677038605,
+      0.67939191445170288,
+      0.73969158217835917
+    ],
+    "svds-30": [
+      0.86784593385388731,
+      0.81582431651396214,
+      0.81800953760353323
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/PowerGrid/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.96091879234838584,
+      0.961689616969294,
+      0.96240869203524859
+    ],
+    "CN": [
+      0.95829589615529309,
+      0.95868478656083544,
+      0.95920933204974435
+    ],
+    "NMF-10": [
+      0.9671521012419293,
+      0.96326705965328696,
+      0.96443785583443975
+    ],
+    "NMF-30": [
+      0.94685311331322553,
+      0.94194249304455968,
+      0.94835041918639507
+    ],
+    "Node2Vec": [
+      0.72007390736439669,
+      0.72483509141821367,
+      0.73585898411273665
+    ],
+    "PA": [
+      0.9483912750850344,
+      0.94877019057636103,
+      0.94906825676299189
+    ],
+    "sfdp-default": [
+      0.94261461851428074,
+      0.93877191406153915,
+      0.94107840672570209
+    ],
+    "svds-10": [
+      0.94882670259035762,
+      0.94876317813666811,
+      0.94662627776401109
+    ],
+    "svds-30": [
+      0.87056851311078742,
+      0.86687318239063138,
+      0.8716338414489635
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/airport/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.86802886104099553,
+      0.86360637200792989,
+      0.86623041907181808
+    ],
+    "CN": [
+      0.8678818369606347,
+      0.86342214264465722,
+      0.86595413372456431
+    ],
+    "NMF-10": [
+      0.81294700860585289,
+      0.81013306108217054,
+      0.82337526109845771
+    ],
+    "NMF-30": [
+      0.8803909574474329,
+      0.87744593354475442,
+      0.88064277941813129
+    ],
+    "Node2Vec": [
+      0.75296743286130607,
+      0.74623486600616695,
+      0.75483687190190385
+    ],
+    "PA": [
+      0.78932617819152373,
+      0.78470848784889013,
+      0.78324809922092664
+    ],
+    "sfdp-default": [
+      0.90690622341617066,
+      0.90277222884261543,
+      0.91132420627540789
+    ],
+    "svds-10": [
+      0.80654246230811355,
+      0.80259185726984272,
+      0.80456935417823716
+    ],
+    "svds-30": [
+      0.85512477757878158,
+      0.85661362102384575,
+      0.84936720586573444
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/Ca-HelpTh/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.53846153846153844,
+      0.54615384615384621,
+      0.51887573964497036
+    ],
+    "CN": [
+      0.53846153846153844,
+      0.54615384615384621,
+      0.51923076923076916
+    ],
+    "NMF-10": [
+      0.73319526627218934,
+      0.82952662721893489,
+      0.7866863905325443
+    ],
+    "NMF-30": [
+      0.69958579881656802,
+      0.75112426035502955,
+      0.76884615384615373
+    ],
+    "Node2Vec-10": [
+      0.80124260355029586,
+      0.82863905325443787,
+      0.8109467455621302
+    ],
+    "Node2Vec-128": [
+      0.87343195266272189,
+      0.83810650887573956,
+      0.84171597633136086
+    ],
+    "Node2Vec-20": [
+      0.81869822485207111,
+      0.81905325443786992,
+      0.81437869822485198
+    ],
+    "Node2Vec-5": [
+      0.76686390532544368,
+      0.80284023668639048,
+      0.78319526627218949
+    ],
+    "PA": [
+      0.41088757396449704,
+      0.44147928994082847,
+      0.44399408284023673
+    ],
+    "sfdp-default": [
+      0.93461538461538463,
+      0.95757396449704146,
+      0.92307692307692313
+    ],
+    "svds-10": [
+      0.65372781065088759,
+      0.77988165680473376,
+      0.74615384615384617
+    ],
+    "svds-30": [
+      0.64964497041420122,
+      0.68189349112426045,
+      0.67278106508875746
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/euroroad/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 10,
+  "auc": {
+    "Adamic-Adar": [
+      0.6327769347496206,
+      0.61911987860394535,
+      0.62367223065250377
+    ],
+    "CN": [
+      0.6327769347496206,
+      0.61911987860394535,
+      0.62367223065250377
+    ],
+    "NMF-10": [
+      0.77416925907419387,
+      0.77276578989179812,
+      0.73138244592786694
+    ],
+    "NMF-30": [
+      0.92273781261441323,
+      0.91100692869363376,
+      0.88236533488685909
+    ],
+    "Node2Vec-10": [
+      0.92344587951119206,
+      0.90293842005521774,
+      0.89968476631489736
+    ],
+    "Node2Vec-128": [
+      0.94040955049841002,
+      0.93104234355175564,
+      0.930908789470412
+    ],
+    "Node2Vec-20": [
+      0.94112797934977588,
+      0.91848135193572822,
+      0.91551322761069431
+    ],
+    "Node2Vec-5": [
+      0.88829122158233964,
+      0.87307066162231373,
+      0.86337187212887501
+    ],
+    "PA": [
+      0.57613388566389045,
+      0.58298313764590204,
+      0.56994549611887235
+    ],
+    "sfdp-default": [
+      0.98149815442075528,
+      0.97100955372212927,
+      0.98092018762045774
+    ],
+    "svds-10": [
+      0.6544334198364653,
+      0.62045081410423208,
+      0.71016922223168866
+    ],
+    "svds-30": [
+      0.79473658760111532,
+      0.83918707012280058,
+      0.78603715106117922
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/PowerGrid/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.96044999013008481,
+      0.96155381188721789,
+      0.96151016226260455
+    ],
+    "CN": [
+      0.95755840874768472,
+      0.95839227032647523,
+      0.95870612387733467
+    ],
+    "NMF-10": [
+      0.96498630736775659,
+      0.96319174155102272,
+      0.96790530101441119
+    ],
+    "NMF-30": [
+      0.94042169362343475,
+      0.94462716995633844,
+      0.94830390083645266
+    ],
+    "Node2Vec-10": [
+      0.72046322901623039,
+      0.71852487068611215,
+      0.72258882323612017
+    ],
+    "Node2Vec-128": [
+      0.71172692914840929,
+      0.71715496996725836,
+      0.73166370769211386
+    ],
+    "Node2Vec-20": [
+      0.71296625599019847,
+      0.72904626770209779,
+      0.71887991763270831
+    ],
+    "Node2Vec-5": [
+      0.69771521214917542,
+      0.70173330259359767,
+      0.69943974731817304
+    ],
+    "PA": [
+      0.94813359605107395,
+      0.94711636104929509,
+      0.94837173775305506
+    ],
+    "sfdp-default": [
+      0.93907434896059905,
+      0.93894801254709215,
+      0.9389694623626238
+    ],
+    "svds-10": [
+      0.94702060562279167,
+      0.94558982417751225,
+      0.94807903402030747
+    ],
+    "svds-30": [
+      0.87204573790665407,
+      0.87041198945689058,
+      0.87199468209573405
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/airport/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.86708388297667038,
+      0.86487768194327042,
+      0.86978332492090593
+    ],
+    "CN": [
+      0.86694445346983595,
+      0.8645975677028237,
+      0.86971531691469017
+    ],
+    "NMF-10": [
+      0.80679455519106624,
+      0.81926939624729811,
+      0.81332916646205256
+    ],
+    "NMF-30": [
+      0.8759189456542974,
+      0.87758796380922932,
+      0.88555371421513263
+    ],
+    "Node2Vec-10": [
+      0.75646608401628357,
+      0.75379895287356724,
+      0.75689410731712148
+    ],
+    "Node2Vec-128": [
+      0.88393022737972538,
+      0.88121940712081315,
+      0.88437786472776814
+    ],
+    "Node2Vec-20": [
+      0.82364246185478707,
+      0.82684728157884635,
+      0.82169088221871212
+    ],
+    "Node2Vec-5": [
+      0.69285666334245288,
+      0.67703515290585636,
+      0.69369770140524545
+    ],
+    "PA": [
+      0.78622380845159889,
+      0.78685743609256675,
+      0.78659999720779772
+    ],
+    "sfdp-default": [
+      0.90638782378732774,
+      0.90637086468021399,
+      0.90509645731476718
+    ],
+    "svds-10": [
+      0.80450833570818014,
+      0.81278698976769836,
+      0.80833084440225123
+    ],
+    "svds-30": [
+      0.85205605514083005,
+      0.84723796197334722,
+      0.85456837799108132
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/Ca-HelpTh/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.98945074417930523,
+      0.98927060669557798,
+      0.9887729551754133
+    ],
+    "CN": [
+      0.98856599208105733,
+      0.98840396630263061,
+      0.98788569807773974
+    ],
+    "NMF-10": [
+      0.93340258643276885,
+      0.93807296623500402,
+      0.93572153854174367
+    ],
+    "NMF-30": [
+      0.98099155692897788,
+      0.98104411407565761,
+      0.97959220861814655
+    ],
+    "Node2Vec-10": [
+      0.92012471253883277,
+      0.91497268895227268,
+      0.91715702544560074
+    ],
+    "Node2Vec-128": [
+      0.95396173237915338,
+      0.95391289404032453,
+      0.9532370398622253
+    ],
+    "Node2Vec-20": [
+      0.94639161052132581,
+      0.94487073758276507,
+      0.9447445365378242
+    ],
+    "Node2Vec-5": [
+      0.88101683457440094,
+      0.88564237431178072,
+      0.87942259406657008
+    ],
+    "PA": [
+      0.898808088960936,
+      0.89862428887629531,
+      0.9004622763898944
+    ],
+    "sfdp-default": [
+      0.98289464410203409,
+      0.98283065707851469,
+      0.98149207395725169
+    ],
+    "svds-10": [
+      0.95000262810569025,
+      0.94659880863910917,
+      0.94867570204186613
+    ],
+    "svds-30": [
+      0.97662031384741999,
+      0.9769257543722244,
+      0.97765955921016823
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/reactome/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "NMF-10": [
+      0.69503007495077951,
+      0.72526079514167718,
+      0.7259398074873562
+    ],
+    "NMF-30": [
+      0.61179625498002344,
+      0.62690827034073093,
+      0.62044930681652599
+    ],
+    "PA": [
+      0.8122330715694368,
+      0.813476521880792,
+      0.81312177518250373
+    ],
+    "sfdp-bipartite": [
+      0.81309804245617823,
+      0.81298178246640962,
+      0.81373239673697972
+    ],
+    "sfdp-default": [
+      0.74326472242409514,
+      0.73975377620140303,
+      0.74249249656462846
+    ],
+    "svds-10": [
+      0.74275716083989507,
+      0.75275533280081253,
+      0.74135853437643384
+    ],
+    "svds-30": [
+      0.61362928850553033,
+      0.61348124912158775,
+      0.61175910447037363
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/frwikinews/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "NMF-10": [
+      0.57732927383228039,
+      0.58475607270390872,
+      0.58632098460460125
+    ],
+    "NMF-30": [
+      0.60837014426837421,
+      0.61432421662070713,
+      0.60867929249525687
+    ],
+    "PA": [
+      0.57386977175321585,
+      0.57608619034118047,
+      0.56957120761464464
+    ],
+    "sfdp-bipartite": [
+      0.60556902944535196,
+      0.61504418755635615,
+      0.60832551928131495
+    ],
+    "sfdp-default": [
+      0.69863290995331684,
+      0.70044660652095903,
+      0.6993605284825708
+    ],
+    "svds-10": [
+      0.59931114567606225,
+      0.60433820378784442,
+      0.59670793458775961
+    ],
+    "svds-30": [
+      0.64921614075020928,
+      0.65659899427703672,
+      0.63902515752133349
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/condmat/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.91509118175913406,
+      0.9150239688885371,
+      0.91463465952997713
+    ],
+    "CN": [
+      0.91476877584893013,
+      0.91470676187316091,
+      0.91431168697431719
+    ],
+    "NMF-10": [
+      0.91940461926865258,
+      0.91964869931117055,
+      0.91908954993206371
+    ],
+    "NMF-30": [
+      0.93787627739673085,
+      0.93894716014615176,
+      0.93791596814941258
+    ],
+    "PA": [
+      0.88699519533002347,
+      0.88745231398031377,
+      0.88774345110815278
+    ],
+    "sfdp-default": [
+      0.94279839673195354,
+      0.94268093944634668,
+      0.94302473564173006
+    ],
+    "svds-10": [
+      0.91239647070511354,
+      0.91296368283131057,
+      0.91224592614761735
+    ],
+    "svds-30": [
+      0.922978283137876,
+      0.92420523422423173,
+      0.92301829928308654
+    ]
+  },
+  "bipartite": false,
+  "comment": "do it",
+  "directed": false,
+  "file": "data/structral/facebook/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "NMF-10": [
+      0.92485219664059026,
+      0.92583461931947819,
+      0.92551386123540835
+    ],
+    "NMF-30": [
+      0.94037232825664019,
+      0.94138352089827027,
+      0.9410259342104853
+    ],
+    "PA": [
+      0.90252980921969372,
+      0.90333430876996301,
+      0.90309353117387559
+    ],
+    "sfdp-bipartite": [
+      0.88732310805011672,
+      0.88809246351699711,
+      0.88814469374849292
+    ],
+    "sfdp-default": [
+      0.83847274326512566,
+      0.8401540196546311,
+      0.84234674136933541
+    ],
+    "svds-10": [
+      0.92712514252587763,
+      0.92801480138444004,
+      0.92774699322880494
+    ],
+    "svds-30": [
+      0.94068663752871662,
+      0.94173460521842278,
+      0.94130181198588847
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/movielens/train.in",
+  "gap": 0,
+  "k": 3,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}

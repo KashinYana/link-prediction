@@ -1,12 +1,48 @@
 from graph_tool.all import *
+from save_sample import safe_sample_edges
+from graph_tool import topology
+
 
 def in_set(u, w, Set):
     return (u + ' ' + w in Set) or (w + ' ' + u in Set)
 
-def read_train(file):
+
+def choose_giant_component(edges, nodes):
+    g = Graph(directed=False)
+    g.add_vertex(max(nodes) + 1)
+    for edge in edges:
+        u, w = map(int, edge.split())
+        g.add_edge(g.vertex(u), g.vertex(w))
+    labels = topology.label_largest_component(g)
+    u = GraphView(g, vfilt=labels)
+    new_nodes = set()
+    new_edges = set()
+    for e in u.edges():
+        new_nodes.add(int(e.source()))
+        new_nodes.add(int(e.target()))
+        new_edges.add(str(e.source()) + ' ' + str(e.target()))
+    return new_edges, new_nodes
+
+
+def rename(edges, nodes):
+    d = {}
+    i = 0
+    for node in nodes:
+        d[node] = i
+        i += 1
+    new_edges = set()
+    new_nodes = set(range(i))
+    for edge in edges:
+        u, w = map(int, edge.strip().split())
+        new_edges.add(str(d[u]) + ' ' + str(d[w]))
+    return new_edges, new_nodes
+
+
+def read_train(file, directed=False):
     train_set = set()
     left_nodes = set()
     right_nodes = set()
+    
     FIN = open(file, 'r')
     for line in FIN:
         train_set.add(line.strip())
@@ -14,7 +50,23 @@ def read_train(file):
         left_nodes.add(int(u))
         right_nodes.add(int(w))
     FIN.close()
-    return train_set, left_nodes, right_nodes
+    
+    if directed:
+        return train_set, left_nodes, right_nodes
+        
+    train_set_undirected = set()
+    f = False
+    for e in train_set:
+        u, w = map(int, e.split())
+        if ((str(u) + ' ' + str(w) not in train_set_undirected)
+            and (str(w) + ' ' + str(u) not in train_set_undirected)):
+            train_set_undirected.add(str(u) + ' ' + str(w))
+        if (str(w) + ' ' + str(u)) in train_set:
+            f = True
+    
+    if f:
+        print('It was bug')
+    return train_set_undirected, left_nodes, right_nodes
 
 def sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False, nodes=None):
     import random
@@ -22,6 +74,9 @@ def sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False, no
     if not sparse:
         return  set(random.sample(train_set, SIZE_POS))
     else:
+        train_set = [tuple(map(int, edge.split())) for edge in train_set]
+        nodes_r, edges_r, sampled_edges_r = safe_sample_edges(nodes, train_set, SIZE_POS)
+        return [str(e[0]) + ' ' + str(e[1]) for e in sampled_edges_r]
         
         g = Graph(directed=False)
         g.add_vertex(max(nodes) + 1)
@@ -63,8 +118,8 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
             int(min(DIFFICULT_EDGE_RATE * SIZE_NEG, len(difficult_edges))) ))
     
     while len(neg_set) < SIZE_NEG:
-        u_sample = random.sample(nodes, 100)
-        w_sample = random.sample(nodes, 100)
+        u_sample = random.sample(nodes, 1000)
+        w_sample = random.sample(nodes, 1000)
         for (u, w) in zip(u_sample, w_sample):
             if u == w:
                 continue
@@ -107,8 +162,12 @@ def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
     return neg_set
 
 def sample_structural(file, N, directed=False, sparse=False):
-    train_set, left_nodes, right_nodes = read_train(file)
+    train_set, left_nodes, right_nodes = read_train(file, directed=directed)
     nodes = left_nodes | right_nodes
+    
+    train_set, nodes = choose_giant_component(train_set, nodes)
+    train_set, nodes = rename(train_set, nodes)
+    
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
     poss_set = sample_structural_poss(train_set, SIZE_POS, directed, sparse, nodes)
@@ -116,7 +175,7 @@ def sample_structural(file, N, directed=False, sparse=False):
     return train_set, nodes, poss_set, neg_set
 
 def sample_bipartite(file, N):
-    train_set, left_nodes, right_nodes = read_train(file)
+    train_set, left_nodes, right_nodes = read_train(file, directed=False)
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
     poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False)
@@ -131,13 +190,17 @@ class TopologicalFeatures:
         self.directed = directed
         
     def convert(self, u, w):
-        return 2*u-1, 2*w
+        return 2*u+1, 2*w
         
     def dist(self, u, w):
+        #print('dist', u, w)
         if self.directed:
             u, w = self.convert(u, w)
+        #print(u, w)
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
+        
+        #print(-((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5)
         return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
@@ -190,6 +253,7 @@ def make_dataset(poss_set, neg_set, functs):
             x.append(func(u, w))
         X.append(x)
         Y.append(1)
+    
     for line in neg_set:
         u, w = map(int, line.split())
         x = []
@@ -197,6 +261,7 @@ def make_dataset(poss_set, neg_set, functs):
             x.append(func(u, w))
         X.append(x)
         Y.append(0)
+        
     X = numpy.array(X)
     Y = numpy.array(Y)
     return X, Y
@@ -228,3 +293,12 @@ class MFFeatures:
     def score(self, u, w):
         import numpy
         return numpy.dot(self.W[u], self.H.T[w])
+    
+    
+class Node2VecFeatures:
+    def __init__(self, d):
+        self.d = d
+        
+    def score(self, u, w):
+        import numpy
+        return numpy.dot(self.d[u], self.d[w])
