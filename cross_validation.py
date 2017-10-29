@@ -46,22 +46,33 @@ def calculate_auc_CN(g, poss_set, neg_set):
     return roc_auc_score(Y, X)
 
 
-def calculate_auc_Node2Vec(g, poss_set, neg_set, d=10):
+def calculate_auc_Node2Vec(train_set, poss_set, neg_set, d=10, directed=False):
     fout = open('node2vec.in', 'w')
-    for e in g.edges():
-        fout.write(str(e.source()) + ' ' + str(e.target()) + '\n')
+    
+    for edge in train_set:
+        if edge not in poss_set:
+            u, w = map(int, edge.split())
+            fout.write(str(u) + ' ' + str(w) + '\n')
     fout.close()
     
-    print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
-          '--dimensions %d --walk-length 80 --p 1 --iter 1' % d)
+    if not directed:
+        print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
+              '--dimensions %d --walk-length 80 --p 1 --iter 1' % d)
+    else:
+        print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
+              '--dimensions %d --walk-length 80 --p 1 --iter 1 --directed' % d)
+        
     
     w2v = {}
     with open('node2vec.out') as fin:
         print(fin.readline())
         for line in fin:
             line = list(map(float, line.strip().split()))
-            w2v[line[0]] = np.array(line[1:])
+            w2v[int(line[0])] = np.array(line[1:])
+      
     print('len w2v', len(w2v))
+    print('max w2v', max(w2v))
+    
     
     features = tools.Node2VecFeatures(w2v)
     X, Y = tools.make_dataset(poss_set, neg_set, [features.score])
@@ -129,9 +140,9 @@ def add_auc(auc, name, value):
     
     
 def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, max_iter, p):
+    
     g = Graph(directed=False)
     
-    #if not directed:
     g.add_vertex(max(nodes) + 1)
     for edge in train_set:
         if edge not in poss_set:
@@ -139,26 +150,28 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
             g.add_edge(g.vertex(u), g.vertex(w))
     
     
-    #add_auc(auc, 'Node2Vec-5', calculate_auc_Node2Vec(g, poss_set, neg_set, 5))
-    #add_auc(auc, 'Node2Vec-10', calculate_auc_Node2Vec(g, poss_set, neg_set, 10))
-    #add_auc(auc, 'Node2Vec-20', calculate_auc_Node2Vec(g, poss_set, neg_set, 20))
-    #add_auc(auc, 'Node2Vec-128', calculate_auc_Node2Vec(g, poss_set, neg_set, 128))
+    add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
+    add_auc(auc, "sfdp-default", calculate_auc_default(g, max_iter, poss_set, neg_set, p, directed))
     
-    add_auc(auc, "PA", calculate_auc_PA(g, poss_set, neg_set))
-    add_auc(auc, "CN", calculate_auc_CN(g, poss_set, neg_set))
-    add_auc(auc, "Adamic-Adar", calculate_auc_Adamic_Adar(g, poss_set, neg_set))
+    if type(p) == list:
+        for p_value in p:
+            add_auc(auc, "sfdp-default-" + str(p_value), calculate_auc_default(g, max_iter, poss_set, neg_set, p_value, directed))
+        return
     
-    add_auc(auc, "NMF-10", 
-        calculate_auc_NMF(10, train_set, nodes, poss_set, neg_set, directed))
-    add_auc(auc, "svds-30", 
-        calculate_auc_SVDS(30, train_set, nodes, poss_set, neg_set, directed))
-    add_auc(auc, "NMF-30", 
-        calculate_auc_NMF(30, train_set, nodes, poss_set, neg_set, directed))
-    add_auc(auc, "svds-10", 
-        calculate_auc_SVDS(10, train_set, nodes, poss_set, neg_set, directed))
+    #add_auc(auc, 'Node2Vec-100', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, directed))
+    #add_auc(auc, 'Node2Vec-100-false', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
+    
+    if not directed:
+        add_auc(auc, "PA", calculate_auc_PA(g, poss_set, neg_set))
+        add_auc(auc, "CN", calculate_auc_CN(g, poss_set, neg_set))
+        add_auc(auc, "Adamic-Adar", calculate_auc_Adamic_Adar(g, poss_set, neg_set))
+    
+    add_auc(auc, "NMF-100", 
+        calculate_auc_NMF(100, train_set, nodes, poss_set, neg_set, directed))
+    add_auc(auc, "svds-100", 
+        calculate_auc_SVDS(100, train_set, nodes, poss_set, neg_set, directed))
 
-    add_auc(auc, "sfdp-default", calculate_auc_default(g, max_iter, poss_set, neg_set, p, directed))    
-
+    
     if bipartite:
         is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
         if is_bi:
@@ -171,74 +184,56 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
                                       bipartite=True, bipartite_method=[left, right], gap=gap)
             features = tools.TopologicalFeatures(g, pos_bip, gap=gap)
             X, Y = tools.make_dataset(poss_set, neg_set, [features.dist])
-            add_auc(auc, "sfdp-bipartite", roc_auc_score(Y, X))  
-    return 
-                       
+            add_auc(auc, "sfdp-bipartite", roc_auc_score(Y, X))             
         
-    print('g_di')
-    g_di = Graph(directed=False)
-    g_di.add_vertex(2*max(nodes) + 2)
-    for edge in train_set:
-        if edge not in poss_set:
-            u, w = map(int, edge.split())
-            if g.vertex(u).out_degree() / g.vertex(w).out_degree() < 0.5:
-                g_di.add_edge(g_di.vertex(2*u + 1), g_di.vertex(2*w))
-            elif g.vertex(u).out_degree() / g.vertex(w).out_degree() > 2:
-                g_di.add_edge(g_di.vertex(2*w + 1), g_di.vertex(2*u))
-            else:
-                g_di.add_edge(g_di.vertex(2*u + 1), g_di.vertex(2*w))
-                g_di.add_edge(g_di.vertex(2*w + 1), g_di.vertex(2*u))
-                    
-    
-    
-    #auc["sfdp-directed"].append(calculate_auc_directed(g_di, verbose, gap, 
-    #                                                   convert_set(poss_set, g), 
-    #                                                   convert_set(neg_set, g)
-    #                                                  ))
-    
     if directed:
-        if "sfdp-directed" not in auc:
-            auc["sfdp-directed"] = []
-        auc["sfdp-directed"].append(calculate_auc_directed(g, verbose, gap, poss_set, neg_set))
-   
-    return auc
+        g_di = Graph(directed=False)
+        g_di.add_vertex(2*max(nodes) + 2)
+        for edge in train_set:
+            if edge not in poss_set:
+                u, w = map(int, edge.split())
+                g_di.add_edge(g_di.vertex(2*u + 1), g_di.vertex(2*w))
+        add_auc(auc, "sfdp-directed", 
+            calculate_auc_directed(g_di, verbose, gap, poss_set, neg_set))
+
 
 
 def cross_validation(file, N, k, gap=0, verbose=False, directed=False, bipartite=False, max_iter=0, 
-                     comment='', p=2, sparse=False):
+                     comment='', p=2, sparse=False, filename='cross_validation'):
     auc = {}
     
     train_set, nodes, poss_set, neg_set = None, None, None, None
     poss_set_2, neg_set_2 =  None, None
     
+    FIN = open(filename, 'a')
+    
     for i in range(k):
         train_set, nodes, poss_set, neg_set = None, None, None, None
         
         if bipartite:
-            train_set, nodes, poss_set, neg_set = tools.sample_bipartite(file, N)
+            train_set, nodes, poss_set, neg_set = tools.sample_bipartite(file, N, sparse=sparse)
         else:
             train_set, nodes, poss_set, neg_set = tools.sample_structural(file, N, directed=directed, sparse=sparse)
                 
         print('calculate_auc', len(train_set), len(nodes), len(poss_set), len(neg_set))
         calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, max_iter, p)
-    
-    FIN = open('cross_validation', 'a')
+   
     
     METADATA = {
-        'file': file,
-        'N': N,
-        'k': k,
-        'gap': gap,
-        'verbose': verbose,
-        'directed':directed,
-        'bipartite':bipartite,
-        'max_iter': max_iter,
-        'p': p,
-        'sparse': sparse,
-        'comment': comment,
-        'auc': auc
+            'file': file,
+            'N': N,
+            'k': k,
+            'gap': gap,
+            'verbose': verbose,
+            'directed':directed,
+            'bipartite':bipartite,
+            'max_iter': max_iter,
+            'p': p,
+            'sparse': sparse,
+            'comment': comment,
+            'auc': auc
     }
-    
+
     FIN.write(json.dumps(METADATA, sort_keys=True, indent=2, separators=(',', ': ')) + '\n')
     
     for x in auc:

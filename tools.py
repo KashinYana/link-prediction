@@ -14,13 +14,16 @@ def choose_giant_component(edges, nodes):
         u, w = map(int, edge.split())
         g.add_edge(g.vertex(u), g.vertex(w))
     labels = topology.label_largest_component(g)
-    u = GraphView(g, vfilt=labels)
     new_nodes = set()
     new_edges = set()
-    for e in u.edges():
-        new_nodes.add(int(e.source()))
-        new_nodes.add(int(e.target()))
-        new_edges.add(str(e.source()) + ' ' + str(e.target()))
+    for e in edges:
+        u, w = map(int, e.split())
+        if labels[g.vertex(u)] and labels[g.vertex(w)]:
+            new_nodes.add(u)
+            new_nodes.add(w)
+            new_edges.add(e)
+    print("old edges", len(edges))
+    print("new_edges", len(new_edges))
     return new_edges, new_nodes
 
 
@@ -75,9 +78,20 @@ def sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False, no
         return  set(random.sample(train_set, SIZE_POS))
     else:
         train_set = [tuple(map(int, edge.split())) for edge in train_set]
-        nodes_r, edges_r, sampled_edges_r = safe_sample_edges(nodes, train_set, SIZE_POS)
-        return [str(e[0]) + ' ' + str(e[1]) for e in sampled_edges_r]
         
+        nodes_r, edges_r, sampled_edges_r = safe_sample_edges(nodes, train_set, SIZE_POS)
+        
+        sampled_edges_r_order = set()
+        for e in sampled_edges_r:
+            if (e[0], e[1]) in train_set:
+                sampled_edges_r_order.add(str(e[0]) + ' ' + str(e[1]))
+            elif (e[1], e[0]) in train_set:
+                sampled_edges_r_order.add(str(e[1]) + ' ' + str(e[0]))
+            else:
+                print('Ussue 1234', e, e[0] in nodes, e[1] in nodes)
+        
+        return sampled_edges_r_order
+
         g = Graph(directed=False)
         g.add_vertex(max(nodes) + 1)
         for edge in train_set:
@@ -116,6 +130,7 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
 
         neg_set = set(random.sample(difficult_edges, 
             int(min(DIFFICULT_EDGE_RATE * SIZE_NEG, len(difficult_edges))) ))
+        print("neg_set", len(neg_set))
     
     while len(neg_set) < SIZE_NEG:
         u_sample = random.sample(nodes, 1000)
@@ -167,6 +182,7 @@ def sample_structural(file, N, directed=False, sparse=False):
     
     train_set, nodes = choose_giant_component(train_set, nodes)
     train_set, nodes = rename(train_set, nodes)
+    print('len nodes after rename', len(nodes))
     
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
@@ -174,11 +190,37 @@ def sample_structural(file, N, directed=False, sparse=False):
     neg_set = sample_structural_neg(train_set, nodes, SIZE_NEG, directed)
     return train_set, nodes, poss_set, neg_set
 
-def sample_bipartite(file, N):
+def sample_bipartite(file, N, sparse):
     train_set, left_nodes, right_nodes = read_train(file, directed=False)
+    
+    nodes = left_nodes | right_nodes
+    train_set, nodes = choose_giant_component(train_set, nodes)
+    train_set, nodes = rename(train_set, nodes)
+    print('len nodes after rename', len(nodes))
+    
+    g = Graph(directed=False)
+    g.add_vertex(max(nodes) + 1)
+    for edge in train_set:
+        u, w = map(int, edge.split())
+        g.add_edge(g.vertex(u), g.vertex(w))
+    
+    is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
+    groups = g.new_vertex_property("int")
+    
+    left_nodes  = set()
+    right_nodes = set()
+ 
+    for u in g.vertices():
+        if int(part[u]) == 0:
+            left_nodes.add(int(u))
+        elif int(part[u]) == 1:
+            right_nodes.add(int(u))
+        else:
+            print('Ussue 4444')
+            
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
-    poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=False)
+    poss_set = sample_structural_poss(train_set, SIZE_POS, directed=False, sparse=sparse, nodes=nodes)
     neg_set = sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG)
     return train_set, left_nodes | right_nodes, poss_set, neg_set
 
