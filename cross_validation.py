@@ -55,6 +55,8 @@ def calculate_auc_Node2Vec(train_set, poss_set, neg_set, d=10, directed=False):
             fout.write(str(u) + ' ' + str(w) + '\n')
     fout.close()
     
+    print('calculate_auc_Node2Vec')
+    
     if not directed:
         print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
               '--dimensions %d --walk-length 80 --p 1 --iter 1' % d)
@@ -141,6 +143,9 @@ def add_auc(auc, name, value):
     
 def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, max_iter, p):
     
+    add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
+    return 
+
     g = Graph(directed=False)
     
     g.add_vertex(max(nodes) + 1)
@@ -150,7 +155,7 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
             g.add_edge(g.vertex(u), g.vertex(w))
     
     
-    add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
+    # add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
     add_auc(auc, "sfdp-default", calculate_auc_default(g, max_iter, poss_set, neg_set, p, directed))
     
     if type(p) == list:

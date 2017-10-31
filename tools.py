@@ -1,6 +1,7 @@
 from graph_tool.all import *
 from save_sample import safe_sample_edges
 from graph_tool import topology
+import numpy as np
 
 
 def in_set(u, w, Set):
@@ -159,9 +160,40 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
 def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
     import random
     neg_set = set()
+    DIFFICULT_EDGE_RATE = 0.5
+    
+    nodes = left_nodes | right_nodes
+    g = Graph(directed=False)
+    g.add_vertex(max(nodes) + 1)
+    for edge in train_set:
+        u, w = map(int, edge.split())
+        g.add_edge(g.vertex(u), g.vertex(w))
+    
+    left_nodes_miltiplied = list()
+    right_nodes_miltiplied = list()
+    
+    for node in left_nodes:
+        for i in range(g.vertex(int(node)).out_degree()):
+            left_nodes_miltiplied.append(node)
+    
+    for node in right_nodes:
+        for i in range(g.vertex(int(node)).out_degree()):
+            right_nodes_miltiplied.append(node)
+    
+    print(len(right_nodes_miltiplied), 'right_nodes_miltiplied')
+    print(len(right_nodes), 'right_nodes')
+    print(len(left_nodes_miltiplied), 'left_nodes_miltiplied')
+    
     while len(neg_set) < SIZE_NEG:
-        u_sample = random.sample(left_nodes, 100)
-        w_sample = random.sample(right_nodes, 100)
+        u_sample = np.concatenate(
+            (random.sample(left_nodes_miltiplied, 1000),
+            random.sample(left_nodes, 1000))
+        )
+        w_sample = np.concatenate(
+            (random.sample(right_nodes_miltiplied, 1000),
+            random.sample(right_nodes, 1000))
+        )
+        
         for (u, w) in zip(u_sample, w_sample):
             if u == w:
                 continue
@@ -172,6 +204,7 @@ def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
             if in_set(u, w, neg_set):
                 continue
             neg_set.add(u + ' ' + w)
+    
     if len(neg_set) > SIZE_NEG:
         neg_set = set(random.sample(neg_set, SIZE_NEG))
     return neg_set

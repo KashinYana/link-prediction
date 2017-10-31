@@ -1,0 +1,280 @@
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5
+    ],
+    "CN": [
+      0.5
+    ],
+    "NMF-100": [
+      0.51237565763338255
+    ],
+    "PA": [
+      0.80028826599060043
+    ],
+    "sfdp-bipartite": [
+      0.82254520829521138
+    ],
+    "sfdp-default": [
+      0.74821783842105405
+    ],
+    "svds-100": [
+      0.56418335420757371
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/frwikinews/train.in",
+  "gap": 0,
+  "k": 1,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5
+    ],
+    "CN": [
+      0.5
+    ],
+    "NMF-100": [
+      0.81302443024701787
+    ],
+    "PA": [
+      0.61618215560624912
+    ],
+    "sfdp-bipartite": [
+      0.67368789008785845
+    ],
+    "sfdp-default": [
+      0.91312128612126098
+    ],
+    "svds-100": [
+      0.78209782020617091
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/condmat/train.in",
+  "gap": 0,
+  "k": 1,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5
+    ],
+    "NMF-100": [
+      0.8258324746279847,
+      0.81725483230781182
+    ],
+    "PA": [
+      0.61812466672300359,
+      0.61559780620436433
+    ],
+    "sfdp-bipartite": [
+      0.6800885895538239,
+      0.69126248710782878
+    ],
+    "sfdp-default": [
+      0.91071332311768116,
+      0.90733623728122881
+    ],
+    "svds-100": [
+      0.79205049672722461,
+      0.78792595241957408
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/condmat/train.in",
+  "gap": 0,
+  "k": 2,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5
+    ],
+    "CN": [
+      0.5
+    ],
+    "NMF-100": [
+      0.79996735722474055
+    ],
+    "PA": [
+      0.78183938859480084
+    ],
+    "sfdp-bipartite": [
+      0.77085739488586258
+    ],
+    "sfdp-default": [
+      0.83230076470879089
+    ],
+    "svds-100": [
+      0.73160234642827615
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/github/train.in",
+  "gap": 0,
+  "k": 1,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5
+    ],
+    "NMF-100": [
+      0.57807147143958304,
+      0.54025340988064241
+    ],
+    "PA": [
+      0.79993577378644187,
+      0.80083543142361691
+    ],
+    "sfdp-bipartite": [
+      0.82607327806479203,
+      0.8341801590740372
+    ],
+    "sfdp-default": [
+      0.74286873215773919,
+      0.74342406675079564
+    ],
+    "svds-100": [
+      0.57384242777054573,
+      0.57557358098620592
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/frwikinews/train.in",
+  "gap": 0,
+  "k": 2,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5
+    ],
+    "NMF-100": [
+      0.80767419409221575,
+      0.80132231597826897
+    ],
+    "PA": [
+      0.7823848304141543,
+      0.78232179001914115
+    ],
+    "sfdp-bipartite": [
+      0.771422563958295,
+      0.77033624272327583
+    ],
+    "sfdp-default": [
+      0.83449571291557545,
+      0.83178609119133451
+    ],
+    "svds-100": [
+      0.73330482536837638,
+      0.72979142165617994
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/github/train.in",
+  "gap": 0,
+  "k": 2,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
+{
+  "N": 30,
+  "auc": {
+    "Adamic-Adar": [
+      0.5,
+      0.5
+    ],
+    "CN": [
+      0.5,
+      0.5
+    ],
+    "NMF-100": [
+      0.86959191493947707,
+      0.87187452850615421
+    ],
+    "PA": [
+      0.7733582181388472,
+      0.77362085773104261
+    ],
+    "sfdp-bipartite": [
+      0.7575786918947669,
+      0.75784032469758933
+    ],
+    "sfdp-default": [
+      0.74817846011428613,
+      0.75716551540314181
+    ],
+    "svds-100": [
+      0.87595070852764711,
+      0.8765957853905475
+    ]
+  },
+  "bipartite": true,
+  "comment": "",
+  "directed": false,
+  "file": "data/bipartite/movielens/train.in",
+  "gap": 0,
+  "k": 2,
+  "max_iter": 0,
+  "p": 2,
+  "sparse": true,
+  "verbose": false
+}
