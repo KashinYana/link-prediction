@@ -1,9 +1,0 @@
-file:data/structral/euroroad/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.709421 (+/- 0.071182)
-svds-30 : 0.620945 (+/- 0.110415)
-PA : 0.381590 (+/- 0.062997)
-CN : 0.529790 (+/- 0.017140)
-Adamic-Adar : 0.529812 (+/- 0.017154)
-NMF-30 : 0.674627 (+/- 0.079876)
-svds-10 : 0.672496 (+/- 0.078075)
-sfdp-default : 0.792918 (+/- 0.084004)

@@ -1,9 +1,0 @@
-file:data/structral/PowerGrid/train.in N: 10 k: 10 gap:0 verbose:False directed:False bipartite:False max_iter:0p: 2sparse: True
-NMF-10 : 0.686091 (+/- 0.062301)
-svds-30 : 0.780256 (+/- 0.051441)
-PA : 0.560905 (+/- 0.030498)
-CN : 0.606608 (+/- 0.014044)
-Adamic-Adar : 0.606614 (+/- 0.014039)
-NMF-30 : 0.805820 (+/- 0.031886)
-svds-10 : 0.591499 (+/- 0.073922)
-sfdp-default : 0.900346 (+/- 0.022621)
