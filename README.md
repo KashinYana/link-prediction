@@ -1,9 +1,8 @@
 # Spring-Electrical Models For Link Prediction
 
 ## Structure of this repository
-- `link_prediction/` contains all scripts used in exprements
 - `datasets/` is a datasets storage. We have converted all datasets to the same format, saved each of them in `<dataset_path>/input.txt` file.
-- `notebooks/` folder is the best place to start. It is a quick introduction to this library.
+- `notebooks/` contains all scripts and jupyter notebooks used in exprements.
 - `graph_tools_patch/` has patch for graph_tools library, which allows to remove repolsive forses between nodes of the same type
 
 ## How to install graph tools patch
