@@ -1,5 +1,0 @@
-Train number of edges - 40325
-Test number of edges - 20518
-
-Train years = [1995, 1999]
-Test year = 2000
