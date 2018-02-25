@@ -18,25 +18,13 @@ def calculate_auc_NMF(n_components, train_set, nodes, poss_set, neg_set, directe
 def calculate_auc_PA(g, poss_set, neg_set):
     features = tools.TopologicalFeatures(g)
     edges = [e for e in g.edges()]
-    print('real number edges', len(edges))
     poss_set = set(poss_set)
     neg_set = set(neg_set)
     for e in edges:
         e1 = str(e.source()) + ' ' + str(e.target())
         e2 = str(e.target()) + ' ' + str(e.source())
-        if e1 in poss_set or e2 in poss_set:
-            print('poss fails')
-        if e1 in neg_set or e2 in neg_set:
-            print('neg_set fails')
             
     X, Y = tools.make_dataset(poss_set, neg_set, [features.preferential_attachment])
-    print('len X', len(X))
-    print('len Y', len(Y))
-    print('sum Y', sum(Y))
-    print('describe', X[:len(X)/2].mean(), Y[:len(X)/2].mean())
-    print('describe', X[len(X)/2:].mean(), Y[len(X)/2:].mean())
-    print('describe', X.mean())
-    
     return roc_auc_score(Y, X)
 
 
@@ -55,8 +43,6 @@ def calculate_auc_Node2Vec(train_set, poss_set, neg_set, d=10, directed=False):
             fout.write(str(u) + ' ' + str(w) + '\n')
     fout.close()
     
-    print('calculate_auc_Node2Vec')
-    
     if not directed:
         print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
               '--dimensions %d --walk-length 80 --p 1 --iter 1' % d)
@@ -64,7 +50,6 @@ def calculate_auc_Node2Vec(train_set, poss_set, neg_set, d=10, directed=False):
         print os.system('python ../node2vec/src/main.py --input node2vec.in --output node2vec.out ' +
               '--dimensions %d --walk-length 80 --p 1 --iter 1 --directed' % d)
         
-    
     w2v = {}
     with open('node2vec.out') as fin:
         print(fin.readline())
@@ -72,10 +57,6 @@ def calculate_auc_Node2Vec(train_set, poss_set, neg_set, d=10, directed=False):
             line = list(map(float, line.strip().split()))
             w2v[int(line[0])] = np.array(line[1:])
       
-    print('len w2v', len(w2v))
-    print('max w2v', max(w2v))
-    
-    
     features = tools.Node2VecFeatures(w2v)
     X, Y = tools.make_dataset(poss_set, neg_set, [features.score])
     return roc_auc_score(Y, X)
@@ -141,11 +122,7 @@ def add_auc(auc, name, value):
     auc[name].append(value)
     
     
-def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, max_iter, p):
-    
-    add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
-    return 
-
+def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, node2vec, max_iter, p):
     g = Graph(directed=False)
     
     g.add_vertex(max(nodes) + 1)
@@ -155,17 +132,8 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
             g.add_edge(g.vertex(u), g.vertex(w))
     
     
-    # add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
     add_auc(auc, "sfdp-default", calculate_auc_default(g, max_iter, poss_set, neg_set, p, directed))
-    
-    if type(p) == list:
-        for p_value in p:
-            add_auc(auc, "sfdp-default-" + str(p_value), calculate_auc_default(g, max_iter, poss_set, neg_set, p_value, directed))
-        return
-    
-    #add_auc(auc, 'Node2Vec-100', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, directed))
-    #add_auc(auc, 'Node2Vec-100-false', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
-    
+        
     if not directed:
         add_auc(auc, "PA", calculate_auc_PA(g, poss_set, neg_set))
         add_auc(auc, "CN", calculate_auc_CN(g, poss_set, neg_set))
@@ -176,7 +144,6 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
     add_auc(auc, "svds-100", 
         calculate_auc_SVDS(100, train_set, nodes, poss_set, neg_set, directed))
 
-    
     if bipartite:
         is_bi, part = graph_tool.topology.is_bipartite(g, partition=True)
         if is_bi:
@@ -200,10 +167,12 @@ def calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, direct
                 g_di.add_edge(g_di.vertex(2*u + 1), g_di.vertex(2*w))
         add_auc(auc, "sfdp-directed", 
             calculate_auc_directed(g_di, verbose, gap, poss_set, neg_set))
+        
+    if node2vec:
+        add_auc(auc, 'Node2Vec-100-undir', calculate_auc_Node2Vec(train_set, poss_set, neg_set, 100, False))
 
 
-
-def cross_validation(file, N, k, gap=0, verbose=False, directed=False, bipartite=False, max_iter=0, 
+def cross_validation(file, N, k, gap=0, verbose=False, directed=False, bipartite=False, node2vec=False, max_iter=0, 
                      comment='', p=2, sparse=False, filename='cross_validation'):
     auc = {}
     
@@ -220,8 +189,7 @@ def cross_validation(file, N, k, gap=0, verbose=False, directed=False, bipartite
         else:
             train_set, nodes, poss_set, neg_set = tools.sample_structural(file, N, directed=directed, sparse=sparse)
                 
-        print('calculate_auc', len(train_set), len(nodes), len(poss_set), len(neg_set))
-        calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, max_iter, p)
+        calculate_auc(train_set, nodes, poss_set, neg_set, auc, gap, verbose, directed, bipartite, node2vec, max_iter, p)
    
     
     METADATA = {
@@ -232,6 +200,7 @@ def cross_validation(file, N, k, gap=0, verbose=False, directed=False, bipartite
             'verbose': verbose,
             'directed':directed,
             'bipartite':bipartite,
+            'node2vec':node2vec,
             'max_iter': max_iter,
             'p': p,
             'sparse': sparse,

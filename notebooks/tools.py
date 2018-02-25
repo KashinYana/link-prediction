@@ -23,8 +23,6 @@ def choose_giant_component(edges, nodes):
             new_nodes.add(u)
             new_nodes.add(w)
             new_edges.add(e)
-    print("old edges", len(edges))
-    print("new_edges", len(new_edges))
     return new_edges, new_nodes
 
 
@@ -131,11 +129,10 @@ def sample_structural_neg(train_set, nodes, SIZE_NEG, directed):
 
         neg_set = set(random.sample(difficult_edges, 
             int(min(DIFFICULT_EDGE_RATE * SIZE_NEG, len(difficult_edges))) ))
-        print("neg_set", len(neg_set))
     
     while len(neg_set) < SIZE_NEG:
-        u_sample = random.sample(nodes, 1000)
-        w_sample = random.sample(nodes, 1000)
+        u_sample = random.sample(nodes, min(1000, len(nodes)))
+        w_sample = random.sample(nodes, min(1000, len(nodes)))
         for (u, w) in zip(u_sample, w_sample):
             if u == w:
                 continue
@@ -180,18 +177,14 @@ def sample_bipartite_neg(train_set, left_nodes, right_nodes, SIZE_NEG):
         for i in range(g.vertex(int(node)).out_degree()):
             right_nodes_miltiplied.append(node)
     
-    print(len(right_nodes_miltiplied), 'right_nodes_miltiplied')
-    print(len(right_nodes), 'right_nodes')
-    print(len(left_nodes_miltiplied), 'left_nodes_miltiplied')
-    
     while len(neg_set) < SIZE_NEG:
         u_sample = np.concatenate(
-            (random.sample(left_nodes_miltiplied, 1000),
-            random.sample(left_nodes, 1000))
+            (random.sample(left_nodes_miltiplied, min(1000, len(left_nodes_miltiplied))),
+            random.sample(left_nodes,  min(1000, len(left_nodes))))
         )
         w_sample = np.concatenate(
-            (random.sample(right_nodes_miltiplied, 1000),
-            random.sample(right_nodes, 1000))
+            (random.sample(right_nodes_miltiplied,  min(1000, len(right_nodes_miltiplied))),
+            random.sample(right_nodes, min(1000, len(right_nodes))))
         )
         
         for (u, w) in zip(u_sample, w_sample):
@@ -215,7 +208,6 @@ def sample_structural(file, N, directed=False, sparse=False):
     
     train_set, nodes = choose_giant_component(train_set, nodes)
     train_set, nodes = rename(train_set, nodes)
-    print('len nodes after rename', len(nodes))
     
     SIZE_POS = int(N * len(train_set) / 100.)
     SIZE_NEG = SIZE_POS
@@ -229,7 +221,6 @@ def sample_bipartite(file, N, sparse):
     nodes = left_nodes | right_nodes
     train_set, nodes = choose_giant_component(train_set, nodes)
     train_set, nodes = rename(train_set, nodes)
-    print('len nodes after rename', len(nodes))
     
     g = Graph(directed=False)
     g.add_vertex(max(nodes) + 1)
@@ -268,14 +259,10 @@ class TopologicalFeatures:
         return 2*u+1, 2*w
         
     def dist(self, u, w):
-        #print('dist', u, w)
         if self.directed:
             u, w = self.convert(u, w)
-        #print(u, w)
         u = self.pos[self.g.vertex(u)]
         w = self.pos[self.g.vertex(w)]
-        
-        #print(-((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5)
         return -((u[0] - w[0])**2 + (u[1] - w[1])**2 + self.gap*self.gap)**0.5
 
     def preferential_attachment(self, u, w):
